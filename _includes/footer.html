@@ -2,17 +2,19 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
+    <h2 class="footer-heading small-site-title">{{ site.title }}</h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        <ul class="contact-list footer-content">
+          <li>Powered By Gravity</li>
+          <li>Made with <i class="fa fa-heart"></i> on <a href="jekyll.com"><span style="color:black">{ { Jekyll } }</a></span></li>
+
+
         </ul>
       </div>
 
-      <div class="footer-col footer-col-2">
+      <div class="footer-col footer-col-2 footer-content">
         <ul class="social-media-list">
           {% if site.github_username %}
           <li>
@@ -28,7 +30,7 @@
         </ul>
       </div>
 
-      <div class="footer-col footer-col-3">
+      <div class="footer-col footer-col-3 site-description">
         <p>{{ site.description }}</p>
       </div>
     </div>
