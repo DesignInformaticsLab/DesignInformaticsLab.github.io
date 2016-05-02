@@ -2,15 +2,15 @@
 title:               Design Informatics Lab
 tagline:             '@ASU'
 description:         'A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:                 http://lanyon.getpoole.com
+url:                 http://designinformaticslab.github.io/
 baseurl:             ''
 paginate:            5
 
 # About/contact
 author:
-  name:              Mark Otto
+  name:              Max Yi Ren
   url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+  email:             yiren@asu.edu
 
 # Custom vars
 version:             1.0.0
