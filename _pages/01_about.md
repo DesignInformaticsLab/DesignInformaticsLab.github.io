@@ -2,9 +2,6 @@
 layout: page
 title: About
 permalink: /about/
+published: true
 ---
-
-About content goes here.
-
-* A list item
-* Another list item
+Welcome to the Design Informatics Lab at Arizona State University.
