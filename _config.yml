@@ -5,8 +5,7 @@ description: >
   Design Informatics Lab at ASU.
 baseurl: ""
 url: "http://designinformaticslab.github.io/"
-twitter_username: taniarascia
-github_username:  taniarascia
+github_username:  designinformaticslab
 # Build Settings
 sass:
   sass_dir: _sass
