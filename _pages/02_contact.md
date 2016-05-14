@@ -5,6 +5,8 @@ permalink: /contact/
 published: true
 ---
 
-email: [yiren@asu.edu](mailto:yiren@asu.edu)
+email: [yiren@asu.edu](mailto:yiren@asu.edu) 
+
 Office: Room 464, Goldwater Center, ASU Tempe
+
 Lab: Room 435, Goldwater Center, ASU Tempe
