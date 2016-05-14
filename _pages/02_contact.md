@@ -2,8 +2,8 @@
 layout: page
 title: Contact
 permalink: /contact/
+published: true
 ---
 
-Contact content goes here.
-
-My e-mail is [email@something.com](mailto:email@something.com).
+email: [yiren@asu.edu](mailto:yiren@asu.edu)
+Location: Room 464, Goldwater Center, ASU Tempe
