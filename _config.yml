@@ -1,10 +1,10 @@
 # Site Settings
-title: Start Jekyll
-email: taniarascia@gmail.com
+title: Design Informatics Lab | ASU
+email: yiren@asu.edu
 description: >
-  A guide to getting started with Jekyll.
+  Design Informatics Lab at ASU.
 baseurl: ""
-url: "http://taniarascia.github.io"
+url: "http://designinformaticslab.github.io/"
 twitter_username: taniarascia
 github_username:  taniarascia
 # Build Settings
