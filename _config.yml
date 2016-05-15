@@ -4,11 +4,40 @@ email: yiren@asu.edu
 description: >
   Design Informatics Lab at ASU.
 baseurl: ""
-url: "http://designinformaticslab.github.io/"
+url: "localhost:4000"
 github_username:  designinformaticslab
 # Build Settings
 sass:
   sass_dir: _sass
-include: ['_pages']
+include: ['_pages', '_papers']
 kramdown:
   input: GFM
+
+scholar:
+  style: apa
+  locale: en
+
+  sort_by: year
+  order: descending
+
+  type_order: article
+  group_by: type
+  group_order: ascending
+
+  source: ./_papers
+  bibliography: references.bib
+  bibliography_template: bibtemplate
+
+  replace_strings: true
+  join_strings:    true
+
+  use_raw_bibtex_entry: false
+  bibtex_filters:
+  - superscript
+  - latex
+
+  details_dir:    _papers
+  details_layout: bibtex.html
+  details_link:   Details
+
+  query: "@*"

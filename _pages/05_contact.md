@@ -4,11 +4,6 @@ title: Contact
 permalink: /contact/
 published: true
 ---
----
-layout: page
-title: Contact
-permalink: /contact/
----
 
 email: [yiren@asu.edu](mailto:yiren@asu.edu) 
 

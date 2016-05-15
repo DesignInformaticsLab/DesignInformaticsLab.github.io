@@ -1,0 +1,14 @@
+---
+---
+{{ reference }}
+
+{% if entry.accepted %} (accepted){% endif %}
+
+{% if entry.pdf %}<a href="../_papers/{{ entry.pdf }}">pdf</a>{% endif %}
+
+{% if entry.data %}, <a href="{{ entry.data }}">data</a>{% endif %}
+
+{% if entry.erratum %}, <a href="{{ entry.erratum }}">erratum</a>{% endif %}
+
+{% if entry.award %}, <b>{{ entry.award }}</b>{% endif %}
+

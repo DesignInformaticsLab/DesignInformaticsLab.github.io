@@ -2,14 +2,14 @@ body {
 	margin: 0;
 	color: $font-color;
 	font-family: $font-style;
-	font-size: 1.1em;
+	font-size: 1.0em;
 	line-height: 1.6;
 	-webkit-font-smoothing: antialiased;
 }
 h1,
 h2,
 h3 {
-	font-weight: 600;
+	font-weight: 100;
 	color: $heading-font-color;
 	font-family: $heading-font;
 	line-height: 1.5;
@@ -47,6 +47,8 @@ header {
 	align-items: center;
 }
 main {
+  	position: relative;
+    top: 50px;
 	padding: 0 15px;
 	max-width: $content-width;
 	margin: 0 auto;
@@ -72,7 +74,7 @@ aside {
 	box-shadow: 0px 1px 1px RGBA(4, 25, 54, .1);
 	nav {
 		float: left;
-		max-width: 800px;
+		max-width: 100%;
 		margin: 0 auto;
 		ul {
 			margin: 0;
@@ -108,4 +110,21 @@ aside {
 footer {
 	text-align: center;
 	padding: 40px;
+  	clear: left;
+}
+
+#mission {
+  	font-size: 80%;
+  	width: 45%;
+  	float: left;
+  	padding: 0 5% 0 0;
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+#news {
+  	font-size: 80%;
+  	width: 45%;
+  	float: left;
+  	padding: 0 5% 0 0;
 }

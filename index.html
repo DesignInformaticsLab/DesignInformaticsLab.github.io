@@ -1,7 +1,22 @@
 ---
 layout: default
 ---
+  <div id="slides">
 
-  <h2>Main Page</h2>
+  </div>
+  <div id="mission">
+    <b>Mission:</b><br>
+    We are interested in developing human-computer interactions and learning algorithms to enhance the
+    experience of engineering and product design. Current research projects focus on
+    <a class="links" href="#inverse">inverse optimal design</a>,
+    <a class="links" href="#material">computational material design</a>, and
+    <a class="links" href="#shape">crowdsourcing of human knowledge on shapes</a>.
+  </div>
 
-  Main content goes here. 
+  <div id="news">
+    <b>News:</b><br>
+    {% for post in site.posts %}
+      <a href="{{ post.url }}">[{{post.date | date: "%b %-d, %Y"}}]  {{ post.title }}</a><br>
+    {% endfor %}
+  </div>
+
