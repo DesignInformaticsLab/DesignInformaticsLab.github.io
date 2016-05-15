@@ -4,7 +4,7 @@ email: yiren@asu.edu
 description: >
   Design Informatics Lab at ASU.
 baseurl: ""
-url: "localhost:4000"
+url: "http://designinformaticslab.github.io"
 github_username:  designinformaticslab
 # Build Settings
 sass:

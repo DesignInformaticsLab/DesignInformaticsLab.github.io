@@ -1,15 +1,43 @@
 # Site Settings
-title: Start Jekyll
-email: taniarascia@gmail.com
+title: Design Informatics Lab | ASU
+email: yiren@asu.edu
 description: >
-  A guide to getting started with Jekyll.
+  Design Informatics Lab at ASU.
 baseurl: ""
-url: "http://localhost:4000"
-twitter_username: taniarascia
-github_username:  taniarascia
+url: "localhost:4000"
+github_username:  designinformaticslab
 # Build Settings
 sass:
   sass_dir: _sass
-include: ['_pages']
+include: ['_pages', '_papers']
 kramdown:
   input: GFM
+
+scholar:
+  style: apa
+  locale: en
+
+  sort_by: year
+  order: descending
+
+  type_order: article
+  group_by: type
+  group_order: ascending
+
+  source: ./_papers
+  bibliography: references.bib
+  bibliography_template: bibtemplate
+
+  replace_strings: true
+  join_strings:    true
+
+  use_raw_bibtex_entry: false
+  bibtex_filters:
+  - superscript
+  - latex
+
+  details_dir:    _papers
+  details_layout: bibtex.html
+  details_link:   Details
+
+  query: "@*"
