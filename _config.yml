@@ -12,6 +12,7 @@ sass:
 include: ['_pages', '_papers']
 kramdown:
   input: GFM
+encoding: UTF-8
 
 scholar:
   style: apa
