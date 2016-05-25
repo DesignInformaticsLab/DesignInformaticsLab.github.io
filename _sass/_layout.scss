@@ -115,7 +115,7 @@ footer {
 
 #mission {
   	font-size: 80%;
-  	width: 45%;
+  	width: 50%;
   	float: left;
   	padding: 0 5% 0 0;
 	text-align: justify;
@@ -124,7 +124,28 @@ footer {
 
 #news {
   	font-size: 80%;
-  	width: 45%;
+  	width: 50%;
   	float: left;
   	padding: 0 5% 0 0;
+}
+
+#projecticon {
+  font-size: 80%;
+  height: 240px;
+  width: 200px;
+  float: left;
+  margin: 10px;
+  text-align: center;
+  img {height: 150px;}
+  overflow: auto;
+}
+
+#project {
+  h2 {text-align: center;}
+  img {
+	width:60%;
+	display: block;
+	margin-left:auto;
+	margin-right:auto;
+  }
 }

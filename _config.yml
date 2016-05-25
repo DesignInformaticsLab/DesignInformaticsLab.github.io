@@ -9,7 +9,8 @@ github_username:  designinformaticslab
 # Build Settings
 sass:
   sass_dir: _sass
-include: ['_pages', '_papers']
+include: ['_pages', '_papers', '_images']
+exclude: ['_pages/publication_backup']
 kramdown:
   input: GFM
 encoding: UTF-8
