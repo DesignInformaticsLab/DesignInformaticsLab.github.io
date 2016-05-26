@@ -29,12 +29,12 @@ h2 {
 a,
 a:visited {
 	color: $link-color;
-	text-decoration: underline;
-	font-weight: bold;
+	//text-decoration: underline;
+	//font-weight: bold;
 }
 a:hover {
 	color: $link-hover-color;
-	text-decoration: underline;
+	//text-decoration: underline;
 }
 header {
 	background: $header;
@@ -60,6 +60,19 @@ time {
 	max-width: $content-width;
 	margin: 0 auto;
 }
+.caption {
+  font-size: 80%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 /* Aside */
 
@@ -149,3 +162,5 @@ footer {
 	margin-right:auto;
   }
 }
+
+

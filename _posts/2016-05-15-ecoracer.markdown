@@ -12,6 +12,6 @@ the optimal design and control problem embedded in a racer game: The player need
 the track within 36 seconds with as little energy consumption as possible. We then compare human results
 with the Efficient Global Optimization (Bayesian Optimization) algorithm. Results showed that some human
 beings are efficient at finding good solutions, yet most of them cannot get close to the true optimal solution."
-gameurl: ecoracer.herokuapp.com
+url: ecoracer.herokuapp.com
 paper: _papers/jmd2016ecoracer.pdf
 ---

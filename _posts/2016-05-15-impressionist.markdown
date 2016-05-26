@@ -7,8 +7,10 @@ categories: project
 publishdate: 2016
 image: _images/impressionist/image.png
 summaryimg: _images/impressionist/summaryimg.png
+imgcaption: "Best viewpoints chosen by aggregated saliency maps using the Impressionist game"
 abstract: "The goal of Impressionist is to achieve large-scale shape saliency knowledge acquisition
 with minimum long-term crowdsourcing cost. The game is inspired by von Ahn's Peekaboom game for image annotation."
-gameurl: impressionist.herokuapp.com
+url: impressionist.herokuapp.com
+paper: _papers/idetc2016h_final.pdf
 ---
-// paper: _papers/idetc2016impressionist.pdf
+
