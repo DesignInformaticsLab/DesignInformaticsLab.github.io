@@ -16,7 +16,9 @@ layout: default
   <div id="news">
     <b>News:</b><br>
     {% for post in site.posts %}
-      <a href="{{ post.url }}">[{{post.date | date: "%b %-d, %Y"}}]  {{ post.title }}</a><br>
+      {% if post.categories contains 'news' %}
+        <a href="{{ post.url }}">[{{post.date | date: "%b %-d, %Y"}}]  {{ post.title }}</a><br>
+      {% endif %}
     {% endfor %}
   </div>
 

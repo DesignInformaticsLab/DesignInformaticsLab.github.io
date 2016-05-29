@@ -4,14 +4,28 @@ title: Research
 permalink: /research/
 published: true
 ---
-
-{% for post in site.posts %}
-{% if post.categories contains 'project' %}
-<div id="projecticon">
-    <img src="{{ site.url }}/{{ post.image }}"><br>
-    <a href="{{ post.url }}">{{ post.title }}</a>
-    ({{ post.publishdate }})
+<div class="researchtopic">
+    <h3>Crowdsourcing and Human Computation</h3>
+    {% for post in site.posts %}
+        {% if post.categories contains 'project-crowdsourcing' %}
+            <div id="projecticon">
+                <img src="{{ site.url }}/{{ post.image }}"><br>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+                ({{ post.publishdate }})
+            </div>
+        {% endif %}
+    {% endfor %}
 </div>
-{% endif %}
-{% endfor %}
+<div class="researchtopic">
+<h3>Engineering System Design</h3>
+    {% for post in site.posts %}
+        {% if post.categories contains 'project-esd' %}
+            <div id="projecticon">
+                <img src="{{ site.url }}/{{ post.image }}"><br>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+                ({{ post.publishdate }})
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
 

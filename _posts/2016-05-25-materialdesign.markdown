@@ -3,7 +3,7 @@ layout: project
 title:  "Deep Network-Based Feature Extraction and Reconstruction of Complex Material Microstructures"
 author: Cang, R.J., Ren, Y.
 authorlink:
-categories: project
+categories: project-esd
 publishdate: 2016
 image: _images/materialdesign/image.jpg
 summaryimg: _images/materialdesign/summaryimg.jpg

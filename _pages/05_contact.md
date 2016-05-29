@@ -2,7 +2,7 @@
 layout: page
 title: Contact
 permalink: /contact/
-published: true
+published: false
 ---
 
 email: [yiren@asu.edu](mailto:yiren@asu.edu) 
