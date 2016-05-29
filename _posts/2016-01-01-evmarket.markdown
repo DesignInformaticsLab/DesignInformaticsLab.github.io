@@ -1,7 +1,8 @@
 ---
 layout: project
-title:  "Public Investment and Electric Vehicle Design: A Model-based Market Analysis Framework with
-         Application to a USA-China Comparison Study"
+shorttitle:  "Public Investment and Electric Vehicle Design: A USA-China Comparison Study"
+title: "Public Investment and Electric Vehicle Design: A Model-based Market Analysis Framework with
+                Application to a USA-China Comparison Study"
 author: Kang, N., Ren, Y.
 authorlink:
 categories: project-esd
