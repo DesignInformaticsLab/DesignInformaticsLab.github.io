@@ -6,8 +6,8 @@ author: Kang, N., Ren, Y.
 authorlink:
 categories: project-esd
 publishdate: 2016
-image: _images/dsjnamwoo2015/image.pdf
-summaryimg: _images/dsjnamwoo2015/summaryimg.jpg
+image: _images/dsjnamwoo2015/image.png
+summaryimg: _images/dsjnamwoo2015/summaryimg.png
 imgcaption: "(a) Multidisciplinary decision-making framework for the EV market (b) Significantly
 different optimal policies and market responses for the Beijing and Ann Arbor markets due to differences in
 consumer preferences, infrastructures, and existing policies."
