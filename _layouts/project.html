@@ -4,8 +4,10 @@ layout: default
 
 <div id="project">
     <h2>{{ page.title }}</h2>
-    <img src="{{ site.url }}/{{ page.summaryimg }}">
-    <div class=caption>{{ page.imgcaption }}</div><br><br>
+    {% if page.summaryimg %}
+        <img src="{{ site.url }}/{{ page.summaryimg }}">
+        <div class=caption>{{ page.imgcaption }}</div><br><br>
+    {% endif %}
 
     <b> Abstract </b>
     <p>{{ page.abstract }}</p>
@@ -13,8 +15,8 @@ layout: default
     <a href="http://{{ page.paper }}">Paper</a>
     {% endif %}
 
-    {% if page.url %}
-    , <a href="http://{{ page.url }}">Link</a>
+    {% if page.link %}
+    , <a href="http://{{ page.link }}">Link</a>
     {% endif %}
 
     {% if page.source %}
