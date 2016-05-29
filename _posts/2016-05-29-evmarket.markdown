@@ -11,6 +11,15 @@ summaryimg: _images/dsjnamwoo2015/summaryimg.png
 imgcaption: "(a) Multidisciplinary decision-making framework for the EV market (b) Significantly
 different optimal policies and market responses for the Beijing and Ann Arbor markets due to differences in
 consumer preferences, infrastructures, and existing policies."
-abstract: ""
+abstract: "Governments encourage use of electric vehicles (EV) via regulation and investment to
+           minimize greenhouse gas (GHG) emissions. Manufacturers produce vehicles to maximize
+           profit, given available public infrastructure and government incentives. EV public adoption
+           depends not only on price and vehicle attributes, but also on EV market size and
+           infrastructure available for refueling, such as charging station proximity and recharging
+           length and cost. Earlier studies have shown that government investment can create EV
+           market growth, and that manufacturers and charging station operators must cooperate
+           to achieve overall profitability. This article describes a framework that connects decisions
+           by the three stakeholders (government, EV manufacturer, charging station operator) with
+           preferences of the driving public."
 paper: _papers/ds2016kang.pdf
 ---

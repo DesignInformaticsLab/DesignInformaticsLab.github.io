@@ -12,11 +12,11 @@ layout: default
     <b> Abstract </b>
     <p>{{ page.abstract }}</p>
     {% if page.paper %}
-    <a href="http://{{ page.paper }}">Paper</a>
+    <a href="{{ site.url }}/{{ page.paper }}">Paper</a>
     {% endif %}
 
     {% if page.link %}
-    , <a href="http://{{ page.link }}">Link</a>
+    , <a href="{{ site.url }}/{{ page.link }}">Link</a>
     {% endif %}
 
     {% if page.source %}
