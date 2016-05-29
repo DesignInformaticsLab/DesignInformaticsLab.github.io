@@ -5,7 +5,7 @@ permalink: /research/
 published: true
 ---
 <div class="researchtopic">
-    <h3>Crowdsourcing and Human Computation</h3>
+    <b>Crowdsourcing and Human Computation</b><br>
     {% for post in site.posts %}
         {% if post.categories contains 'project-crowdsourcing' %}
             <div id="projecticon">
@@ -17,12 +17,12 @@ published: true
     {% endfor %}
 </div>
 <div class="researchtopic">
-<h3>Engineering System Design</h3>
+    <b>Engineering System Design</b><br>
     {% for post in site.posts %}
         {% if post.categories contains 'project-esd' %}
             <div id="projecticon">
                 <img src="{{ site.url }}/{{ post.image }}"><br>
-                <a href="{{ post.url }}">{{ post.title }}</a>
+                <a href="{{ post.url }}">{{ post.shorttitle }}</a>
                 ({{ post.publishdate }})
             </div>
         {% endif %}
