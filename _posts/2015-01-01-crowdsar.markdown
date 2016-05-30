@@ -1,0 +1,34 @@
+---
+layout: project
+shorttitle:  "Crowdsourcing for Search of Disaster Victims:
+              A Preliminary Study for Search System Design"
+title:  "Crowdsourcing for Search of Disaster Victims:
+                       A Preliminary Study for Search System Design"
+author: Burnap, A., Barto, C., Johnson-Roberson, M., Ren, Y., Gonzalez, R. and Papalambros, P.Y.
+authorlink:
+categories: project-crowdsourcing
+publishdate: 2015
+image: _images/iced2015a/image.jpg
+summaryimg: _images/iced2014a/summaryimg.jpg
+imgcaption: "Example frames from the three video feeds corresponding to three altitudes:
+(Left) low ~ 10m, (Middle) medium ~ 50 m, and (Right) high ~ 150m.
+Each example frame shown has a human present
+(highlighted in red) to illustrate relative size of human versus video frame."
+abstract: "Teams of unmanned aerial vehicles (UAV) have been suggested as sensor platforms
+           for disaster victim search systems used shortly after natural disasters such as an earthquake
+           or tsunami. Previous efforts have used UAVs equipped with video cameras for the disaster
+           information gathering stage, with the information processing stage performed by either
+            a single human operator or a victim detection computer vision algorithm.  We propose
+             extending these efforts by investigating how a large and distributed 'crowd'
+             of search volunteers and professionals may augment the information processing stage
+             by helping search video feeds for disaster victims.  An experiment is conducted comparing
+             the victim detection accuracy between a single human searcher, a crowd of searchers, and
+             a victim detection algorithm.  Our preliminary results show that while victim search
+             accuracy is sensitive to a system design variable, namely, UAV altitude, crowdsourcing
+              the search process can be more accurate than a single human or victim detection
+              algorithm alone.  These findings are a first step towards optimizing search system
+               design with respect to both information collection and information processing augmented
+               with crowdsourcing."
+paper: _papers/iced2015crowdsar.pdf
+---
+

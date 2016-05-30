@@ -1,5 +1,7 @@
 ---
 layout: project
+shorttitle: "Topology Generation for Hybrid Electric Vehicle
+                     Architecture Design"
 title:  "Topology Generation for Hybrid Electric Vehicle
          Architecture Design"
 author: Bayrak, A.E., Ren, Y.

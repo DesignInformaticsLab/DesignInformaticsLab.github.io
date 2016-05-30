@@ -1,24 +1,48 @@
 ---
 layout: default
 ---
+  <br>
   <div id="slides">
-
+    {% for post in site.posts %}
+      {% if post.categories contains 'project-crowdsourcing' %}
+      <div id="slideimage">
+        <a href="{{ post.url }}" title="{{ post.shorttitle }}"><img src="{{ site.url }}/{{ post.image}}"></a>
+      </div>
+      {% endif %}
+      {% if post.categories contains 'project-esd' %}
+      <div id="slideimage">
+        <a href="{{ post.url }}" title="{{ post.shorttitle }}"><img src="{{ site.url }}/{{ post.image}}"></a>
+      </div>
+      {% endif %}
+    {% endfor %}
   </div>
+  <br><br>
+
   <div id="mission">
     <b>Mission:</b><br>
-    We are interested in developing human-computer interactions and learning algorithms to enhance the
-    experience of engineering and product design. Current research projects focus on
-    <a class="links" href="#inverse">inverse optimal design</a>,
-    <a class="links" href="#material">computational material design</a>, and
-    <a class="links" href="#shape">crowdsourcing of human knowledge on shapes</a>.
+    We study <i>computational</i> and <i>crowdsourcing</i> tools that will renovate
+    engineering and industrial design activities. Specifically, we consider any design problem
+    as finding an optimal solution from a potentially high-dimensional space and
+    investigate effective and efficient search algorithms that integrate
+    human knowledge, learning algorithms and physics-based models.
+    Challenges lie across optimization, machine learning,
+    crowdsourcing, and engineering system design and control.
+    Key real-world applications include powertrain design and control,
+    computational material design,
+    over-actuated robot system design and control,
+    and automated shape design for functionalities and preferences.
   </div>
 
   <div id="news">
     <b>News:</b><br>
     {% for post in site.posts %}
       {% if post.categories contains 'news' %}
-        <a href="{{ post.url }}">[{{post.date | date: "%b %-d, %Y"}}]  {{ post.title }}</a><br>
+        <a href="{{ post.url }}">[{{post.date | date: "%b %-d, %Y"}}]   {{ post.title }}</a><br>
       {% endif %}
     {% endfor %}
   </div>
+
+<script>
+
+</script>
 
