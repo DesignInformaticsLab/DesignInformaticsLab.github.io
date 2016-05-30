@@ -1,10 +1,10 @@
 ---
-layout: page
 title: Research
+layout: page
 permalink: /research/
 published: true
 ---
-<div class="researchtopic">
+<div class="topic">
     <b>Crowdsourcing and Human Computation</b><br>
     {% for post in site.posts %}
         {% if post.categories contains 'project-crowdsourcing' %}
@@ -16,7 +16,7 @@ published: true
         {% endif %}
     {% endfor %}
 </div>
-<div class="researchtopic">
+<div class="topic">
     <b>Engineering System Design</b><br>
     {% for post in site.posts %}
         {% if post.categories contains 'project-esd' %}

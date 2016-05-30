@@ -1,6 +1,51 @@
 ---
-layout: page
 title: Teaching
+layout: page
 permalink: /teaching/
 published: true
 ---
+    <div class="topic">
+        <b>Design Optimization (MAE598/494) Lecture Notes</b><br>
+        {% for post in site.posts %}
+        {% if post.categories contains '598lecturenote' %}
+            * {{ post.title }} (<a href="{{ site.url}}/_teaching{{ post.link }}">pdf</a>)<br>
+        {% endif %}
+        {% endfor %}
+
+        <div id="designopt_list_button" class="list_button"><b>Click to see student projects</b></div>
+        <div id="designopt_list" class="hidden_list">
+            {% for i in (2015..2016) %}
+            <b> {{ i }}</b><br>
+            {% for post in site.posts %}
+                {% if post.categories contains '598studentproject' %}
+                    {% if post.year == i %}
+                    * {{ post.title }}({{ post.authors}}, <a href="{{ site.url}}/_teaching/{{ post.link }}">pdf</a>)<br>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="topic">
+        <b>Applied Statistics (MAE301) Lecture Notes</b><br>
+        {% for post in site.posts %}
+        {% if post.categories contains '301lecturenote' %}
+            * {{ post.title }} (<a href="{{ site.url}}/_teaching{{ post.link }}">pdf</a>)<br>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+<script>
+    $('#designopt_list_button').click(
+            function(){
+                if($('#designopt_list').css('display')=='none'){
+                    $('#designopt_list').show();
+                }
+                else{
+                    $('#designopt_list').hide();
+                }
+
+            }
+    );
+</script>

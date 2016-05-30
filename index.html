@@ -47,8 +47,12 @@ layout: default
   {% for people in site.posts %}
     {% if people.categories contains 'people' %}
     <div class="member">
-      <img src="{{ site.url }}/_images/people/{{ people.image}}">
-      <a href="{{ people.link }}">{{ people.name }}, {{ people.position }} </a><br>
+      {% if people.image %}
+        <img src="{{ site.url }}/_images/people/{{ people.image}}">
+      {% else %}
+        <img src="{{ site.url }}/_images/people/missing_people.png">
+      {% endif %}
+      <br><a href="http://{{ people.link }}">{{ people.name }}, {{ people.position }} </a><br>
     </div>
     {% endif %}
   {% endfor %}
@@ -59,8 +63,12 @@ layout: default
   {% for people in site.posts %}
     {% if people.categories contains 'alumni' %}
       <div class="member">
-        <img src="{{ site.url }}/_images/people/{{ people.image}}">
-        <a href="http://{{ people.link }}">{{ people.name }}, {{ people.position }} </a><br>
+        {% if people.image %}
+          <img src="{{ site.url }}/_images/people/{{ people.image}}">
+        {% else %}
+          <img src="{{ site.url }}/_images/people/missing_people.png">
+        {% endif %}
+        <br><a href="http://{{ people.link }}">{{ people.name }}, {{ people.position }} </a><br>
       </div>
     {% endif %}
   {% endfor %}

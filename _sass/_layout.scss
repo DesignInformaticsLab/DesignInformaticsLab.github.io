@@ -166,9 +166,10 @@ footer {
   }
 }
 
-.researchtopic {
+.topic {
   float:left;
   width: 100%;
+  margin-bottom: 10px;
 }
 
 #slides {
@@ -198,15 +199,22 @@ footer {
 }
 
 .member {
-  height: 165px;
+  height: 200px;
   width: 120px;
   float: left;
   margin: 10px;
   text-align: center;
   img {
-	height: 100px;
 	width: 100px;
   }
   overflow: auto;
 }
 
+.hidden_list {
+  display: none;
+  font-size: 80%;
+}
+
+.list_button {
+  cursor: pointer;
+}
