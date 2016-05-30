@@ -175,7 +175,7 @@ footer {
   width: 100%;
 }
 
-#slideimage {
+#slideimage, {
   text-align: center;
   width: 100px;
   height: 100px;
@@ -190,4 +190,23 @@ footer {
   margin-right: 10px;
 }
 
+.people {
+  font-size: 80%;
+  width: 100%;
+  float: left;
+  padding: 10px 5% 0 0;
+}
+
+.member {
+  height: 165px;
+  width: 120px;
+  float: left;
+  margin: 10px;
+  text-align: center;
+  img {
+	height: 100px;
+	width: 100px;
+  }
+  overflow: auto;
+}
 

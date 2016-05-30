@@ -1,0 +1,7 @@
+---
+name: Max Yi Ren
+position: Assistant Professor
+link: semte.engineering.asu.edu/ren-yi/
+categories: people
+image: yiren2012jul.png
+---
