@@ -8,8 +8,8 @@ author: Burnap, A., Barto, C., Johnson-Roberson, M., Ren, Y., Gonzalez, R. and P
 authorlink:
 categories: project-crowdsourcing
 publishdate: 2015
-image: _images/iced2015a/image.jpg
-summaryimg: _images/iced2014a/summaryimg.jpg
+image: _images/iced2015a/image.png
+summaryimg: _images/iced2015a/summaryimg.png
 imgcaption: "Example frames from the three video feeds corresponding to three altitudes:
 (Left) low ~ 10m, (Middle) medium ~ 50 m, and (Right) high ~ 150m.
 Each example frame shown has a human present
