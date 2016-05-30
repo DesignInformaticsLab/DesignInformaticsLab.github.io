@@ -1,7 +1,7 @@
 ---
 layout: project
 shorttitle: "Quantification of Effects of Complex Product
-Attributes Using Adaptive Questionnaire and Preference Learning"
+Attributes"
 title:  "Quantification of Effects of Complex Product
          Attributes Using Adaptive Questionnaire and Preference Learning"
 author: Kang, N., Ren, Y., Feinberg, F. and Papalambros, P.Y.
