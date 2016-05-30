@@ -1,6 +1,6 @@
 ---
 name: Channing Kremer
-position: MAE Bachelor
+position: MAE Undergrad
 link:
 categories: people
 image:
