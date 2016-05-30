@@ -149,7 +149,10 @@ footer {
   float: left;
   margin: 10px;
   text-align: center;
-  img {height: 150px;}
+  img {
+	height: 150px;
+	width: 150px;
+  }
   overflow: auto;
 }
 
