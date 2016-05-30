@@ -12,7 +12,9 @@ layout: default
     <b> Abstract </b>
     <p>{{ page.abstract }}</p>
     {% if page.paper %}
-    <a href="{{ site.url }}/{{ page.paper }}">Paper</a>
+        <a href="{{ site.url }}/{{ page.paper }}">Paper</a>
+    {% else %}
+        Paper not yet published
     {% endif %}
 
     {% if page.link %}

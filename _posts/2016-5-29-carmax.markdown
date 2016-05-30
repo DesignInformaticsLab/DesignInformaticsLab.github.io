@@ -20,4 +20,5 @@ to consumer preference. All learning is performed in real time so that the quest
 question to maximize the information gain. From the collected survey results, we further discover the
 relationship between consumer preference groups (e.g., people who are sensitive to MPG or price) and
 preferred vehicle styles."
+link: complexattribute.appspot.com
 ---
