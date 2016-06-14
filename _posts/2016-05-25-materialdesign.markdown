@@ -18,6 +18,6 @@ material systems to identify geometric and statistical features, which could be 
 reconstructing physically meaningful microstructures of complex material systems. Our current work
 investigates learning mechanisms that could automate the conversion between microstructures and their
 lower-dimensional feature representations."
-paper: _papers/idetc2016r_final.pdf
+paper: _papers/IDETC2016r_final.pdf
 source: https://github.com/DesignInformaticsLab/Material-Design
 ---
