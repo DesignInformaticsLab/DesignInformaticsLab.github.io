@@ -1,5 +1,5 @@
 ---
 categories: 301lecturenote
-link: /designopt/Introduction.pdf
+link: /statistics/Introduction.pdf
 title: Introduction to applied statistics
 ---

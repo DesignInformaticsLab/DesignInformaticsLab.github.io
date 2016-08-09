@@ -1,5 +1,5 @@
 ---
 categories: 301lecturenote
-link: /designopt/PCA.pdf
+link: /statistics/PCA.pdf
 title: Principal component analysis
 ---

@@ -1,5 +1,5 @@
 ---
 categories: 301lecturenote
-link: /designopt/t_test.pdf
+link: /statistics/t_test.pdf
 title: t-test
 ---

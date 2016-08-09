@@ -1,5 +1,5 @@
 ---
 categories: 301lecturenote
-link: /designopt/Continuous_random_variable.pdf
+link: /statistics/Continuous_random_variable.pdf
 title: Continuous random variable
 ---
