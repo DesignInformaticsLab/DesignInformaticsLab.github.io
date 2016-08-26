@@ -8,6 +8,7 @@ categories: project-crowdsourcing
 publishdate: 2015
 image: _images/ecoracer/image.png
 summaryimg: _images/ecoracer/summaryimg.png
+imgcaption: "Game performance by human players (left) and the Efficient Global Optimization algorithm (right)"
 abstract: "We developed this game to analyze how human players solve
 the optimal design and control problem embedded in a racer game: The player needs to finish
 the track within 36 seconds with as little energy consumption as possible. We then compare human results

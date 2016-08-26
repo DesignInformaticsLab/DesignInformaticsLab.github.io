@@ -1,0 +1,34 @@
+---
+layout: project
+shorttitle: "Learning Human Search Strategies from a Crowdsourcing Game"
+title:  "Learning Human Search Strategies from a Crowdsourcing Game"
+author: Sexton, T. and Ren, Y.
+authorlink:
+categories: project-crowdsourcing
+publishdate: 2016
+image: _images/ecoracer/image.png
+summaryimg: _images/ecoracer/ibosummaryimg.png
+imgcaption: "The residual of current best score vs. the known best score, 
+for 'learning from best player' (red), 
+ 'self learning' (blue), 
+and the default setting (green). 
+Average best score curve from all players is also shown in gray, 
+along with the scores from a player (P2) with fast improvement."
+abstract: "There is evidence that humans can be more efficient than existing 
+algorithms at searching for good solutions in high-dimensional and non-convex 
+design or control spaces, potentially due to our prior knowledge and learning 
+capability. This work attempts to quantify the search strategy of human beings 
+to enhance a Bayesian optimization (BO) algorithm for an optimal design and 
+control problem. We consider the sequence of human solutions (called a search 
+trajectory) as generated from BO, and propose to recover the algorithmic 
+parameters of BO through maximum likelihood estimation. The method is first 
+verified through simulation studies and then applied to human solutions 
+crowdsourced from a gamified design problem. We learn BO parameters from a 
+player who achieved fast improvement in his/her solutions and show that 
+applying the learned parameters to BO achieves better convergence than 
+using a self-adaptive BO. The proposed method is different from inverse 
+reinforcement learning in that it only requires a good search strategy, 
+rather than near-optimal solutions from humans."
+link: ecoracer.herokuapp.com
+paper: _papers/idetc2016t_final.pdf
+---
