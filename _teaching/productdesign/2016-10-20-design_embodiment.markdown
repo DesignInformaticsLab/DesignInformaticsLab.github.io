@@ -1,0 +1,42 @@
+---
+layout: apd_default
+title:  "Design Embodiment (Progress Report)"
+date:   2017-01-01 00:00:00
+published: false
+categories: productdesign
+---
+
+The progress report document is an evolved version of your proposal. 
+The original proposal material should be used as much as possible with 
+editing that reflects new information. The final report itself will be a 
+further evolved version of your progress report. With some early planning you 
+can substantially reduce the time required for report preparation.
+
+The report should include the following main sections. 
+
+1.      Introduction
+
+2.      Previous Designs
+
+3.      Design Objectives
+
+4.      Concept Generation and Selection
+
+    *      Alternative Concepts
+
+    *      Concept Selection Process
+
+    *      Current Design Concept
+
+    *      Description of the Beta prototype
+
+5.      Engineering Functionality Analysis
+
+6.      Economic Analysis
+
+7.      Time Schedule
+
+Include discussion of remaining work and plan
+
+You can rearrange/rename things as it makes sense to you but you must 
+include all the pertinent information.
