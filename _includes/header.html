@@ -4,9 +4,11 @@
 			<ul>
                 <li><a>{{ site.title }}</a></li>
 				<li><a href="{{ site.url }}/index.html">Home</a></li>
-              	{% for page in site.pages %} {% if page.title && page.published %}
-				<li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-				{% endif %} {% endfor %}
+              	{% for page in site.pages %}
+                    {% if page.category == 'header' && page.published %}
+				        <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+                    {% endif %}
+                {% endfor %}
 				<!--<li><a href="{{ "/blog" | prepend: site.baseurl }}">News</a></li>-->
 			</ul>
 			</li>

@@ -1,9 +1,8 @@
 ---
+categories: productdesign_guideline
+link: presentation1
 layout: apd_default
-title:  "Design Concept Presentation"
-date:   2017-01-01 00:00:00
-published: false
-categories: productdesign
+title:  Design Concept Presentation
 ---
 Here is a summary of the items for the proposal presentations. 
 

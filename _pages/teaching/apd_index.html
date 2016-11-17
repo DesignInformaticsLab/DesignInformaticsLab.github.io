@@ -1,0 +1,40 @@
+---
+layout: apd_default
+title:  "Advanced Product Design"
+date:   2017-01-01 00:00:00
+published: true
+category: course_productdesign
+---
+
+<b><a href="{{ site.url}}/_teaching/productdesign/syllabus.pdf">Syllabus</a></b><br><br>
+
+<b>Lecture Notes</b><br>
+    {% for post in site.posts %}
+    {% if post.categories contains 'productdesign' %}
+    * <a href="{{ site.url}}/_posts/teaching/productdesign/{{ post.path }}">{{ post.title }}</a><br>
+    {% endif %}
+    {% endfor %}
+<br>
+
+<b>Report Guidelines</b><br>
+    {% for post in site.posts %}
+    {% if post.categories contains 'productdesign_guideline' %}
+    * <a href="{{ site.url}}/{{ post.path }}">{{ post.title }}</a><br>
+    {% endif %}
+    {% endfor %}
+<br>
+
+<!--<b>Tutorials</b><br>-->
+    <!--{% for post in site.posts %}-->
+    <!--{% if post.categories contains 'productdesign_tutorial' %}-->
+    <!--* {{ post.title }} (<a href="{{ site.url}}/_teaching{{ post.link }}">pdf</a>)<br>-->
+    <!--{% endif %}-->
+    <!--{% endfor %}-->
+<!--<br>-->
+    <!-- -->
+<!--<b>Supplementary Materials</b><br>-->
+    <!--{% for post in site.posts %}-->
+    <!--{% if post.categories contains 'productdesign_supplementary' %}-->
+    <!--* {{ post.title }} (<a href="{{ site.url}}/_teaching{{ post.link }}">pdf</a>)<br>-->
+    <!--{% endif %}-->
+    <!--{% endfor %}-->

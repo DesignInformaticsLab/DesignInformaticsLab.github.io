@@ -9,7 +9,7 @@ github_username:  designinformaticslab
 # Build Settings
 sass:
   sass_dir: _sass
-include: ['_pages', '_papers', '_images', '_teaching']
+include: ['_pages', '_papers', '_images', '_teaching', '_posts']
 exclude: ['_pages/publication_backup']
 kramdown:
   input: GFM

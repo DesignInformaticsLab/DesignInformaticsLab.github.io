@@ -9,12 +9,6 @@
         <nav>
             <ul>
                 <li><a>ASU MAE540: Advanced Product Design</a></li>
-                {% for page in site.pages %} {% if page.title && page.category = "productdesign" %}
-                <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-                {% endif %} {% endfor %}
-                <!--<li><a href="{{ "/blog" | prepend: site.baseurl }}">News</a></li>-->
-            </ul>
-            </li>
             </ul>
         </nav>
     </div>

@@ -1,9 +1,8 @@
 ---
+categories: productdesign_guideline
+link: preliminary
 layout: apd_default
-title:  "Design Problem Definition"
-date:   2017-01-01 00:00:00
-published: false
-categories: productdesign
+title:  Preliminary Report
 ---
 * Introduction - Design Needs and Desires  
 
