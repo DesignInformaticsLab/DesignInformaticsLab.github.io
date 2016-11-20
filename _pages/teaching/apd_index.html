@@ -27,7 +27,7 @@ category: course_productdesign
 <b>Tutorials</b><br>
     {% for post in site.posts %}
     {% if post.categories contains 'productdesign_tutorial' %}
-    * {{ post.title }} (<a href="{{ site.url}}/_teaching{{ post.link }}">pdf</a>)<br>
+    * <a href="{{ post.url }}">{{ post.title }}</a><br>
     {% endif %}
     {% endfor %}
 <br>

@@ -14,6 +14,7 @@
         <array />
       </option>
       <option name="outputFromStdout" value="false" />
+      <option name="passParentEnvs" value="true" />
       <option name="program" value="C:/Ruby23-x64/bin/scss.bat" />
       <option name="scopeName" value="Project Files" />
       <option name="trackOnlyRoot" value="true" />
