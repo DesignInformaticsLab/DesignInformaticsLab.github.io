@@ -71,7 +71,7 @@ Security>System**) and check "**Ports**". See figure below.
 
 In addition, sometimes this problem disappears when you re-upload, if your Port is chosen correctly.
 
-## Case study
+## Case study - Pressure and temperature sensor
 Now assume that you had fun with those cases, below we go through the simple setup to read from a 
 pressure sensor (data from board to phone) and to control the on-board LED (data from phone to board).
 
@@ -82,58 +82,78 @@ pins, and connect them to the corresponding pins on the Thing. See figure.
 <img src="/_images/tutorial_iot/pressure.JPG" alt="Drawing" style="height: 400px;"/>
 
 ### Arduino Sketch
-In Arduino IDE, open a new sketch, compile and upload the following code:
+For this particular sensor, you need to download [its library][3], unzip the file, and move the 
+unzipped folder to **%myDocuments%/Arduino/libraries** (%myDocument% should 
+be %your_user_name/documents% on Windows). Restart Arduino IDE, check to see if you have 
+**SparkFun MPL3115A2 Altitude and Pressure Sensor Breakout** under **File>Examples**. If so, you have
+successfully installed the libraries needed to run this sensor. For other sensors, the same precedure
+should apply.
+<img src="/_images/tutorial_iot/pressuresensorlib.png" alt="Drawing" style="height: 400px;"/>
 
-{% highlight C %}
-#define BLYNK_PRINT Serial    // Comment this out to disable prints and save space
-#include <Wire.h>
-#include <ESP8266WiFi.h>
-#include <BlynkSimpleEsp8266.h>
-#include "SparkFunMPL3115A2.h"
+Now in Arduino IDE, open a new sketch, compile and upload the following code:
 
-// You should get Auth Token in the Blynk App.
-// Go to the Project Settings (nut icon).
-char auth[] = "***"; // ***Type in your Blynk Token
-
-// Your WiFi credentials.
-// Set password to "" for open networks.
-char ssid[] = "***"; ***your wifi name
-char pass[] = "***"; ***and password
-
-// pressure
-MPL3115A2 myPressure;
-float pressure = 0;
-
-void setup()
-{
-  Wire.begin();        // Join i2c bus
-  Serial.begin(9600);
-  myPressure.begin(); // Get sensor online
-
-  // Configure the sensor
-  //myPressure.setModeAltimeter(); // Measure altitude above sea level in meters
-  myPressure.setModeBarometer(); // Measure pressure in Pascals from 20 to 110 kPa
-
-  myPressure.setOversampleRate(7); // Set Oversample to the recommended 128
-  myPressure.enableEventFlags(); // Enable all three pressure and temp event flags
-
-  Blynk.begin(auth, ssid, pass);
-}
-
-void loop()
-{
-  Blynk.run();
-  getPressure();
-}
-
-void getPressure()
-{
-  pressure = myPressure.readPressure();
-  tempf = myPressure.readTempF();
-  Blynk.virtualWrite(0, tempf);
-  Blynk.virtualWrite(1, pressure);
-}
+{% highlight C linenos %}
+  #include <Wire.h>
+  #include <ESP8266WiFi.h>
+  #include <BlynkSimpleEsp8266.h>
+  #include "SparkFunMPL3115A2.h"
+  
+  // You should get Auth Token in the Blynk App.
+  // Go to the Project Settings (nut icon).
+  char auth[] = "***"; // ***Type in your Blynk Token
+  
+  // Your WiFi credentials.
+  // Set password to "" for open networks.
+  char ssid[] = "***"; ***your wifi name
+  char pass[] = "***"; ***and password
+  
+  // pressure
+  MPL3115A2 myPressure;
+  float pressure = 0;
+  float tempf = 0;
+  
+  void setup()
+  {
+    Wire.begin();        // Join i2c bus
+    myPressure.begin(); // Get sensor online
+  
+    // Configure the sensor
+    //myPressure.setModeAltimeter(); // Measure altitude above sea level in meters
+    myPressure.setModeBarometer(); // Measure pressure in Pascals from 20 to 110 kPa
+  
+    myPressure.setOversampleRate(7); // Set Oversample to the recommended 128
+    myPressure.enableEventFlags(); // Enable all three pressure and temp event flags
+  
+    Blynk.begin(auth, ssid, pass);
+  }
+  
+  void loop()
+  {
+    Blynk.run();
+    getPressure();
+  }
+  
+  void getPressure()
+  {
+    pressure = myPressure.readPressure();
+    tempf = myPressure.readTempF();
+    Blynk.virtualWrite(0, tempf);
+    Blynk.virtualWrite(1, pressure);
+  }
 {% endhighlight %}
+
+Following is a brief explanation of this code:
+
+* Line 1: **Wire.h** is necessary to work with the sensor (anything connected to SDA/SCL pins)
+* Line 2-3: These are header files for the ESP8266 Wifi shield and Blynk
+* Line 4: Include the library for the pressure sensor (we just downloaded that)
+* Line 8: You should receive a token from Blynk when you create a new project, email this token 
+to yourself and input it here
+* Line 12-13: You (home) wifi name and password
+* Line 19-32: Initialize the board and the sensor, connect to wifi. This block is mandatory.
+* Line 34-38: Keep updating the pressure and forward that to Blynk. This block is mandatory.
+* Line 40-46: Assign values to the global variables **pressure** and **tempf**, and forward
+these values to the virtual pins **0** and **1**.
 
 ### Blynk setup
 In Blynk, create a new project and create the following
@@ -155,3 +175,4 @@ wifi connection.
 
 [1]: https://learn.sparkfun.com/tutorials/esp8266-thing-hookup-guide/introduction
 [2]: https://www.arduino.cc/en/Main/Software
+[3]: https://github.com/sparkfun/SparkFun_MPL3115A2_Breakout_Arduino_Library/archive/master.zip
