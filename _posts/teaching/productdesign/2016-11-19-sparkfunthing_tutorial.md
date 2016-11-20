@@ -1,7 +1,7 @@
 ---
 categories: productdesign_tutorial
 layout: apd_default
-title:  Hookup Guideline for ESP8266 Thing and Blynk
+title:  IoT - Hookup Guideline for ESP8266 Thing and Blynk
 ---
 # Hookup Guideline for ESP8266 Thing and Blynk
 
@@ -162,6 +162,7 @@ In Blynk, create a new project and create the following
  If you look close enough, you can see "5" next to the LED on the board.
 * Two **value displays**: Set the inputs to "Virtual - V0" and "Virtual - V1", respectively. If necessary, you can also
 come back to fine tune the value range.
+
 <img src="/_images/tutorial_iot/blynkinterface.png" alt="Drawing" style="height: 400px;"/>
 <img src="/_images/tutorial_iot/button.png" alt="Drawing" style="height: 400px;"/>
 <img src="/_images/tutorial_iot/display.png" alt="Drawing" style="height: 400px;"/>
