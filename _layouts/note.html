@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<div id="project">
+    <h2>{{ page.title }}</h2>
+    {% if page.summaryimg %}
+    <img src="{{ site.url }}/{{ page.summaryimg }}">
+    <div class=caption>{{ page.imgcaption }}</div><br><br>
+    {% endif %}
+
+    <b> Abstract </b>
+    <p>{{ page.abstract }}</p>
+    {% if page.paper %}
+    <a href="{{ site.url }}/{{ page.paper }}">Paper</a>
+    {% else %}
+    Paper not yet published
+    {% endif %}
+
+    {% if page.link %}
+    , <a href="http://{{ page.link }}">Link</a>
+    {% endif %}
+
+    {% if page.source %}
+    , <a href="{{ page.source }}">Source</a>
+    {% endif %}
+
+    {% if page.video %}
+    <br><br>
+    <h3> Video </h3>
+    {{ page.video }}
+    {% endif %}
+
+    <br><br>Authors: {{ page.author }}
+</div>
+
