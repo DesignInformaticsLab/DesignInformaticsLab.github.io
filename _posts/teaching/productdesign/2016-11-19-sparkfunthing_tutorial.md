@@ -163,9 +163,9 @@ In Blynk, create a new project and create the following
 * Two **value displays**: Set the inputs to "Virtual - V0" and "Virtual - V1", respectively. If necessary, you can also
 come back to fine tune the value range.
 
-<img src="/_images/tutorial_iot/blynkinterface.png" alt="Drawing" style="height: 400px;"/>
-<img src="/_images/tutorial_iot/button.png" alt="Drawing" style="height: 400px;"/>
-<img src="/_images/tutorial_iot/display.png" alt="Drawing" style="height: 400px;"/>
+<img src="/_images/tutorial_iot/blynkinterface.PNG" alt="Drawing" style="height: 400px;"/>
+<img src="/_images/tutorial_iot/button.PNG" alt="Drawing" style="height: 400px;"/>
+<img src="/_images/tutorial_iot/display.PNG" alt="Drawing" style="height: 400px;"/>
 
 That's about it! Now turn on the Thing and hit the run button on Blynk. You should be able to (1) see the current room
 temprature (give it some time to converge) and the pressure, and (2) turn on the LED by clicking the button in Blynk.
