@@ -34,7 +34,7 @@ interest to the Thing.
 To test the basic functionality, we will use the following hookup.
 
 <img src="/_images/tutorial_iot/hookup1.JPG" alt="Drawing" style="height: 400px;"/>
-<img src="/_images/tutorial_iot/hookup2.JPG" alt="Drawing" style="height: 400px;"/>
+<img src="/_images/tutorial_iot/hookup2.jpg" alt="Drawing" style="height: 400px;"/>
 
 ## Software setup
 The following setup should work for both Windows and Linux.
@@ -47,6 +47,8 @@ into the "Additional Board Manager URLs" text box. Hit OK.
   * Then go to **Tools > Boards > Boards Manager**, search "esp8266", and install it.
   * Go to **Tools > Boards**, select "ESP8266 Thing". If you don't see it, close and reopen the IDE.
 3. On your smart phone, install "Blynk" and register. It's free.
+4. Download the [Blynk library][blynklib]. Unzip it and move it to **%myDocuments%/Arduino/libraries**
+(%myDocument% should be %your_user_name/documents% on Windows).
 
 ## Validation
 Before you move forward, I strongly recommend you to go through the cases 
@@ -83,11 +85,11 @@ pins, and connect them to the corresponding pins on the Thing. See figure.
 
 ### Arduino Sketch
 For this particular sensor, you need to download [its library][3], unzip the file, and move the 
-unzipped folder to **%myDocuments%/Arduino/libraries** (%myDocument% should 
-be %your_user_name/documents% on Windows). Restart Arduino IDE, check to see if you have 
+unzipped folder to **%myDocuments%/Arduino/libraries**. Restart Arduino IDE, check to see if you have 
 **SparkFun MPL3115A2 Altitude and Pressure Sensor Breakout** under **File>Examples**. If so, you have
 successfully installed the libraries needed to run this sensor. For other sensors, the same precedure
 should apply.
+
 <img src="/_images/tutorial_iot/pressuresensorlib.png" alt="Drawing" style="height: 400px;"/>
 
 Now in Arduino IDE, open a new sketch, compile and upload the following code:
@@ -154,9 +156,17 @@ to yourself and input it here
 * Line 34-38: Keep updating the pressure and forward that to Blynk. This block is mandatory.
 * Line 40-46: Assign values to the global variables **pressure** and **tempf**, and forward
 these values to the virtual pins **0** and **1**.
+* **NOTE** If you see the error "the function (getPressure) isn't declared", move the *getPressure* block
+up above the *loop* block.
 
 ### Blynk setup
-In Blynk, create a new project and create the following
+To start
+
+* Create a Blynk account.
+* Create a new project in Blynk, and select the hardware model **SparkFun ESP8266 Thing**.
+* Get Auth Token, and type it into the Arduino Sketch code.
+
+Then in the project, create the following
 
 * A **button**: Set output of the button to "Digital - GP5", this particular pin correspond to the LED on the Thing board.
  If you look close enough, you can see "5" next to the LED on the board.
@@ -177,3 +187,4 @@ wifi connection.
 [1]: https://learn.sparkfun.com/tutorials/esp8266-thing-hookup-guide/introduction
 [2]: https://www.arduino.cc/en/Main/Software
 [3]: https://github.com/sparkfun/SparkFun_MPL3115A2_Breakout_Arduino_Library/archive/master.zip
+[blynklib]: https://github.com/blynkkk/blynk-library
