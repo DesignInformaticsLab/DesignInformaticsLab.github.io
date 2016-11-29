@@ -5,6 +5,8 @@ title:  IoT - Hookup Guideline for ESP8266 Thing and Blynk
 ---
 # Hookup Guideline for ESP8266 Thing and Blynk
 
+by Max Yi Ren
+
 ## Introduction
 
 This is a tutorial for people (like me) who have no IoT experience **at all**. We will skip a lot 
