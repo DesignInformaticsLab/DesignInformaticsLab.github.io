@@ -4,7 +4,6 @@ layout: apd_default
 title:  IoT - Hookup Guideline for ESP8266 Thing and Blynk
 ---
 # Hookup Guideline for ESP8266 Thing and Blynk
-
 by Max Yi Ren
 
 ## Introduction
@@ -12,7 +11,7 @@ by Max Yi Ren
 This is a tutorial for people (like me) who have no IoT experience **at all**. We will skip a lot 
 of the technical details and focus on moving you from "**Really I can do this?**" to "**Oh that's neat!**". 
 This tutorial mostly follow the official [ESP8266 Thing Hookup Guide][1], but tries to explain 
-a few (dummy) things.
+a few (dummy) things. The [Blynk tutorial][blynk] is also useful. 
 
 ## Item list
 
@@ -190,3 +189,4 @@ wifi connection.
 [2]: https://www.arduino.cc/en/Main/Software
 [3]: https://github.com/sparkfun/SparkFun_MPL3115A2_Breakout_Arduino_Library/archive/master.zip
 [blynklib]: https://github.com/blynkkk/blynk-library
+[blynk]: http://docs.blynk.cc/
