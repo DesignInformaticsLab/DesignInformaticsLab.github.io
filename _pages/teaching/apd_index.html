@@ -6,11 +6,11 @@ published: true
 category: course_productdesign
 ---
 
-<b><a href="{{ site.url}}/_teaching/productdesign/syllabus.pdf">Syllabus</a></b><br><br>
+<b><a href="{{ site.url}}/productdesign/2016/12/08/syllabus.html">Syllabus</a></b><br><br>
 
 <b>Lecture Notes</b><br>
     {% for post in site.posts %}
-    {% if post.categories contains 'productdesign' %}
+    {% if post.categories contains 'productdesign_lecture' %}
     * <a href="{{ post.url }}">{{ post.title }}</a><br>
     {% endif %}
     {% endfor %}
