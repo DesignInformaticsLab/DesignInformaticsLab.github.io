@@ -2,6 +2,8 @@
 ---
 {{ reference }}
 
+{% if entry.review %} (under review)
+{% endif %}
 {% if entry.accepted %} (accepted)
 {% else %}
     {% if entry.pdf %}<a href="../_papers/{{ entry.pdf }}">pdf</a>{% endif %}
