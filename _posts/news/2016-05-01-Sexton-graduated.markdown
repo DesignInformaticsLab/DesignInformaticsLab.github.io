@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Thurston Sexton graduated"
-date:   2016-05-15 00:00:00
+title:  "Thurston Sexton accepted offer at NIST"
+date:   2016-12-01 00:00:00
 categories: news
-published: false
+published: true
 ---

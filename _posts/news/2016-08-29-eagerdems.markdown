@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "NSF EAGER award for Design of Engineering Material Systems"
+title:  "We received a NSF EAGER award on Design of Engineering Material Systems"
 date:   2016-08-29 00:00:00
 categories: news
 ---
 
-[Max Yi Ren], [Yang Jiao] and [Yongming Liu] won a NSF EAGER award for the Design of Engineering Material Systems program.
+[Max Yi Ren], [Yang Jiao] and [Yongming Liu] won a NSF EAGER award from the Design of Engineering Material Systems program.
 
 ### Title: Efficient Reconstruction and Optimal Design of Multi-scale Material Systems through Deep Networks
 
