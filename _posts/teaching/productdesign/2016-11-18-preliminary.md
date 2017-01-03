@@ -3,6 +3,7 @@ categories: productdesign_guideline
 link: preliminary
 layout: apd_default
 title:  Preliminary Report
+published: true
 ---
 * Introduction - Design Needs and Desires  
 

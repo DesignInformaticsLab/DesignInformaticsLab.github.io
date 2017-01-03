@@ -3,6 +3,7 @@ categories: productdesign_guideline
 link: presentation1
 layout: apd_default
 title:  Design Concept Presentation
+published: false
 ---
 Here is a summary of the items for the proposal presentations. 
 

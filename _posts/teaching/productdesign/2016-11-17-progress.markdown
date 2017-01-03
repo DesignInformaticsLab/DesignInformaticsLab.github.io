@@ -3,6 +3,7 @@ categories: productdesign_guideline
 link: progress
 layout: apd_default
 title:  Progress Report
+published: true
 ---
 
 The progress report document is an evolved version of your proposal. 
