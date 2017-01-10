@@ -45,6 +45,6 @@ left. Think about a design solution that will make life much easier, and probabl
 Go through the project creation process to get a better idea of what you will need to 
 address before the launch. There are quite a lot of tutorials on google, so I will leave this to you.
 
-[googledoc]: ./
+[googledoc]: https://docs.google.com/spreadsheets/d/1sCL38r9I73seXU7IXAj6VPdroeFTddfsGBVgFXyvBMA/edit#gid=0
 [ks]: https://www.kickstarter.com
 [ig]: https://www.indiegogo.com
