@@ -4,7 +4,7 @@ layout: apd_default
 title:  IoT Activities
 published: true
 ---
-# IoT Activities
+# IoT Activities and Homework 1
 by Max Yi Ren
 
 ## Activity 1: Introduction to ESP8266 Thing
