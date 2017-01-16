@@ -1,7 +1,7 @@
 ---
 categories: productdesign_lecture
 layout: apd_default
-title:  IoT Activities
+title:  IoT Activities and Homework 1
 published: true
 ---
 # IoT Activities and Homework 1
