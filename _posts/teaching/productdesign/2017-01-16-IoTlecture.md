@@ -88,8 +88,12 @@ Notes:
 your instruction. 
 
 * **Additional points** You get an additional 10 points (out of 100) if your report follows
-the markdown format. See [the markdown version of this file][3] for example. This allows me to easily
+the markdown format. See [the markdown version of this file][3] for example (click on the *raw* button). 
+You may submit your images as a zip file if you do so. This allows me to easily
 publish your report online for others to see.
+
+* Submit your report to yiren@asu.edu with the exact title "MAE540 Homework 1 - Team number". If 
+you are submitting a non-markdown file, please make sure it is in **pdf** format.
 
 [1]: http://designinformaticslab.github.io/productdesign_tutorial/2016/11/19/sparkfunthing_tutorial.html
 [2]: https://www.sparkfun.com/products/13754
