@@ -36,7 +36,7 @@ interest to the Thing.
 To test the basic functionality, we will use the following hookup.
 
 <img src="/_images/tutorial_iot/hookup1.JPG" alt="Drawing" style="height: 400px;"/>
-<img src="/_images/tutorial_iot/hookup2.jpg" alt="Drawing" style="height: 400px;"/>
+<img src="/_images/tutorial_iot/hookup2.JPG" alt="Drawing" style="height: 400px;"/>
 
 ## Software setup
 The following setup should work for both Windows and Linux.
