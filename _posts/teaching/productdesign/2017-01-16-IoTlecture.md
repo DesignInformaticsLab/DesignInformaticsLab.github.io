@@ -40,10 +40,40 @@ into the "Additional Board Manager URLs" text box. Hit OK.
 4. Download the [Blynk library][blynklib]. Unzip it and move it to **%myDocuments%/Arduino/libraries**
 (%myDocument% should be %your_user_name/documents% on Windows).
 
-## Validation
-Before you move forward, I strongly recommend you to go through the cases 
-from [the official guideline][1] to see
-if your setup is all correct.
+### A simple test
+We can now test a simplest functionality: Using Blynk to switch on the LED at Digital 5 on the Thing. To do so,
+create an Arduino sketch with the following code:
+
+{% highlight C linenos %}
+  #include <Wire.h>
+  #include <ESP8266WiFi.h>
+  #include <BlynkSimpleEsp8266.h>
+  
+  // You should get Auth Token in the Blynk App.
+  // Go to the Project Settings (nut icon).
+  char auth[] = "***"; // ***Type in your Blynk Token
+  
+  // Your WiFi credentials.
+  // Set password to "" for open networks.
+  char ssid[] = "***"; ***your wifi name
+  char pass[] = "***"; ***and password
+  
+  void setup()
+  {
+    Blynk.begin(auth, ssid, pass);
+  }
+  
+  void loop()
+  {
+    Blynk.run();
+  }
+{% endhighlight %}
+
+Note that the campus wifi does not work for the Thing due to its security settings. 
+You could, however, turn on hotspot on your phone and set up ssid and password from there. The Thing
+ will then connect to your phone.
+
+On Blynk, add a "Button" and link it to Digital 5.
 
 **Hint**: If you encounter the error: "warning: espcomm_sync failed...", there could be three reasons:
 
@@ -62,6 +92,11 @@ Security>System**) and check "**Ports**". See figure below.
 3. It could be that your soldering is not well done. 
 
 In addition, sometimes this problem disappears when you re-upload, if your Port is chosen correctly.
+
+## Validation
+Before you move forward, I strongly recommend you to go through the cases 
+from [the official guideline][1] to see
+if your setup is all correct.
 
 ## Activity 2: Test one sensor
 
