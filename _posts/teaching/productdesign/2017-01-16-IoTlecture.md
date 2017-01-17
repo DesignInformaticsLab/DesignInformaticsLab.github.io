@@ -98,3 +98,4 @@ you are submitting a non-markdown file, please make sure it is in **pdf** format
 [1]: http://designinformaticslab.github.io/productdesign_tutorial/2016/11/19/sparkfunthing_tutorial.html
 [2]: https://www.sparkfun.com/products/13754
 [3]: https://github.com/DesignInformaticsLab/DesignInformaticsLab.github.io/tree/master/_posts/teaching/productdesign/2017-01-16-IoTlecture.md
+[blynklib]: https://github.com/blynkkk/blynk-library
