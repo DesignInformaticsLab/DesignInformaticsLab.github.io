@@ -8,7 +8,7 @@ published: true
 by Max Yi Ren
 
 ## Activity 1: Introduction to ESP8266 Thing
-Suggested read: [Hookup Guideline for ESP8266 Thing and Blynk][1]
+Also read: [Hookup Guideline for ESP8266 Thing and Blynk][1]
 
 ### Item list
 You will need the following during the class:
@@ -74,6 +74,10 @@ You could, however, turn on hotspot on your phone and set up ssid and password f
  will then connect to your phone.
 
 On Blynk, add a "Button" and link it to Digital 5.
+
+<img src="/_images/tutorial_iot/blynkinterface.PNG" alt="Drawing" style="height: 400px;"/>
+<img src="/_images/tutorial_iot/button.PNG" alt="Drawing" style="height: 400px;"/>
+
 
 **Hint**: If you encounter the error: "warning: espcomm_sync failed...", there could be three reasons:
 
