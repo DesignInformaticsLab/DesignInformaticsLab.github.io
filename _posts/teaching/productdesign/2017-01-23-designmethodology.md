@@ -84,9 +84,10 @@ Practice the following using your problems
 
 ## Activity 6: Critical thinking
 
-1. Find the curve of fastest descent.
-2. 
-
+1. Design a cola can
+2. Find the curve of fastest descent
+3. Design a bridge
+4. Four-bar linkage design
 
 [1]: https://www.youtube.com/watch?v=9uOMectkCCs
 [2]: http://www.design.caltech.edu/erik/Misc/Heilmeier_Questions.html
