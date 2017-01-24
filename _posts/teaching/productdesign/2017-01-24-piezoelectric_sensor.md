@@ -5,7 +5,7 @@ title: IoT - Piezoelectric Sensor Hookup Guide
 published: true
 ---
 
-# IoT - Piezoelectric sensor hookup guide - MAE540-2017 Homework 1 Team 1
+# IoT - Piezoelectric sensor hookup guide - MAE540-2017 Team 1
 By Brandon Butterfield, Rutvij Naik, Sankaranand Ramasamy, Sai Nizampatnam, Sujeet Krishnan
 
 ## Introduction to Piezoelectric sensor
