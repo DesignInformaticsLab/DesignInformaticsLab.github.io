@@ -75,5 +75,18 @@ Practice the following using your problems
 3. Identify all possible means to implement each parameter, and list in columns
 4. Create solutions by combining different means and drawing the concept
 
+## Activity 5: Optimal design and optimal control
+
+* Learn the concept of **objective**, **attribute**, **variable**, **constraint** in a static setting
+* Learn the concept of **state**, **action**, **reward**, **controller** in a dynamic setting
+* Is finding solutions to a static design problem a dynamic process?
+* Team discussion: What are your design objectives, variables, attributes, constraints, and assumptions?
+
+## Activity 6: Critical thinking
+
+1. Find the curve of fastest descent.
+2. 
+
+
 [1]: https://www.youtube.com/watch?v=9uOMectkCCs
 [2]: http://www.design.caltech.edu/erik/Misc/Heilmeier_Questions.html
