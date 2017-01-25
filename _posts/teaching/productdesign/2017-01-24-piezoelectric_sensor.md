@@ -40,9 +40,9 @@ By Brandon Butterfield, Rutvij Naik, Sankaranand Ramasamy, Sai Nizampatnam, Suje
 4. The Piezo sensor is grounded on one end, and a generated voltage is routed to the Arduino's A0 ADC pin.
 5. Additionally, to dampen voltage spikes the Piezo sensor is loaded with a large resistor of 1 Mega Ohm. See figures below.
 
-<img src="/_images/tutorial_iot/hookup 1.jpeg" alt="Drawing" style="height: 400px;"/>
-<img src="/_images/tutorial_iot/hookup 2.jpeg" alt="Drawing" style="height: 400px;"/>
-<img src="/_images/tutorial_iot/hookup 3.jpeg" alt="Drawing" style="height: 400px;"/>
+<img src="/_images/tutorial_iot/Hookup 1.jpeg" alt="Drawing" style="height: 400px;"/>
+<img src="/_images/tutorial_iot/Hookup 2.jpeg" alt="Drawing" style="height: 400px;"/>
+<img src="/_images/tutorial_iot/Hookup 3.jpeg" alt="Drawing" style="height: 400px;"/>
 
 ### Software setup
 1. Download the [Arduino IDE] and install.
