@@ -85,7 +85,7 @@ Practice the following using your problems
 ## Activity 6: Critical thinking
 
 1. Design a cola can
-2. Find the curve of fastest descent (see [Brachistochrone curve][5])
+2. Find the curve of fastest descent (see [Brachistochrone curve][5] and [its derivation][7])
 3. Design a bridge (see [TopOpt][4])
 4. Four-bar linkage design (see [MotionGen][3])
 5. Optimal design + control (see [ecoRacer game][6])
@@ -96,3 +96,4 @@ Practice the following using your problems
 [4]: http://www.topopt.dtu.dk/?q=node/751
 [5]: https://en.wikipedia.org/wiki/Brachistochrone_curve
 [6]: http://ecoracer.herokuapp.com/
+[7]: http://www.osaka-ue.ac.jp/zemi/nishiyama/math2010/cycloid.pdf
