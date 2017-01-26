@@ -70,9 +70,9 @@ You have:
 Now let's think about how your solution can be realized through a product. 
 Practice the following using your problems
 
-1. Identify all functions and attributes of your solution
-2. Make each parameter a row in a matrix
-3. Identify all possible means to implement each parameter, and list in columns
+1. Identify all functions of your solution
+2. Make each function a row in a matrix
+3. Identify all possible means to realize each function, and list in columns
 4. Create solutions by combining different means and drawing the concept
 
 ## Activity 5: Optimal design and optimal control
@@ -85,9 +85,14 @@ Practice the following using your problems
 ## Activity 6: Critical thinking
 
 1. Design a cola can
-2. Find the curve of fastest descent
-3. Design a bridge
-4. Four-bar linkage design
+2. Find the curve of fastest descent (see [Brachistochrone curve][5])
+3. Design a bridge (see [TopOpt][4])
+4. Four-bar linkage design (see [MotionGen][3])
+5. Optimal design + control (see [ecoRacer game][6])
 
 [1]: https://www.youtube.com/watch?v=9uOMectkCCs
 [2]: http://www.design.caltech.edu/erik/Misc/Heilmeier_Questions.html
+[3]: http://www.stonybrook.edu/commcms/motiongen/download.html
+[4]: http://www.topopt.dtu.dk/?q=node/751
+[5]: https://en.wikipedia.org/wiki/Brachistochrone_curve
+[6]: http://ecoracer.herokuapp.com/
