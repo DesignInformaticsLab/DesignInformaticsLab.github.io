@@ -5,6 +5,8 @@ layout: apd_default
 title:  Design Concept Presentation (Feb. 2nd)
 published: true
 ---
+## Design Concept Presentation (Feb. 2nd)
+
 Here is a summary of the items for the proposal presentations. 
 
 * Each team will make an oral presentation for **6 minutes**.

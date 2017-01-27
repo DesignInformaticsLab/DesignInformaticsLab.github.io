@@ -5,6 +5,8 @@ layout: apd_default
 title:  Preliminary Report (Feb. 2nd)
 published: true
 ---
+## Preliminary Report (Feb. 2nd)
+
 * Introduction - The real-world problem  
 
     The need for the design work is explained and justified. 
