@@ -2,7 +2,7 @@
 categories: productdesign_guideline
 link: preliminary
 layout: apd_default
-title:  Preliminary Report (Jan. 31st)
+title:  Preliminary Report (Feb. 2nd)
 published: true
 ---
 * Introduction - The real-world problem  
@@ -11,7 +11,7 @@ published: true
     Typical questions to be addressed are:
     
   * Motivation: Why is this an important problem? Who will benefit from the resulting design? Who might be negatively affected?
-  * Identify buyers: What is the market for the proposed product? Do you have a vision of your customer?
+  * Identify users and buyers: What is the market for the proposed product? Do you have a vision of your customer?
   * Assumptions: What are the (physical, technical, regulatory, social) assumptions that constrain you solution space?  
 
 * Review of the current state-of-the-art solutions
@@ -60,3 +60,4 @@ resources (what is needed to succeed), possible solutions (how well they may wor
 and the design to manufacturing transformation (what can be actually fabricated).
 
 * The length of this report should be about 5 pages plus appendices.
+* Please submit your report to yiren@asu.edu, in pdf or markdown format.
