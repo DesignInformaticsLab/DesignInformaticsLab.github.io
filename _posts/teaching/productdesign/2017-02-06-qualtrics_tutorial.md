@@ -204,6 +204,6 @@ Range      normal         20.6140    27.1308     0.2265     0.0000
 
 You can also find the individual level estimates from the variable "cmeans".
 
-[code]: /_teaching/productdesign/analysis.zip
+[code]: /_teaching/productdesign/discrete_choice_analysis.zip
 [3]: http://eml.berkeley.edu//~train/
 [namwoopaper]: http://designinformaticslab.github.io/project-crowdsourcing/2016/05/29/carmax.html
