@@ -8,7 +8,7 @@ published: true
 # Preference learning and Homework 2
 by Max Yi Ren
 
-See the [lecture notes][1] and the [Qualtrics survey tutorial][2].
+See the [lecture notes][1] and the [discrete choice analysis tutorial][2].
 
 ## Activity 1: Test the survey
 Please participate in a mock [survey][3] regarding your preference on cars. Once we collect the data,
@@ -20,7 +20,7 @@ for individual participants.
 
 The report should contain the following elements:
 
-1. A description of your survey goal, i.e., what do you want to learn from consumers? This
+1. A description of your survey goal, i.e., what do you want to learn from your consumer group? This
 could include qualitative goals, and quantitative hypotheses.
 
 2. A description of design attributes and attribute levels
@@ -50,5 +50,5 @@ Please make sure it is in **pdf** format.
 
 
 [1]: /_teaching/productdesign/PreferenceLearning.pptx
-[2]: /
+[2]: http://designinformaticslab.github.io/productdesign_tutorial/2017/02/06/qualtrics_tutorial.html
 [3]: https://asu.co1.qualtrics.com/SE/?SID=SV_eevvPb4p2ZfSFpP
