@@ -5,7 +5,7 @@ title:  Preference learning
 published: true
 ---
 
-# Preference learning
+# Preference learning and Homework 2
 by Max Yi Ren
 
 See the [lecture notes][1] and the [Qualtrics survey tutorial][2].

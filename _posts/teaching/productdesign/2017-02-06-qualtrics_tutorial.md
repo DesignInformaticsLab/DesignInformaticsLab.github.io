@@ -27,6 +27,7 @@ continuous in nature, safety ratings are discrete (ordinal), while engine type (
 is categorical.
 
 ## Survey creation
+
 ### Generation of a DCA survey
 Please download the [script][1]. 
 
