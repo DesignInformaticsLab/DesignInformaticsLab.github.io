@@ -1,7 +1,7 @@
 ---
 categories: productdesign_lecture
 layout: apd_default
-title:  Preference learning
+title:  Preference learning and Homework 2
 published: true
 ---
 
