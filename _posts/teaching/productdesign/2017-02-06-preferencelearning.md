@@ -38,12 +38,12 @@ could include qualitative goals, and quantitative hypotheses.
     * What results do you get from your analysis?
     * What insights do you get from your analysis?
     * From these insights, how will you improve your survey?
+    * **Please provide a visualization of your results**. Simply pasting MATLAB tables to your report will not be accepted.
 
 6. The code and raw data you used for the analysis
-    * Make sure that by directly running your code, others can reproduce your results
+    * Make sure that by directly running your code with your data, others can reproduce your results.
 
 Notes:
-
 * Submit your report to yiren@asu.edu with the exact title "MAE540 Homework 2 - Team number". 
 Please make sure it is in **pdf** format.
 

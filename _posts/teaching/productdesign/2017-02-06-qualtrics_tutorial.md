@@ -88,8 +88,9 @@ these choices under the **Distributions** tab.
 
 ### Download the data
 You can download the currently stored data any time during the launch. To do so, go to the "Data & Analysis"
-tab and choose **Export & Import->Export Data->Download Data Table**. Note that choosing "Export Data with Legacy Format"
-will also work but the resulting csv file will have a slightly different format.
+tab and choose **Export & Import->Export Data->Export Data with Legacy Format**. Note that choosing "Download Data Table"
+will also work but the resulting csv file will have a slightly different format and you will need to modify the analysis code
+to accommodate this.
 
 ## Data analysis
 
