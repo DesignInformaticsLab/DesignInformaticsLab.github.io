@@ -8,7 +8,8 @@ published: true
 # Preference learning and Homework 2
 by Max Yi Ren
 
-See the [lecture notes][1] and the [discrete choice analysis tutorial][2].
+See the [lecture notes][1], the [Qualtrics tutorial][2], and this engineer-friendly tutorial 
+([Part 1][michalek1], [Part 2][michalek2]) on discrete choice analysis.
 
 ## Activity 1: Test the survey
 Please participate in a mock [survey][3] regarding your preference on cars. Once we collect the data,
@@ -52,3 +53,5 @@ Please make sure it is in **pdf** format.
 [1]: /_teaching/productdesign/PreferenceLearning.pptx
 [2]: http://designinformaticslab.github.io/productdesign_tutorial/2017/02/06/qualtrics_tutorial.html
 [3]: https://asu.co1.qualtrics.com/SE/?SID=SV_eevvPb4p2ZfSFpP
+[michalek1]: /_teaching/productdesign/Discrete Choice Conjoint - Part 1.pdf
+[michalek2]: /_teaching/productdesign/Discrete Choice Conjoint - Part 2.pdf
