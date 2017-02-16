@@ -44,10 +44,10 @@ will pay for it. Describe potential product attributes that the user/buyer cares
 * A one-sentence pitch of your product.
 
 ## Problem Statement 2
-In US, one out of seven people is hungry, while we as a society waste approximately one thirds of 
-all the food. See [this video][3] for example. Food wasting happens both before and after they reach 
-consumers, due to various reasons including appearance concerns (consumable but less appealing foods 
-are discarded by farmers and grocery stores) and our business life style or lack of social awareness.
+In US, one out of every six people lives in a food-insecure household, while we as a society waste approximately one third of 
+all food. See [this video][3] for example. Food wasting happens both before and after they reach 
+consumers, due to various reasons including appearance concerns (consumable but less appealing food 
+are discarded by farmers and grocery stores) and our busy life style or lack of social awareness.
 
 As a design team, please draft a proposal for a product or service that 
 could help to reduce food wasting, reuse wasted food, or improve the distribution of food.
@@ -66,6 +66,9 @@ in implementing this solution, and possible measures to address them.
 will pay for it. Describe potential product attributes that the user/buyer cares about.
 
 * A one-sentence pitch of your product.
+
+## Submission
+Submit a single pdf to yiren@asu.edu with the title "design competition 1 team number".
 
 [1]: http://www.new-ag.info/en/view/point.php?a=2912
 [2]: https://www.youtube.com/watch?v=eZ2sVriiIuU
