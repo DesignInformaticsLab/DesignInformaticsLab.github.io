@@ -51,6 +51,9 @@ Your proposal should include the followings:
             an affordable, eco-friendly solution to help combat this problem providing better incentives for
             restaurants to manage their food waste. [read more][t1]
 
+* **Team 4**: Can't afford food! Register with us and get access to free food all throughout the year Nationwide. 
+[read more][t4]
+
 * **Team 5**: Food station - A smart solution to food wastage. BUY "LEFTOVER FOOD STATION" [read more][t5]
 
 * **Team 6**: Food for everyone by smart dining! [read more][t6]
