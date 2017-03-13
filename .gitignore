@@ -1,5 +1,7 @@
 _site
 .sass-cache
+*.pptx
+*.ppt
 _pages/publication_backup
 ### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
