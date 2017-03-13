@@ -8,7 +8,9 @@
 {% if entry.accepted %} (accepted)
 {% endif %}
 
-{% if entry.pdf %}<a href="../_papers/{{ entry.pdf }}"><b> pdf </b></a>{% endif %}
+{% if entry.pdf %} | <a href="../_papers/{{ entry.pdf }}"><b> pdf </b></a>{% endif %}
+
+{% if entry.arxiv %} | <a href="../_papers/{{ entry.arxiv }}"><b> arXiv </b></a>{% endif %}
 
 {% if entry.web %} | <a href="{{entry.web}}"><b> web </b></a>{% endif %}
 
