@@ -37,7 +37,7 @@ Design a bridge using the following criteria:
 * **Dimensions**: The bridge needs to be at least 50 feet (15.2 meters) long and at least 8 feet (2.4 meters) wide.
 
 * **Material**: For simplicity, the material of the entire bridge is assumed to be structural steel, 
-with Young's modulus 200Gpa, Poisson's ratio 0.3, and density of $7850 kg/m^3$ (use ANSYS default values).
+with Young's modulus $200~Gpa$, Poisson's ratio $0.3$, and density of $7850 ~kg/m^3$ (use ANSYS default values).
 
 * **Functionality**: The bridge needs to be fully paved with the same material, so that pedestrians can easily pass. 
 The pavement cannot have large positive/negative curvatures (See examples below) and should have a width of at least 7 feet (2.1 meters).
