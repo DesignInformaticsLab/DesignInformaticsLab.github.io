@@ -2,7 +2,7 @@
 categories: productdesign_competition
 layout: apd_default
 title:  Design Competition 2
-published: false
+published: true
 ---
 # Design Competition 2 - Spring 2017
 
