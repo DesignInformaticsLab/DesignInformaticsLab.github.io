@@ -2,9 +2,10 @@
 categories: productdesign_guideline
 link: progress
 layout: apd_default
-title:  Progress Report
+title:  Progress Report (Mar. 28th)
 published: true
 ---
+## Preliminary Report (Mar. 28th)
 
 The progress report document is an evolved version of your proposal. 
 The original proposal material should be used as much as possible with 
@@ -14,29 +15,22 @@ can substantially reduce the time required for report preparation.
 
 The report should include the following main sections. 
 
-1.      Introduction
+1.      Introduction (same as preliminary)
 
-2.      Previous Designs
+2.      Review of the current state-of-the-art solutions (same as preliminary)
 
-3.      Design Objectives
+3.      Design Objectives (same as preliminary)
 
-4.      Concept Generation and Selection
+4.      Concept Generation and Selection: Describe all concepts you have 
+proposed/investigated and your concept selection process. Provide details of your 
+current design concept. Describe your Beta prototype. Images and video links 
+to the demonstration of a working prototype are encouraged.
 
-    *      Alternative Concepts
+5.      Engineering Functionality Analysis: Summarize the engineering challenges and 
+your analysis, based on Homework 3.
 
-    *      Concept Selection Process
-
-    *      Current Design Concept
-
-    *      Description of the Beta prototype
-
-5.      Engineering Functionality Analysis
-
-6.      Economic Analysis
-
-7.      Time Schedule
-
-Include discussion of remaining work and plan
+6.      Time Schedule: Summarize all issues to be addressed and what action items 
+will be taken.
 
 You can rearrange/rename things as it makes sense to you but you must 
 include all the pertinent information.
