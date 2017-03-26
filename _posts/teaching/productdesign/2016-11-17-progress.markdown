@@ -5,7 +5,7 @@ layout: apd_default
 title:  Progress Report (Mar. 28th)
 published: true
 ---
-## Preliminary Report (Mar. 28th)
+## Progress Report (Mar. 28th)
 
 The progress report document is an evolved version of your proposal. 
 The original proposal material should be used as much as possible with 
@@ -26,8 +26,9 @@ proposed/investigated and your concept selection process. Provide details of you
 current design concept. Describe your Beta prototype. Images and video links 
 to the demonstration of a working prototype are encouraged.
 
+5.      Summary of the market analysis (based on Homework 2).
 5.      Engineering Functionality Analysis: Summarize the engineering challenges and 
-your analysis, based on Homework 3.
+your analysis (based on Homework 3).
 
 6.      Time Schedule: Summarize all issues to be addressed and what action items 
 will be taken.
