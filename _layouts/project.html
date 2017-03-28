@@ -3,18 +3,20 @@ layout: default
 ---
 
 <div id="project">
-    <h2>{{ page.title }}</h2>
+    <h3>{{ page.title }}</h3>
+    By {{ page.author }}<br><br>
+
     {% if page.summaryimg %}
         <img src="{{ site.url }}/{{ page.summaryimg }}">
-        <div class=caption>{{ page.imgcaption }}</div><br><br>
+        <div class=caption>{{ page.imgcaption }}</div><br>
     {% endif %}
 
-    <b> Abstract </b>
-    <p>{{ page.abstract }}</p>
+    <b> Abstract </b><p>{{ page.abstract }}</p>
     {% if page.paper %}
-        <a href="{{ site.url }}/{{ page.paper }}">Paper</a>
-    {% else %}
-        Paper not yet published
+        <a href="{{ site.url }}/{{ page.paper }}">Most Recent Paper</a>
+    {% endif %}
+    {% if page.paper_remote %}
+        <a href="{{ page.paper_remote }}">Most Recent Paper</a>
     {% endif %}
 
     {% if page.link %}
@@ -27,10 +29,9 @@ layout: default
 
     {% if page.video %}
     <br><br>
-    <h3> Video </h3>
-    {{ page.video }}
+    <b> Presentation </b><br>
+    <video controls><source src="{{ site.url }}/{{ page.video }}" type="video/mp4">Your browser does not support the video tag.
+    </video>
     {% endif %}
-
-    <br><br>Authors: {{ page.author }}
 </div>
 
