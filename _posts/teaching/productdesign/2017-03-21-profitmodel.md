@@ -63,7 +63,52 @@ The unit cost is 0.001 (dollar per inch cubed) and 5 (dollar per fluffiness). Th
 
 Note: The profit in this case will be $s_i(p_i-c_i)$, where $c_i$ is the unit cost.
 
+## Activity 3
+From Activity 2, you might find it hard to make a decision on what design attribute levels
+and prices to set, in order to maximize your profit given all your competitors. 
+To this end, develop an optimization routine in MATLAB to automatically adjust your
+design decisions according to the market. 
+
+A template of the code can be found [here][5].
+
+Once done, run the competition again, with your algorithm rather than gut feeling.
+
+### Brief intro of fmincon: The optimizer for nonlinear constrained problems
+Nonlinear constrained optimization problems have the following general form:
+
+$$\min_x f(x)$$
+
+$$\text{subject to}: g(x)\leq 0, h(x)=0$$ 
+
+Here $f(x)$, $g(x)$ and $h(x)$ are the objective, the inequality constraints, and the
+equality constraints, respectively. $x$ are the variables. In our case, the objective
+is the profit, and constraints are related to bounds of design variables and other 
+engineering considerations.
+
+The usage of fmincon can be found by typing ```help fmincon``` in the MATLAB terminal. 
+The most common call has the following form
+
+``` [x,f] = fmincon(@(x)objective(x,arg1,arg2,...),x0,A,b,Aeq,beq,lb,ub,@(x)nonlinear)```
+
+Here ```arg1```, ```arg2``` are inputs to the objective function. In our case, these
+could be part-worths and product costs that influences the profit, yet are not part of 
+the variables. ```Ax <= b``` are the linear inequality constraints; ```Aeq x = beq``` are the 
+equality constraints.  ```lb``` and ```ub``` are the lower and upper bounds on the variables.
+```@(x)nonlinear``` is the function handle for nonlinear constraints.
+
+## Activity 4
+You may noticed from Activity 3 that there exists an equilibrium of the market. Conduct
+analysis to find out what that equilibrium is. 
+
+A template of the code can be found at the bottom of "optimal_profit_template.m". Need to 
+download files from Activity 3.
+
+## Activity 5
+If you want to form an organization with companies to maximize your profit, 
+how many companies will you include in the organization?
+
 [1]: /_teaching/productdesign/ProfitModel.pptx
 [2]: /_teaching/productdesign/BeamProfitMaximizationExample.xlsx
 [3]: http://ode.engin.umich.edu
 [4]: https://docs.google.com/spreadsheets/d/1sCL38r9I73seXU7IXAj6VPdroeFTddfsGBVgFXyvBMA/edit#gid=5391810
+[5]: /_teaching/productdesign/optimal_profit_template.zip
