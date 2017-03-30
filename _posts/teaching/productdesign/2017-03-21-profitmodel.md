@@ -1,7 +1,7 @@
 ---
 categories: productdesign_lecture
 layout: apd_default
-title:  Macroeconomics and Profit Model
+title:  Microeconomics and Profit Model
 published: true
 ---
 <style TYPE="text/css">
@@ -24,7 +24,7 @@ MathJax.Hub.Queue(function() {
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
-# Macroeconomics and Profit Model
+# Microeconomics and Profit Model
 by Max Yi Ren
 
 ## Disclaimer
@@ -34,7 +34,7 @@ Others from the [ODE lab][3] also contributed to these materials throughout year
 
 The following activities are based on the [course spreadsheet][4].
 
-## Activity 1
+## Activity 1: Market simulation with pricing
 Consider you are competing companies selling 
 exactly the same product, say a teddy bear. The consumer's part-worth on the price is -1. Discuss
 among yourselves to come up with a MSRP. 
@@ -55,7 +55,7 @@ In this case, the profit of a company is simply $s_ip_i$.
 * Task 3: If all competitors are driven by profit, does there exists an equilibrium of prices, 
 i.e., a set of prices that no one is motivated to change?
 
-## Activity 2
+## Activity 2: Market simulation with pricing and product positioning
 Now include design in your decision making: Let the design variables be the size of the bear, and
 the fluffiness. The artificial part-worths are -0.1, 0.0008, and 1.5 for price, size and fluffiness.
 The unit cost is 0.001 (dollar per inch cubed) and 5 (dollar per fluffiness). The range of size is 
@@ -63,7 +63,7 @@ The unit cost is 0.001 (dollar per inch cubed) and 5 (dollar per fluffiness). Th
 
 Note: The profit in this case will be $s_i(p_i-c_i)$, where $c_i$ is the unit cost.
 
-## Activity 3
+## Activity 3: Optimal decision making
 From Activity 2, you might find it hard to make a decision on what design attribute levels
 and prices to set, in order to maximize your profit given all your competitors. 
 To this end, develop an optimization routine in MATLAB to automatically adjust your
@@ -96,16 +96,25 @@ the variables. ```Ax <= b``` are the linear inequality constraints; ```Aeq x = b
 equality constraints.  ```lb``` and ```ub``` are the lower and upper bounds on the variables.
 ```@(x)nonlinear``` is the function handle for nonlinear constraints.
 
-## Activity 4
+## Activity 4: The equilibrium
 You may noticed from Activity 3 that there exists an equilibrium of the market. Conduct
 analysis to find out what that equilibrium is. 
 
 A template of the code can be found at the bottom of "optimal_profit_template.m". Need to 
 download files from Activity 3.
 
-## Activity 5
+## Activity 5: Formulate your own decision problem
+If your company plans to upgrade manufacturing capabilities with a max budget of $500,000, how 
+will you rigorously plan the upgrade? Consider the following upgrade costs:
+
+* Upper bound on teddy bear size: $100 for each additional unit improvement
+* Upper bound on teddy bear fluffiness: $100,000 for each additional unit improvement
+
+Does your decision depend on your competitors' product positioning?
+
+## Activity 6: A more complicated game
 If you want to form an organization with companies to maximize your profit, 
-how many companies will you include in the organization?
+how many companies will you include in the organization? Consider a penalty of $1,000,000 for betrayal.
 
 [1]: /_teaching/productdesign/ProfitModel.pptx
 [2]: /_teaching/productdesign/BeamProfitMaximizationExample.xlsx
