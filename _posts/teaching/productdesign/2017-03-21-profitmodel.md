@@ -104,7 +104,7 @@ A template of the code can be found at the bottom of "optimal_profit_template.m"
 download files from Activity 3.
 
 ## Activity 5: Formulate your own decision problem
-1. If your company plans to upgrade manufacturing capabilities with a max budget of $500,000, how 
+If your company plans to upgrade manufacturing capabilities with a max budget of $500,000, how 
 will you rigorously plan the upgrade? Consider the following upgrade costs:
 
 * Upper bound on teddy bear size: $100 for each additional unit improvement
@@ -112,7 +112,7 @@ will you rigorously plan the upgrade? Consider the following upgrade costs:
 
 Does your decision depend on your competitors' product positioning?
 
-2. For the project you are currently working on, define your design variables, associate them to 
+For the project you are currently working on, define your design variables, associate them to 
 manufacturing cost, engineering feasibility, and eventually to the profit. Study your competitors. Derive
 a design decision for this market. 
 
