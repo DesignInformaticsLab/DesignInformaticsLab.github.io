@@ -30,7 +30,8 @@ layout: default
     {% if page.video %}
     <br><br>
     <b> Presentation </b><br>
-    <video controls><source src="{{ site.url }}/{{ page.video }}" type="video/mp4">Your browser does not support the video tag.
+    <video width="640" height="480" controls>
+        <source src="{{ site.url }}/{{ page.video }}" type="video/mp4">Your browser does not support the video tag.
     </video>
     {% endif %}
 </div>

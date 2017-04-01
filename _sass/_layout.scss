@@ -61,6 +61,10 @@ main {
 time {
 	color: #898989;
 }
+video {
+  margin: 0;
+  padding: 0;
+}
 .container {
 	max-width: $content-width;
 	margin: 0 auto;
