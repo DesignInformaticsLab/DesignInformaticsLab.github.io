@@ -11,12 +11,21 @@ layout: default
         <div class=caption>{{ page.imgcaption }}</div><br>
     {% endif %}
 
-    <b> Abstract </b><p>{{ page.abstract }}</p>
+    <b> Abstract </b><br>
+    <a>{{ page.abstract }}</a>
+    <br><br>
+
     {% if page.paper %}
-        <a href="{{ site.url }}/{{ page.paper }}">Most Recent Paper</a>
+        <b>Most Recent Paper</b>
+        <br>
+        <a>{{ page.paper_detail }}</a>
+        <a href="{{ page.paper }}"><b>paper</b></a>
     {% endif %}
     {% if page.paper_remote %}
-        <a href="{{ page.paper_remote }}">Most Recent Paper</a>
+        <b>Most Recent Paper</b>
+        <br>
+        <a>{{ page.paper_detail }}</a>
+        <a href="{{ page.paper_remote }}"><b>arXiv</b></a>
     {% endif %}
 
     {% if page.link %}
@@ -24,7 +33,7 @@ layout: default
     {% endif %}
 
     {% if page.source %}
-    , <a href="{{ page.source }}">Source</a>
+    , <a href="{{ page.source }}"><b>Source Code</b></a>
     {% endif %}
 
     {% if page.video %}

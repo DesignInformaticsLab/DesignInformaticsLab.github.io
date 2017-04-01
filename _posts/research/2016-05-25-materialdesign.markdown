@@ -27,6 +27,7 @@ features. Current study focuses on improving the mechanism by developing physics
 network architectures, e.g., for n-point correlation functions, and incorporating
 them into the feature learning process. We hypothesize that such models will further
 improve the validity of the learned features."
+paper_detail: Cang, R., Xu, Y., Chen, S., Liu, Y., Jiao, Y., and Ren, Y. (2017). Microstructure Representation and Reconstruction of Heterogeneous Materials via Deep Belief Network for Computational Material Design. ASME Journal of Mechanical Design.
 paper_remote: https://arxiv.org/abs/1612.07401 
 video: _papers/material_cang_2017spring.mp4
 source: https://github.com/DesignInformaticsLab/Material-Design
