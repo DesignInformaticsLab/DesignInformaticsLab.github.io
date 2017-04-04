@@ -44,18 +44,21 @@ It describes a projected reality and **includes a lot of assumptions**.
   down.
   
 ## Business plan elements
+
   1. Business opportunity
-    1. Business objective (why)
-    2. Product description (what)
-    3. Market analysis (where)
-    4. Capital and personnel resources (how)
+      1. Business objective (why)
+      2. Product description (what)
+      3. Market analysis (where)
+      4. Capital and personnel resources (how)
+    
   2. Financial data
-    1. Capital equipment and supply list 
-    2. Break-even analysis 
-    3. Three-year summary of Pro-forma income and cost projections 
+      1. Capital equipment and supply list 
+      2. Break-even analysis 
+      3. Three-year summary of Pro-forma income and cost projections 
+    
   3. Supporting documents
-    1. Existing patents
-    2. Technical analysis and benchmarking
+      1. Existing patents
+      2. Technical analysis and benchmarking
     
 ## Interest
 Interest can be thought as the "rental charge" for the use of money.
@@ -64,11 +67,11 @@ Simple interest:
     
 * Principal ($P$) = dollar value at the time given
 * (Discount) Rate ($i$) = interest earned per unit principal per unit time
-* Future value (FV) =  value at a future point
+* Future value ($FV$) =  value at a future point
 
 Formulas:
 
-* One period: $FV = P + PI = P(1+i)$
+* One period: $FV = P + Pi = P(1+i)$
 * Multiple ($n$) periods: $FV = P(1+i)^n$
 
 ### Present value
@@ -82,7 +85,7 @@ Present value $PV = FV/(1+i)^n$
 
 ### Series compound future value
 Series of equal payments ($R$) given at regular time periods
-$$ F = [\frac{(1+i)^n-1}{i}]R$$
+$$ FV = [\frac{(1+i)^n-1}{i}]R$$
 
 Practice: Calculate the future value of $R = 5,000$ at the end of each year for 5 years at $6\%$.
 
@@ -96,7 +99,7 @@ Practice: Calculate the present value of $R = 5,000$ at the end of each year for
 ### Gradient series
 $R$ now changes $g\%$ at the end of each year
 
-$$PV = [\frac{1-(1+g)^n(1+i)^{-n}}{i-g}]R$$, when $g=i$, we have $$PV = \frac{nR}{1-i}$$.
+$$PV = [\frac{1-(1+g)^n(1+i)^{-n}}{i-g}]R$$, when $g=i$, we have $$PV = \frac{nR}{1+i}$$.
 
 ### Net present value
 With a series of $R$s. 
