@@ -51,5 +51,14 @@ Regarding the concern that delaying the submission may lead to better grade, the
 for in-time submissions is 87.1, while that for late submissions is 75.4. 96% (33%) of in-time 
 (late) submissions have grades above 80.
 
-## Best designs
-Coming soon...
+## Best designs so far
+**Best design during the competition**: Max deformation: 5.79e-6m, Mass: 17939Kg, By Dhruvil Shah
+
+<img src="/_images/productdesign/designcompetition2017shah.png" alt="Drawing" style="height: 300px;"/>
+<img src="/_images/productdesign/designcompetition2017shah2.png" alt="Drawing" style="height: 300px;"/>
+
+**Second best design during the competition**: Max deformation: 7.73e-6m, Mass: 23953Kg, By Fawzan Ahamad Nazir
+
+<img src="/_images/productdesign/designcompetition2017ahamad.png" alt="Drawing" style="height: 300px;"/>
+<img src="/_images/productdesign/designcompetition2017ahamad2.png" alt="Drawing" style="height: 300px;"/>
+
