@@ -60,13 +60,28 @@ Provide a table with all initial and annual costs. Example:
     4. Interest Rate
     
 ### Three-year summary of Pro-forma income and cost projections
-This is a profit-loss statement for the zeroth year and the first three years of operation.
+This is a profit-loss statement for the zero-th year and the first three years of operation. Example:
+
+| Project quarter | 2017-1 | 2017-2 | 2017-3 | 2017-4 | 2018-1 | ... |
+| --------------- | ------ | ------ | ------ | ------ | ------ | --- |
+| Qty sold        | 0      | 0      | 0      |        | 100    | ... |
+| Investor contribution | | | | | | |
+| Product revenue | | | | | | |
+| Total income | | | | | | |
+| Facility | | | | | | |
+| Material costs | | | | | | |
+| Manufacturing costs | | | | | | |
+| Personnel costs | | | | | | |
+| Total expenses | | | | | | |
+| Qrtly cash balance | | | | | | |
+| Running cash balance | | | | | | |
+| After taxes | | | | | | |
 
 ### Existing patents
 Provide existing patents (with patent numbers) and justify that your product will not breach these
-patents.
+patents. 
 
 ### Technical analysis and benchmarking
-This contains analysis from the progress report
+This contains analysis from the progress report.
 
 [1]: https://docs.google.com/spreadsheets/d/1sCL38r9I73seXU7IXAj6VPdroeFTddfsGBVgFXyvBMA/edit#gid=428714885
