@@ -1,0 +1,72 @@
+---
+categories: productdesign_guideline
+link: progress
+layout: apd_default
+title:  Business Plan (May 7th)
+published: true
+---
+## Business Plan (May 8th)
+
+## Business plan elements
+
+  1. Business opportunity
+      1. Business objective (why): 
+      2. Product description (what)
+      3. Market analysis (where)
+      4. Capital and personnel resources (how)
+    
+  2. Financial data
+      1. Capital equipment and supply list 
+      2. Break-even analysis 
+      3. Three-year summary of Pro-forma income and cost projections 
+    
+  3. Supporting documents
+      1. Existing patents
+      2. Technical analysis and benchmarking
+      
+## Explanation and Examples
+
+### Market analysis
+
+1. Use a figure to explain the market gap and where your product will fit
+2. Qualitatively summarize your market study to support your product positioning
+
+### Capital and personnel resources
+
+1. Provide an estimate of the amount of investment you need. Explain how you will spend
+this startup funding for your facilities and personnel.
+2. Provide a logistic plan: Justify your office and fab locations, plans for research, 
+development, production, employee training, marketing.
+
+### Capital equipment and supply list
+
+Provide a table with all initial and annual costs. Example:
+
+| Iterm | Use | Cost (initial) | Cost (per year) | Cost (per part) | ... |
+| ----  | --- | -------------- | --------------- | --------------- | --- |
+| Electronic workstation | Manufacturing | $1,000 | | | |
+| Line worker | Manufacturing | | | $0.3 | $18/hr, $0.3/part|
+| Office material | Property | $14,900 | | | |
+| Energy costs | Property | | $600 | | | |
+| Total | | | | | |
+
+### Break-even analysis
+
+1. Use the [spreadsheet][1] for the calculation.
+2. Take into account:
+    1. Total investment cost
+    2. Annual operating cost
+    3. Annual income
+    4. Interest Rate
+    
+### Three-year summary of Pro-forma income and cost projections
+This is a profit-loss statement for the zeroth year and the first three years of operation.
+
+### Existing patents
+Provide existing patents (with patent numbers) and justify that your product will not breach these
+patents.
+
+### Technical analysis and benchmarking
+This contains analysis from the progress report
+
+[1]: https://docs.google.com/spreadsheets/d/1sCL38r9I73seXU7IXAj6VPdroeFTddfsGBVgFXyvBMA/edit#gid=428714885
