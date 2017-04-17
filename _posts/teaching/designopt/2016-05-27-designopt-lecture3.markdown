@@ -1,5 +1,5 @@
 ---
-categories: 598lecturenote
+categories: designopt_lecture
 link: /designopt/unconstrained.pdf
 title: Unconstrained optimization
 ---

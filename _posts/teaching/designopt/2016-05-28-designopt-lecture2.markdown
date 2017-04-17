@@ -1,5 +1,5 @@
 ---
-categories: 598lecturenote
+categories: designopt_lecture
 link: /designopt/chap3.pdf
 title: Preliminaries
 ---

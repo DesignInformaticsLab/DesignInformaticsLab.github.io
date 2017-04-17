@@ -1,0 +1,68 @@
+---
+layout: opt_default
+title:  "Design Optimization"
+date:   2017-04-13 00:00:00
+published: true
+category: course_designopt
+---
+
+<b><a href="{{ site.url}}/designopt/2017/04/16/syllabus.html">Syllabus</a></b><br><br>
+
+<b>Lecture Notes</b><br>
+{% for post in site.posts %}
+{% if post.categories contains 'designopt_lecture' AND post.published %}
+* <a href="{{ post.url }}">{{ post.title }}</a><br>
+{% endif %}
+{% endfor %}
+<br>
+
+<b>Tutorials</b><br>
+{% for post in site.posts %}
+{% if post.categories contains 'designopt_tutorial' AND post.published %}
+* <a href="{{ post.url }}">{{ post.title }}</a><br>
+{% endif %}
+{% endfor %}
+<br>
+
+<!--<b>Design Optimization (MAE598/494) Lecture Notes</b><br>-->
+<!--{% for post in site.posts %}-->
+<!--{% if post.categories contains '598lecturenote' %}-->
+<!--* {{ post.title }} (<a href="{{ site.url}}/_teaching{{ post.link }}">pdf</a>)<br>-->
+<!--{% endif %}-->
+<!--{% endfor %}-->
+
+<div id="designopt_list_button" class="list_button"><b>Click to see previous student projects</b></div>
+<div id="designopt_list" class="hidden_list">
+{% for i in (2015..2016) %}
+<b> {{ i }}</b><br>
+{% for post in site.posts %}
+{% if post.categories contains 'opt_studentproject' %}
+{% if post.year == i %}
+* {{ post.title }}({{ post.authors}}, <a href="{{ site.url}}/_teaching/{{ post.link }}">pdf</a>)<br>
+{% endif %}
+{% endif %}
+{% endfor %}
+{% endfor %}
+</div>
+
+<!-- -->
+<!--<b>Supplementary Materials</b><br>-->
+<!--{% for post in site.posts %}-->
+<!--{% if post.categories contains 'productdesign_supplementary' %}-->
+<!--* {{ post.title }} (<a href="{{ site.url}}/_teaching{{ post.link }}">pdf</a>)<br>-->
+<!--{% endif %}-->
+<!--{% endfor %}-->
+
+<script>
+    $('#designopt_list_button').click(
+            function(){
+                if($('#designopt_list').css('display')=='none'){
+                    $('#designopt_list').show();
+                }
+                else{
+                    $('#designopt_list').hide();
+                }
+
+            }
+    );
+</script>

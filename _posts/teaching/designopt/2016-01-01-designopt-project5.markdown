@@ -4,5 +4,5 @@ title: Performance optimization of the suspension system of an off-road
        vehicle
 authors: A. Borude, G. Kankriya, S. Singh, V. Manka
 year: 2016
-categories: 598studentproject
+categories: opt_studentproject
 ---
