@@ -5,7 +5,7 @@ layout: apd_default
 title:  Business Plan (May 7th)
 published: true
 ---
-## Business Plan (May 8th)
+## Business Plan (May 7th)
 
 ## Business plan elements
 
