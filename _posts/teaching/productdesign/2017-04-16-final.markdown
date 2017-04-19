@@ -88,4 +88,4 @@ More examples can be found [here][2]. These materials are from the Analytical Pr
 at the University of Michigan.
 
 [1]: https://docs.google.com/spreadsheets/d/1sCL38r9I73seXU7IXAj6VPdroeFTddfsGBVgFXyvBMA/edit#gid=428714885
-[2]: _teaching/productdesign/businessplan_examples.pptx
+[2]: /_teaching/productdesign/businessplan_examples.pptx
