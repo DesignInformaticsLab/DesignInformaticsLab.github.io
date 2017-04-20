@@ -30,7 +30,7 @@ MathJax.Hub.Queue(function() {
 ## Summary
 Here are some statistics. 36% of the submissions are on time (before 6:40pm), 52% of 
 all are feasible, i.e., within the mass limit (25000 Kg). Among all feasible designs, the 
-minimal max deformation achieved is 0.00000014979 Meter (Mar. 23, 2017), with mass 17939 Kg. 
+minimal max deformation achieved is 5.79e-6 Meter (updated Apr. 19, 2017), with mass 17939 Kg.
 I still need to verify all numbers.
 
 The average grade is 79.7, with std 8.4. Highest grade is 100. 
