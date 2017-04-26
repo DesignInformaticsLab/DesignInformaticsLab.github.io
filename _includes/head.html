@@ -19,4 +19,15 @@
 	<script type="text/javascript" async
 			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 	</script>
+	<script type="text/javascript" src="/javascript/restive.min.js"></script>
+
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			$('body').restive({
+				breakpoints: ['10000','960'],
+				classes: ['nb','r_phone'],
+//				turbo_classes: 'is_mobile=r_mobi,is_phone=r_phone,is_tablet=r_tablet,is_landscape=r_landscape',
+			});
+		});
+	</script>
 </head>

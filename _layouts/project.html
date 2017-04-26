@@ -4,7 +4,9 @@ layout: default
 
 <div id="project">
     <h3>{{ page.title }}</h3>
-    By {{ page.author }}<br><br>
+    {% if page.author %}
+        Current students and collaborators: {{ page.author }}<br><br>
+    {% endif %}
 
     {% if page.summaryimg %}
         <img src="{{ site.url }}/{{ page.summaryimg }}">
@@ -15,25 +17,60 @@ layout: default
     <a>{{ page.abstract }}</a>
     <br><br>
 
+    <b>Related Papers</b><br>
     {% if page.paper %}
-        <b>Most Recent Paper</b>
-        <br>
         <a>{{ page.paper_detail }}</a>
-        <a href="{{ page.paper }}"><b>paper</b></a>
-    {% endif %}
-    {% if page.paper_remote %}
-        <b>Most Recent Paper</b>
-        <br>
-        <a>{{ page.paper_detail }}</a>
-        <a href="{{ page.paper_remote }}"><b>arXiv</b></a>
+        {% if page.paper_link %}
+            <a href="{{ page.paper_link }}"><b>pdf</b></a>
+        {% endif %}
+        {% if page.paper_arxiv %}
+            <a href="{{ page.paper_arxiv }}"><b>arXiv</b></a>
+        {% endif %}
+
+        {% if page.link %}
+        , <a href="http://{{ page.link }}">Link</a>
+        {% endif %}
+
+        {% if page.source %}
+        , <a href="{{ page.source }}"><b>Source Code</b></a>
+        {% endif %}
     {% endif %}
 
-    {% if page.link %}
-    , <a href="http://{{ page.link }}">Link</a>
+    {% if page.paper2 %}
+        <br>
+        <a>{{ page.paper_detail2 }}</a>
+        {% if page.paper_link2 %}
+            <a href="{{ page.paper_link2 }}"><b>pdf</b></a>
+        {% endif %}
+        {% if page.paper_arxiv2 %}
+            <a href="{{ page.paper_arxiv2 }}"><b>arXiv</b></a>
+        {% endif %}
+
+        {% if page.link2 %}
+            , <a href="http://{{ page.link2 }}">Link</a>
+        {% endif %}
+
+        {% if page.source2 %}
+            , <a href="{{ page.source2 }}"><b>Source Code</b></a>
+        {% endif %}
     {% endif %}
 
-    {% if page.source %}
-    , <a href="{{ page.source }}"><b>Source Code</b></a>
+    {% if page.paper3 %}
+        <br>
+        <a>{{ page.paper_detail3 }}</a>
+        {% if page.paper_link3 %}
+            <a href="{{ page.paper_link3 }}"><b>pdf</b></a>
+        {% endif %}
+        {% if page.paper_arxiv3 %}
+            <a href="{{ page.paper_arxiv3 }}"><b>arXiv</b></a>
+        {% endif %}
+        {% if page.link3 %}
+        , <a href="http://{{ page.link3 }}">Link</a>
+        {% endif %}
+
+        {% if page.source3 %}
+        , <a href="{{ page.source3 }}"><b>Source Code</b></a>
+        {% endif %}
     {% endif %}
 
     {% if page.video %}

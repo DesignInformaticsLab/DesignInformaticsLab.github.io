@@ -1,34 +1,28 @@
 ---
 layout: project
-shorttitle: "Learning Human Search Strategies from a Crowdsourcing Game"
-title:  "Learning Human Search Strategies from a Crowdsourcing Game"
-author: Sexton, T. and Ren, Y.
+shorttitle: "Learning an Optimization Algorithm through Human Design Iterations"
+title:  "Learning an Optimization Algorithm through Human Design Iterations"
+author: 
 authorlink:
 categories: project-crowdsourcing
-publishdate: 2016
+publishdate: 2017
 image: _images/ecoracer/image.png
-summaryimg: _images/ecoracer/ibosummaryimg.png
-imgcaption: "The residual of current best score vs. the known best score, 
-for 'learning from best player' (red), 
- 'self learning' (blue), 
-and the default setting (green). 
-Average best score curve from all players is also shown in gray, 
-along with the scores from a player (P2) with fast improvement."
-abstract: "There is evidence that humans can be more efficient than existing 
-algorithms at searching for good solutions in high-dimensional and non-convex 
-design or control spaces, potentially due to our prior knowledge and learning 
-capability. This work attempts to quantify the search strategy of human beings 
-to enhance a Bayesian optimization (BO) algorithm for an optimal design and 
-control problem. We consider the sequence of human solutions (called a search 
-trajectory) as generated from BO, and propose to recover the algorithmic 
-parameters of BO through maximum likelihood estimation. The method is first 
-verified through simulation studies and then applied to human solutions 
-crowdsourced from a gamified design problem. We learn BO parameters from a 
-player who achieved fast improvement in his/her solutions and show that 
-applying the learned parameters to BO achieves better convergence than 
-using a self-adaptive BO. The proposed method is different from inverse 
-reinforcement learning in that it only requires a good search strategy, 
-rather than near-optimal solutions from humans."
+summaryimg: _images/ecoracer/summaryimg.png
+imgcaption: "Game performance by human players (left) and the Efficient Global Optimization algorithm (right)"
+abstract: "Solving optimal design problems through crowdsourcing faces a dilemma: 
+On one hand, human beings have been shown to be more effective than algorithms at searching 
+for good solutions of certain real-world problems with high-dimensional or discrete solution 
+spaces; on the other hand, the cost of setting up crowdsourcing environments, the uncertainty 
+in the crowd's domain-specific competence, and the lack of commitment of the crowd, all contribute 
+to the lack of real-world application of design crowdsourcing. We are thus motivated to 
+investigate a solution-searching mechanism where the computer learns to mimic the search 
+strategy of a human solver, so that the search can be continued after he/she abandons the 
+problem."
+paper: published
+paper_detail: Sexton, T. and Ren, Y. (2017). Learning an Optimization Algorithm through Human Design Iterations. ASME Journal of Mechanical Design.
+paper_arxiv: https://arxiv.org/abs/1608.06984
 link: ecoracer.herokuapp.com
-paper: _papers/idetc2016t_final.pdf
+paper2: published
+paper_detail2: Ren, Y., Bayrak, A. and Papalambros, P. Y. (2016). Ecoracer Optimal Design and Control of Electric Vehicles Using Human Game Players. Journal of Mechanical Design, 138(6), 061407.
+paper_link2: _papers/jmd2016ecoracer.pdf
 ---

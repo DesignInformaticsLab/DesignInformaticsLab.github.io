@@ -1,3 +1,48 @@
+/** For Phones **/
+.r_phone aside{
+  font-size: 55%;
+  a {padding: 4px;}
+  a:-webkit-any-link
+  {
+	text-decoration: none;
+  }
+  img {display:none;}
+  height: 30px;
+}
+
+.r_phone #mission{
+  width:100%;
+  font-size: 60%;
+}
+
+.r_phone #news{
+  width:100%;
+  font-size: 60%;
+}
+
+.r_phone #slides{
+	display: none;
+}
+
+.r_phone .people{
+  font-size: 55%;
+}
+.r_phone .member{
+  height: 110px;
+  width: 50px;
+  float: left;
+  margin: 2px;
+  text-align: center;
+  img {
+	height: 50px;
+  }
+  overflow: auto;
+}
+
+
+/** For Tablets in Landscape Orientation **/
+.r_mobi.r_tablet.r_landscape #sidebar {display: block; width: 35%;}
+
 body {
 	margin: 0;
 	color: $font-color;
@@ -98,7 +143,7 @@ aside {
   	height: 50px;
 	z-index: 2;
 	border-bottom: 2px solid lighten($light, 30%);
-	box-shadow: 0px 3px 3px RGBA(4, 25, 54, .1);
+	//box-shadow: 0px 3px 3px RGBA(4, 25, 54, .1);
 	nav {
 		float: left;
 		max-width: 100%;
@@ -141,6 +186,9 @@ footer {
 	padding: 40px;
   	clear: left;
   	bottom: 0px;
+  	img {
+		margin: 0px;
+	}
 }
 
 #mission {
@@ -220,13 +268,13 @@ footer {
 }
 
 .member {
-  height: 200px;
-  width: 120px;
+  height: 180px;
+  width: 110px;
   float: left;
-  margin: 10px;
+  margin: 5px;
   text-align: center;
   img {
-	width: 100px;
+	height: 100px;
   }
   overflow: auto;
 }
