@@ -1,7 +1,7 @@
 ---
 name: Aditya Vipradas
-position: MAE Master
+position: MAE Master (MSC Software)
 link:
-categories: people
+categories: alumni
 image:
 ---
