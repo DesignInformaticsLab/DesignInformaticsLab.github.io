@@ -31,7 +31,6 @@ MathJax.Hub.Queue(function() {
 Here are some statistics. 36% of the submissions are on time (before 6:40pm), 52% of 
 all are feasible, i.e., within the mass limit (25000 Kg). Among all feasible designs, the 
 minimal max deformation achieved is 5.79e-6 Meter (updated Apr. 19, 2017), with mass 17939 Kg.
-I still need to verify all numbers.
 
 The average grade is 79.7, with std 8.4. Highest grade is 100. 
 
@@ -52,6 +51,11 @@ for in-time submissions is 87.1, while that for late submissions is 75.4. 96% (3
 (late) submissions have grades above 80.
 
 ## Best designs so far
+**Best design overall**: Max deformation: 4.7788e-6m, Mass: 24766Kg, By Sachin Panchal
+<img src="/_images/productdesign/designcompetition2017panchal.png" alt="Drawing" style="height: 300px;"/>
+<img src="/_images/productdesign/designcompetition2017panchal2.png" alt="Drawing" style="height: 300px;"/>
+
+
 **Best design during the competition**: Max deformation: 5.79e-6m, Mass: 17939Kg, By Dhruvil Shah
 
 <img src="/_images/productdesign/designcompetition2017shah.png" alt="Drawing" style="height: 300px;"/>
