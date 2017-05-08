@@ -51,10 +51,15 @@ for in-time submissions is 87.1, while that for late submissions is 75.4. 96% (3
 (late) submissions have grades above 80.
 
 ## Best designs so far
-**Best design overall**: Max deformation: 4.7788e-6m, Mass: 24766Kg, By Sachin Panchal
+**Best design - 1st Place**: Max deformation: 3.628e-6m, Mass: 24623Kg, By Surya Dasari
+<img src="/_images/productdesign/designcompetition2017surya.png" alt="Drawing" style="height: 300px;"/>
+
+**Best design - 2nd Place**: Max deformation: 4.596e-6m, Mass: 24961Kg, By Fawzan Ahamad Nazir
+<img src="/_images/productdesign/designcompetition2017ahamad3.png" alt="Drawing" style="height: 300px;"/>
+
+**Best design - 3rd Place**: Max deformation: 4.779e-6m, Mass: 24766Kg, By Sachin Panchal
 <img src="/_images/productdesign/designcompetition2017panchal.png" alt="Drawing" style="height: 300px;"/>
 <img src="/_images/productdesign/designcompetition2017panchal2.png" alt="Drawing" style="height: 300px;"/>
-
 
 **Best design during the competition**: Max deformation: 5.79e-6m, Mass: 17939Kg, By Dhruvil Shah
 
