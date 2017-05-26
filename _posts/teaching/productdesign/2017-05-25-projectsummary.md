@@ -55,7 +55,7 @@ FM Receiver. Furthermore, this system can also be used in Museums, Art galleries
  the airport terminals about directions and gate numbers and it will also help tourists 
  at museums by providing them information about certain Art work. | [**business plan**][4]
 
-<img src="/_images/productdesign/team4.png" alt="Drawing" style="height: 300px;"/>
+<img src="/_images/productdesign/team4.png" alt="Drawing" style="height: 200px;"/>
 
 ---
 
@@ -79,7 +79,7 @@ Our product is a smart pill dispenser that stores pills, notifies the user to ta
 pills at the right time and dispenses the right number of pills and it does all this 
 with a low cost. | [**business plan**][6]
 
-<img src="/_images/productdesign/team6.png" alt="Drawing" style="height: 300px;"/>
+<img src="/_images/productdesign/team6.png" alt="Drawing" style="height: 400px;"/>
 
 <iframe width="420" height="315"
 src="http://www.youtube.com/embed/-Z0GOxjObDI">
