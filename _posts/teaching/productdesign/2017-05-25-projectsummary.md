@@ -18,7 +18,7 @@ package targeting medium-end and high-end bike users. | [**business plan**][1]
 src="http://www.youtube.com/embed/F3OxNtV9bso">
 </iframe>
 
---
+---
 
 ### Team 2: **Retractable headphone case**
 
@@ -32,7 +32,7 @@ We design a retractable case that accommodates users' choice of headphones with 
 src="http://www.youtube.com/embed/uSuAx7yHPyY">
 </iframe>
 
---
+---
 
 ### Team 3: **Protective phone case**
  
@@ -40,7 +40,7 @@ How many times have you accidentally dropped and broke? your phone's screen.
 We design a smartphone case which protects the phone from damages in case 
 it falls. | [**business plan**][3]
 
---
+---
 
 ### Team 4: **Personalized Broadcast**
  
@@ -57,7 +57,7 @@ FM Receiver. Furthermore, this system can also be used in Museums, Art galleries
 
 <img src="/_images/productdesign/team4.png" alt="Drawing" style="height: 300px;"/>
 
---
+---
 
 ### Team 5: **Smart fridge**
 
@@ -68,7 +68,7 @@ only to find that you forget what remains in your fridge.
 We design a smart fridge sensor that gradually learns your diet habits, keeps
 track of essential grocery items for you, and alerts you when you are under-stocked. | [**business plan**][5]
 
---
+---
 
 ### Team 6: **Smart pill dispenser**
 <a><b> Best implementation </b></a>
@@ -86,7 +86,7 @@ with a low cost. | [**business plan**][6]
 src="http://www.youtube.com/embed/-Z0GOxjObDI">
 </iframe>
 
---
+---
 
 ### Team 7: **Water Eye - Watermeter reader**
 <a style="color:indianred"><b> I'm looking for students to continue the development on this </b></a>
@@ -110,7 +110,7 @@ and hard earned money. | [**business plan**][7] | [code][7code]
 src="http://www.youtube.com/embed/bp0MxpqSNWY">
 </iframe>
 
---
+---
 
 ### Team 8: **Anti-theft tag**
 
@@ -123,7 +123,7 @@ their loss due to misplacement during travel or in crowded places. | [**business
 <img src="/_images/productdesign/team8.png" alt="Drawing" style="height: 300px;"/>
 <img src="/_images/productdesign/team82.png" alt="Drawing" style="height: 300px;"/>
 
---
+---
 
 ### Team 9: **Never Forgotten - Baby buckle with alarm**
 
