@@ -71,7 +71,6 @@ track of essential grocery items for you, and alerts you when you are under-stoc
 ---
 
 ### Team 6: **Smart pill dispenser**
-<a><b> Best implementation </b></a>
 
 With ever changing lifestyle in this fast-paced world, people often get affected with 
 diseases and tend to consume a lot of pills. However, with the busy lifestyle people 
