@@ -47,7 +47,7 @@ it falls. | [**business plan**][3]
 The motivation of this project is to rectify the audibility problems in Classrooms 
 and Conference Halls by using a Sound Control system which will ensure that every 
 person/Student in classroom will hear properly to what Professor/Lecturer is saying. 
-In this system, we will transmit Professor’s voice on a particular FM frequency using 
+In this system, we will transmit Professor's voice on a particular FM frequency using 
 FM Transmitters. Students can listen to Professor using his Smartphone or any kind of 
 FM Receiver. Furthermore, this system can also be used in Museums, Art galleries,
  Airport Terminals etc. to guide visitors/Travelers by transmitting crucial data about 
