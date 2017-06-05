@@ -8,18 +8,39 @@ layout: default
         Current students and collaborators: {{ page.author }}<br><br>
     {% endif %}
 
+    <b> Summary </b><br>
+    <a>{{ page.abstract }}</a>
+    <br><br>
+
+    <b> Gallery </b><br>
     {% if page.summaryimg %}
         <img src="{{ site.url }}/{{ page.summaryimg }}">
         <div class=caption>{{ page.imgcaption }}</div><br>
     {% endif %}
-
-    <b> Abstract </b><br>
-    <a>{{ page.abstract }}</a>
-    <br><br>
+    {% if page.summaryimglink %}
+        <img src="{{ page.summaryimglink }}">
+        <div class=caption>{{ page.imgcaption }}</div><br>
+    {% endif %}
+    {% if page.summaryimg2 %}
+        <img src="{{ site.url }}/{{ page.summaryimg2 }}">
+        <div class=caption>{{ page.imgcaption2 }}</div><br>
+    {% endif %}
+    {% if page.summaryimglink2 %}
+        <img src="{{ page.summaryimglink2 }}">
+        <div class=caption>{{ page.imgcaption2 }}</div><br>
+    {% endif %}
+    {% if page.summaryimg3 %}
+        <img src="{{ site.url }}/{{ page.summaryimg3 }}">
+        <div class=caption>{{ page.imgcaption3 }}</div><br>
+    {% endif %}
+    {% if page.summaryimglink3 %}
+        <img src="{{ page.summaryimglink3 }}">
+        <div class=caption>{{ page.imgcaption3 }}</div><br>
+    {% endif %}
 
     <b>Related Papers</b><br>
     {% if page.paper %}
-        <a>{{ page.paper_detail }}</a>
+        <a>1. {{ page.paper_detail }}</a>
         {% if page.paper_link %}
             <a href="{{ page.paper_link }}"><b>pdf</b></a>
         {% endif %}
@@ -34,11 +55,18 @@ layout: default
         {% if page.source %}
         , <a href="{{ page.source }}"><b>Source Code</b></a>
         {% endif %}
+
+        {% if page.paper_video %}
+        <br><br>
+        <iframe width="420" height="315"
+                src="{{ page.paper_video }}">
+        </iframe>
+        {% endif %}
     {% endif %}
 
     {% if page.paper2 %}
-        <br>
-        <a>{{ page.paper_detail2 }}</a>
+        <br><br>
+        <a>2. {{ page.paper_detail2 }}</a>
         {% if page.paper_link2 %}
             <a href="{{ page.paper_link2 }}"><b>pdf</b></a>
         {% endif %}
@@ -53,11 +81,18 @@ layout: default
         {% if page.source2 %}
             , <a href="{{ page.source2 }}"><b>Source Code</b></a>
         {% endif %}
+
+        {% if page.paper_video2 %}
+        <br><br>
+        <iframe width="420" height="315"
+                src="{{ site.url }}/{{ page.paper_video2 }}">
+        </iframe>
+        {% endif %}
     {% endif %}
 
     {% if page.paper3 %}
-        <br>
-        <a>{{ page.paper_detail3 }}</a>
+        <br><br>
+        <a>3. {{ page.paper_detail3 }}</a>
         {% if page.paper_link3 %}
             <a href="{{ page.paper_link3 }}"><b>pdf</b></a>
         {% endif %}
@@ -71,14 +106,14 @@ layout: default
         {% if page.source3 %}
         , <a href="{{ page.source3 }}"><b>Source Code</b></a>
         {% endif %}
+
+        {% if page.paper_video3 %}
+        <br><br>
+        <iframe width="420" height="315"
+                src="{{ site.url }}/{{ page.paper_video3 }}">
+        </iframe>
+        {% endif %}
     {% endif %}
 
-    {% if page.video %}
-    <br><br>
-    <b> Presentation </b><br>
-    <video width="640" height="480" controls>
-        <source src="{{ site.url }}/{{ page.video }}" type="video/mp4">Your browser does not support the video tag.
-    </video>
-    {% endif %}
 </div>
 

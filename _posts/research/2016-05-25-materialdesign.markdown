@@ -7,29 +7,33 @@ authorlink:
 categories: project-esd
 publishdate: 2017
 image: _images/materialdesign/image.jpg
+
 summaryimg: _images/materialdesign/summaryimg.jpg
-imgcaption: "(Top) Original samples from Ti-6Al-4V alloy, Pb-Sn alloy, Fontainebleau sandstone,
-and spherical colloids (Bottom) Random reconstructions by learning from the samples"
-abstract: "Integrated Computational Materials Engineering (ICME) aims to accelerate 
-optimal design of complex material systems by integrating material science and 
-design automation. For tractable ICME, it is required that (1) a structural feature 
-space be identified to allow reconstruction of new designs, and (2) the 
-reconstruction process be property-preserving. The majority of existing 
-structural presentation schemes rely on the designer's understanding of specific 
-material systems to identify geometric and statistical features, which could be 
-biased and insufficient for reconstructing physically meaningful microstructures 
-of complex material systems. This project aims at developing feature learning mechanisms 
-to automate a two-way conversion between microstructures and their 
-lower-dimensional feature representations.
-Our method achieved a 1000-fold dimension reduction from the microstructure 
-space on a variety of heterogeneous material systems with distinct microstructural 
-features. Current study focuses on improving the mechanism by developing physics-based
-network architectures, e.g., for n-point correlation functions, and incorporating
-them into the feature learning process. We hypothesize that such models will further
-improve the validity of the learned features."
+imgcaption: (Top) Original samples from Ti-6Al-4V alloy, Pb-Sn alloy, Fontainebleau sandstone, and spherical colloids (Bottom) Random reconstructions by learning from the samples (Cang et al., 2016, 2017)
+
+summaryimglink2: https://raw.githubusercontent.com/DesignInformaticsLab/StyleTransfer-VAE/master/VAE%2BST/image/Random.JPG
+imgcaption2: Augmented variational autoencoder for scalable topology optimization (Paper in preparation, collaboration with <a href="http://systemdesign.illinois.edu/">Engineering System Design Lab@UIUC</a>)
+
+summaryimglink3: https://raw.githubusercontent.com/DesignInformaticsLab/StyleTransfer-VAE/master/image/model.JPG
+imgcaption3: Finding a low dimensional design space for accelerated material design through deep learning (Paper in preparation, <a href="https://github.com/DesignInformaticsLab/StyleTransfer-VAE">source code</a>)
+
+abstract: "Integrated Computational Materials Engineering (ICME) aims to 
+develop scalable design methodologies for complex material systems by leveraging and extending 
+knowledge from material science and design automation. The key challenges are 
+(1) the high dimensional design representations of material structures and (2) 
+the high computational cost for physics-based process-structure-property mappings.
+For (1), we develop unsupervised learning models that learn lower-dimensional feature 
+spaces from where new designs (microstructures and topologies) can be created 
+based on samples;
+for (2), we integrate deep learning and physics-based models to discover key factors 
+(e.g., microstructure patterns) that influence properties of interest (e.g., fracture strength)."
+
 paper: published
-paper_detail: Cang, R., Xu, Y., Chen, S., Liu, Y., Jiao, Y., and Ren, Y. (2017). Microstructure Representation and Reconstruction of Heterogeneous Materials via Deep Belief Network for Computational Material Design. ASME Journal of Mechanical Design.
+paper_detail: Cang, R., Xu, Y., Chen, S., Liu, Y., Jiao, Y., and Ren, Y. (2017). Microstructure Representation and Reconstruction of Heterogeneous Materials via Deep Belief Network for Computational Material Design. <i>ASME Journal of Mechanical Design</i>.
 paper_arxiv: https://arxiv.org/abs/1612.07401 
-video: _papers/material_cang_2017spring.mp4
+paper_video: http://www.youtube.com/embed/PQm2wSdKC2w
 source: https://github.com/DesignInformaticsLab/Material-Design
+paper2: published
+paper_detail2: Cang, R., and Ren, Y. (2017). Scalable Microstructure Reconstruction with Multi-scale Pattern Preservation. <i>In ASME 2017 International Design Engineering Technical Conferences and Computers and Information in Engineering Conference. American Society of Mechanical Engineers</i>.
+paper_link2: _papers/idetc2017cang.pdf
 ---
