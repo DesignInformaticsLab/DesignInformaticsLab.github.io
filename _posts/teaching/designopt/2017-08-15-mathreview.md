@@ -1,6 +1,6 @@
 ---
 categories: designopt_tutorial
-layout: apd_default
+layout: opt_default
 title:  Math Review
 published: true
 ---
@@ -23,14 +23,15 @@ MathJax.Hub.Queue(function() {
 </script>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
+This course will need you to be fluent in basic linear algebra and calculus. 
 Please check if you can answer the following questions:
 
 ### Linear algebra
 * How do you do **matrix multiplication**?
-* How do you calculate the **eigenvalues** and **eigenvectors** of a matrix?
+* How do you calculate the **eigenvalues** and **eigenvectors** of a square matrix?
 * What is the definition of a **positive definite/positive semidefinite/negative definite/
 negative semidefinite/indefinite matrix**?
-* What is the **rank** of a matrix?
+* What is the **rank** of a square matrix?
 * What is the property of a **singular matrix**?
 * What is a **symmetric matrix**?
 * Let $${\bf X}$$ be a $$n$$-by-$$p$$ matrix, what can you tell about $${\bf X}^T{\bf X}$$?
@@ -61,8 +62,8 @@ If you have difficulty answering these questions, please check out the following
 
 **Password** is: ME555
   
-All tutorials are prepared by [Emrah Bayrak][3] at the Optimal Design Lab, the University of Michigan. 
-Please **DO NOT** share the videos outside of the class.
+These tutorials are prepared by [Emrah Bayrak][3] and others at the Optimal Design Lab, the University of Michigan, 
+and only shared with this class. Please **DO NOT** share the videos outside of the class.
 
 [1]: https://vimeo.com/149907223
 [2]: https://vimeo.com/149966720
