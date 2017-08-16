@@ -8,6 +8,14 @@ category: course_designopt
 
 <b><a href="{{ site.url}}/designopt/2017/04/16/syllabus.html">Syllabus</a></b><br><br>
 
+<b>Assignments</b><br>
+{% for post in site.posts %}
+{% if post.categories contains 'designopt_assignment' AND post.published %}
+* <a href="{{ site.url }}/_teaching/designopt/hw/{{ post.link }}">{{ post.title }}</a><br>
+{% endif %}
+{% endfor %}
+<br>
+
 <b>Lecture Notes</b><br>
 {% for post in site.posts %}
 {% if post.categories contains 'designopt_lecture' AND post.published %}
