@@ -1,12 +1,16 @@
 ---
 layout: post
-title:  Report on the computational material design project
+title:  Report - NSF DEMS Project (2016-2017)
 date:   2017-08-20 00:00:00
 published: true
 categories: news
 ---
 
-## Table of Contents
+**Participants**: Ruijin Cang (PhD student), Dr. Hechao Li (PhD student, graduated), 
+Shaohua Chen (PhD student), Yaopengxiao Xu (PhD student), [Yi Ren][yiren] (Asst. Prof.), 
+[Yang Jiao][yangjiao] (Asst. Prof.), [Yongming Liu][yongming] (Prof.)
+
+### **Table of Contents**
 1. [The Goals](#goal)
 2. [Results and Findings](#results)
     1.  [Generative Model for Microstrutures and Topologies](#generative)
@@ -17,9 +21,7 @@ categories: news
 
 ***
 
-Authors: Ruijin Cang, Hechao Li, Shaohua Chen, Yaopengxiao Xu, [Yi Ren][yiren], [Yang Jiao][yangjiao], [Yongming Liu][yongming]
-
-## The Goals <a name="goal"></a>
+### **The Goals <a name="goal"></a>**
 
 The goals of this project is to address two computational barriers in material design: 
 (1) Material microstructures are usually represented as high-resolution images and 
@@ -40,10 +42,13 @@ we developed and compared implicit and explicit solvers for fracture strength te
 of the alloy, and investigated the necessity of nonlinear constitutive models (nonlinear elasticity
 and plasticity).
 
-## Results and Findings <a name="results"></a>
+***
+
+### **Results and Findings <a name="results"></a>**
+
 The results and findings are summarized below.
 
-### Generative Model for Microstrutures and Topologies <a name="generative"></a>
+#### Generative Model for Microstrutures and Topologies <a name="generative"></a>
 While state-of-the-art generative models has achieved photo-realistic image generation 
 based on often enormous amount of training samples, it is well understood that these models 
 will fail to learn meaningful local patterns (poor distribution matching) when only a small 
@@ -60,9 +65,9 @@ the layers, and has limited control over the output morphology through the netwo
 
 <img src="/_images/nsfmaterial2017report/fig1.png" alt="Drawing" style="height: 400px;"/> 
 
-<a class="caption">(a) Samples and generations of Ti64, Pb-Sn, Sandstone and spherical colloids through layer-by-layer
+<a class="caption">**Figure 1.** **(a)** Samples and generations of Ti64, Pb-Sn, Sandstone and spherical colloids through layer-by-layer
 learning of a Convolutional Deep Belief Network.
-(b) The network requires material-dependent parameter tuning to reach good performance.
+**(b)** The network requires material-dependent parameter tuning to reach good performance.
 </a>
 
 To this end, we investigate solutions inspired by *style transfer* (ST), a method 
@@ -84,7 +89,7 @@ each case.
 
 <img src="/_images/nsfmaterial2017report/fig2.png" alt="Drawing" style="height: 400px;"/> 
 
-<a class="caption">Generations through Style Transfer (ST), Variational Autoencoder (VAE), Generative Adversarial Network (GAN),
+<a class="caption">**Figure 2.** Generations through Style Transfer (ST), Variational Autoencoder (VAE), Generative Adversarial Network (GAN),
 and the proposed VAE+ST method.</a>
 
 The findings are summarized as follows:
@@ -99,7 +104,7 @@ regularize the generation through a physically meaningful loss. The loss will
 be calculated by measuring how well the generated microstructure matches the 
 equilibrium state governed by the processing parameters.
 
-### Structure-Property Prediction <a name="prediction"></a>
+#### Structure-Property Prediction <a name="prediction"></a>
 We investigated the utility of deep neural networks when applied to predict structure-property
 mappings. Two specific mappings are studied: The fracture strength of Ti64, and the 
 Young's modulus of sandstone. The fracture strength is computed by an explicit solver
@@ -120,9 +125,9 @@ is still room for improvements (**Fig. 3b**).
 
 <img src="/_images/nsfmaterial2017report/fig3.png" alt="Drawing" style="height: 300px;"/> 
 
-<a class="caption">(a) Comparison on the prediction performance of a residual network trained with 40 sandstone samples (blue)
+<a class="caption">**Figure 3.** **(a)** Comparison on the prediction performance of a residual network trained with 40 sandstone samples (blue)
 and with the additional 400 samples generated using the proposed VAE+ST model (red).
-(b) Sensitivity analysis of local structural patterns.</a>
+**(b)** Sensitivity analysis of local structural patterns.</a>
 
 In the Ti64 case, we encountered difficulty in reaching plausible predictive performance 
 for fracture strength, with extensive testing of network architectures. We should, however,
@@ -135,7 +140,7 @@ See **Fig. 4**.
  
 <img src="/_images/nsfmaterial2017report/fig4.png" alt="Drawing" style="height: 400px;"/> 
 
-<a class="caption">Comparison on the prediction performance of a Support Vector Regression model (yellow),
+<a class="caption">**Figure 4.** Comparison on the prediction performance of a Support Vector Regression model (yellow),
 a VGG model (blue), and a residual network model (red).</a>
 
 The findings are summarized as follows:
@@ -148,7 +153,7 @@ than standard surrogate models.
 **This suggests that the incorporation of physics-based knowledge into the surrogate model
 is necessary.**
 
-### Modeling and quantification of microstructure evolution of Ti-6Al-4V during selective laser sintering (SLS) <a name="evolution"></a>
+#### Modeling and quantification of microstructure evolution of Ti-6Al-4V during selective laser sintering (SLS) <a name="evolution"></a>
 A hybrid finite-element cellular-automaton model for microstructure evolution in Ti64 during SLS developed in this project has been 
 developed and calibrated. The model incorporates the nonlinear variation of 
 intrinsic material properties (i.e., specific heat, heat conductivity and material 
@@ -160,21 +165,23 @@ associated with different processing conditions (laser power density, spot movin
   
 <img src="/_images/nsfmaterial2017report/fig5.png" alt="Drawing" style="height: 300px;"/> 
 
-<a class="caption">(a) The temperature field on the surface of Ti64 resulting from a laser spot with radius 0.05mm and maximum powder 100W that moves at speed of 200mm/s along a zigzag path.
-(b) Distribution of vanadium concentration during SLS.
-(c) Distribution of alpha  plate orientation in Ti64 microstructure during SLS.
-(d-e) Comparison of the simulated Ti64 microstructure (d) and an experimental system (e) obtained via the same SLS condition.
-(f) Scaled autocorrelation function f(r) associated with the ? plate boundaries/ ? phase of the Ti64 microstructure obtained using different laser power densities and 3D simulated structures.
+<a class="caption">**Figure 5.** **(a)** The temperature field on the surface of Ti64 resulting from a laser spot with radius 0.05mm and maximum powder 100W that moves at speed of 200mm/s along a zigzag path.
+**(b)** Distribution of vanadium concentration during SLS.
+**(c)** Distribution of alpha  plate orientation in Ti64 microstructure during SLS.
+**(d-e)** Comparison of the simulated Ti64 microstructure (d) and an experimental system (e) obtained via the same SLS condition.
+**(f)** Scaled autocorrelation function f(r) associated with the alpha plate boundaries/ beta phase of the Ti64 microstructure obtained using different laser power densities and 3D simulated structures.
 </a>
 
-### Publications <a name="publications"></a>
+***
+
+### **Publications <a name="publications"></a>**
 * Cang, R., Xu, Y., Chen, S., Liu, Y., Jiao, Y., and Ren, Y. (2017). Microstructure Representation and Reconstruction of Heterogeneous Materials via Deep Belief Network for Computational Material Design. ASME Journal of Mechanical Design, 139(7), 071404.
 * Cang, R., Vipradas, A., and Ren, Y. (2017). Scalable Microstructure Reconstruction with Multi-scale Pattern Preservation. In ASME 2017 International Design Engineering Technical Conferences and Computers and Information in Engineering Conference. American Society of Mechanical Engineers.
 * Cang, R., and Ren, Y. (2016). Deep Network-based Feature Extraction and Reconstruction of Complex Material Microstructures. In ASME 2016 International Design Engineering Technical Conferences and Computers and Information in Engineering Conference. American Society of Mechanical Engineers.
 * Chen, H., and Liu, Y. (2017). Micro/meso Scale Fracture Modeling Using A Novel Discrete Model. International Conference of Fracture, Greece, 2017.
 * Xu, Y., and Jiao Y. (2017). Micro-structure and Superior Mechanical Properties of Hyperuniform Materials, 2017 TMS Annual Meeting, San Diego.
 
-### Videos <a name="videos"></a>
+### **Videos <a name="videos"></a>**
 <iframe width="420" height="315"
                 src="http://www.youtube.com/embed/PQm2wSdKC2w">
 </iframe>

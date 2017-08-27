@@ -119,6 +119,8 @@ video {
   text-align: center;
   justify-content: center;
   align-items: center;
+  background-color: lightgray;
+  font-style: italic;
 }
 
 p {
@@ -131,6 +133,10 @@ a:-webkit-any-link
   text-decoration: none;
 }
 
+article {
+  text-align: justify;
+
+}
 
 /* Aside */
 
@@ -325,6 +331,4 @@ table tr th :last-child, table tr td :last-child {
 //  border-right: 2px solid #aaaaaa;
 //}ff
 
-.caption a{
-  font-size: smaller;
-}
+
