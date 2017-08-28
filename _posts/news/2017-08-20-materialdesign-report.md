@@ -109,6 +109,9 @@ We investigated the utility of deep neural networks when applied to predict stru
 mappings. Two specific mappings are studied: The fracture strength of Ti64, and the 
 Young's modulus of sandstone. The fracture strength is computed by an explicit solver
 on a particle model of the Ti64 microstructure (see [the development of the model][Ti64model]).
+The Young's modulus is computed via a Strong Contrast Expansion method, which expresses 
+the elastic properties of a heterogeneous material in terms of individual phase properties 
+and microstructural parameters involving the integration of correlation functions. 
 Our findings are as follows.
 
 In the sandstone case, we used 40 images for training an initial residual network. 
@@ -117,7 +120,7 @@ have large prediction errors.
 The enriched dataset then leads to an improved predictive model as shown in **Fig. 3a**. 
 To understand whether the network learns the correlation between structural patterns and 
 the property, we scan a material 
-sample by switching pixel values of each small image patch and evaluate the changes in Young's modulus. 
+sample and convert each small material patch to the void phase and evaluate the changes in Young's modulus. 
 We then compare the true changes with those derived from the prediction. Result shows that the improved model
 has better understanding of the local structure-property correlation, although there
 is still room for improvements (**Fig. 3b**).
