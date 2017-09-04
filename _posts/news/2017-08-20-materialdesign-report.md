@@ -11,36 +11,45 @@ Shaohua Chen (PhD student), Yaopengxiao Xu (PhD student), [Yi Ren][yiren] (Asst.
 [Yang Jiao][yangjiao] (Asst. Prof.), [Yongming Liu][yongming] (Prof.)
 
 ### **Table of Contents**
-1. [The Goals](#goal)
+1. [Executive Summary](#goal)
 2. [Results and Findings](#results)
     1.  [Generative Model for Microstrutures and Topologies](#generative)
     2.  [Structure-Property Prediction](#prediction)
     3.  [Modeling and quantification of microstructure evolution](#evolution)
+    4.  [Efficient lattice particle simulation](#simulation)
 3. [Publications](#publications)
 4. [Videos](#videos)
 
 ***
 
-### **The Goals <a name="goal"></a>**
+### **Executive Summary <a name="goal"></a>**
 
-The goals of this project is to address two computational barriers in material design: 
-(1) Material microstructures are usually represented as high-resolution images and 
+Through this project, we achieved the following goals and derived new research questions.
+
+1. **Microstructure patterns can be learned and used to generate new material samples.** 
+Material microstructures are usually represented as high-resolution images and 
 are limited in quantity due to high acquisition costs through experiments. We developed 
 generative models that learn the latent dimensions of microstructures, and create 
 new microstructure samples that are morphologically and statistically similar to 
-the limited samples.
-(2) The physics-based structure-property mapping often involves high computational cost, 
+the limited samples. This allowed us to bootstrap limited data to improve a predictive model.
+
+2. **While deep networks outperform conventional models, they are not yet capable of capturing 
+ highly nonlinear structure-property mappings.** The physics-based structure-property mapping often involves high computational cost, 
 due to the nonlinear constitutive models of material systems. We validated the hypothesis
 that deep learning architectures can outperform conventional nonlinear predictive models
-(such as Support Vector Regression) in predicting structure-property mappings.
+(such as Support Vector Regression) in predicting structure-property mappings. However, we
+ found that deep convolutional neural networks cannot attain the prediction accuracy required
+ for material microstructure optimization.
 
-In addition, we developed physics-based models for Ti-6Al-4V (Ti64) alloy to facilitate a case study 
-and data collection. Specifically, on process-structure mapping, 
-we investigated the modeling and quantification of microstructure 
-evolution of Ti64 during selective laser sintering (SLS). On process-structure mapping,
-we developed and compared implicit and explicit solvers for fracture strength testing 
-of the alloy, and investigated the necessity of nonlinear constitutive models (nonlinear elasticity
-and plasticity).
+3. **Microstructure evolution of Ti64 during selective laser sintering is modeled and quantified.** 
+We developed physics-based models for Ti-6Al-4V (Ti64) alloy to facilitate a case study 
+and data collection. Specifically, on process-structure mapping, we investigated the modeling and quantification of 
+a hybrid finite-element cellular-automaton model for microstructure evolution. 
+
+4. **An efficient lattice particle simulation is developed for Ti64 fractual strength computation.**
+A new atomic finite element method for the proposed lattice particle method is developed to
+ replace an explicit solver for Ti64 fractual strength computation. Nonlinear elasticity and plasticity 
+ constitutive models will be added to refine this method.
 
 ***
 
@@ -156,7 +165,8 @@ than standard surrogate models.
 is necessary.**
 
 #### Modeling and quantification of microstructure evolution of Ti-6Al-4V during selective laser sintering (SLS) <a name="evolution"></a>
-A hybrid finite-element cellular-automaton model for microstructure evolution in Ti64 during SLS developed in this project has been 
+A hybrid finite-element cellular-automaton model for microstructure evolution in Ti64 during 
+SLS has been 
 developed and calibrated. The model incorporates the nonlinear variation of 
 intrinsic material properties (i.e., specific heat, heat conductivity and material 
 density) during SLS as well as temperature- and property-dependent heterogeneous 
@@ -174,6 +184,31 @@ associated with different processing conditions (laser power density, spot movin
 **(f)** Scaled autocorrelation function f(r) associated with the alpha plate boundaries/ beta phase of the Ti64 microstructure obtained using different laser power densities and 3D simulated structures.
 </a>
 
+#### Efficient lattice particle simulation algorithms
+The commonly used explicit dynamic solution algorithm for lattice particle method is time consuming, 
+especially for large scale simulations (e.g., many grains within 3D microstructure). 
+A new atomic finite element method for the proposed lattice particle method is developed to address 
+this issue. First, the energy minimization principle in AFEM will be applied to the developed 
+non-local lattice formulation at the equilibrium condition during the quasi-static loading steps. 
+The non-local stiffness matrix of elements will be constructed using the similar format in classical 
+FEM. Connectivity in the non-local finite elements will be explored with respect to different 
+crystal microstructures. Following this, the concurrent coupling between classical FEM and the 
+lattice particle method will be developed. The concurrent coupling is achieved by a "faded layer" 
+between the AFEM and FEM domain, where the non-locality gradually reduces from the AFEM domain to 
+the FEM domain. Thus, a smooth transition between the non-local lattice method and FEM can be 
+achieved without numerical artifacts at the boundaries (see **Fig. 6(a)** for a 2D example). 
+Model verification will be performed for several benchmark problems (**Fig. 6(b)**). 
+Significant improvement in computational efficiency is observed for the proposed atomic finite element 
+formulation (**Fig. 6(c)**).
+
+<img src="/_images/nsfmaterial2017report/fig6.png" alt="Drawing" style="height: 300px;"/> 
+
+<a class="caption">**Figure 6.** Efficient lattice particle simulation algorithms 
+**(a)** coupled FEM and lattice particle simulation; 
+**(b)** verification of simulation results with classical FEM method; 
+**(c)** computation efficiency comparison of particle dynamics (blue), proposed method (red), 
+and classical FEM (black)
+</a>
 ***
 
 ### **Publications <a name="publications"></a>**
