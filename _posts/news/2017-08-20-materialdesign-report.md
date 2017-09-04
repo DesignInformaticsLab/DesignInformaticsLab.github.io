@@ -31,34 +31,36 @@ Material microstructures are usually represented as high-resolution images and
 are limited in quantity due to high acquisition costs through experiments. We developed 
 generative models that learn the latent dimensions of microstructures, and create 
 new microstructure samples that are morphologically and statistically similar to 
-the limited samples. This allowed us to bootstrap limited data to improve a predictive model.
+the limited samples. The developed model allowed us to bootstrap limited material samples to improve 
+predictive structure-property models. See details [here](#prediction).
 
 2. **While deep networks outperform conventional models, they are not yet capable of capturing 
- highly nonlinear structure-property mappings.** The physics-based structure-property mapping often involves high computational cost, 
-due to the nonlinear constitutive models of material systems. We validated the hypothesis
+ highly nonlinear structure-property mappings.** The physics-based structure-property mapping often 
+ involves high computational cost, 
+due to nonlinear constitutive models of material systems. We validated the hypothesis
 that deep learning architectures can outperform conventional nonlinear predictive models
 (such as Support Vector Regression) in predicting structure-property mappings. However, we
- found that deep convolutional neural networks cannot attain the prediction accuracy required
+ found that even state-of-the-art deep convolutional neural networks 
+ cannot obtain the required prediction accuracy 
  for material microstructure optimization.
 
 3. **Microstructure evolution of Ti64 during selective laser sintering is modeled and quantified.** 
-We developed physics-based models for Ti-6Al-4V (Ti64) alloy to facilitate a case study 
-and data collection. Specifically, on process-structure mapping, we investigated the modeling and quantification of 
-a hybrid finite-element cellular-automaton model for microstructure evolution. 
+We developed a hybrid finite-element cellular-automaton model for microstructure evolution.
+ This model is used for processing-structure mapping for Ti-6Al-4V (Ti64) alloy microstructures. 
 
 4. **An efficient lattice particle simulation is developed for Ti64 fractual strength computation.**
-A new atomic finite element method for the proposed lattice particle method is developed to
- replace an explicit solver for Ti64 fractual strength computation. Nonlinear elasticity and plasticity 
- constitutive models will be added to refine this method.
+A new atomic finite element method based on lattice particle is developed to
+ replace an explicit solver to more efficiently compute Ti64 fracture strength. Nonlinear elasticity 
+ and plasticity constitutive models will be added to further refine the lattice particle model.
 
 ***
 
 ### **Results and Findings <a name="results"></a>**
 
-The results and findings are summarized below.
+The results and findings are summarized as follows.
 
 #### Generative Model for Microstrutures and Topologies <a name="generative"></a>
-While state-of-the-art generative models has achieved photo-realistic image generation 
+While state-of-the-art generative models have achieved photo-realistic image generation 
 based on often enormous amount of training samples, it is well understood that these models 
 will fail to learn meaningful local patterns (poor distribution matching) when only a small 
 amount of data (in the scale of ten to a hundred) is available. The latter is usually the 
@@ -68,9 +70,9 @@ morphological difference from the samples, making these models inapplicable to m
 systems where properties are sensitive to morphological details. The PIs have partially 
 addressed this challenge using a layer-by-layer learning mechanism through Restricted 
 Boltzmann Machines (see **Fig 1a**), yet this model requires extensive calibration of 
-the model parameters by the designer (see **Fig 1b** and [the paper][jmdcang]), 
+the model parameters (see **Fig 1b** and [the paper][jmdcang]), 
 as it only preserves morphologies within 
-the layers, and has limited control over the output morphology through the network.
+each layers, thus has limited control over the output morphology through a multilayer network.
 
 <img src="/_images/nsfmaterial2017report/fig1.png" alt="Drawing" style="height: 400px;"/> 
 
@@ -85,7 +87,7 @@ hidden-layer activations (denoted as the *style vector*) of a convolutional neur
 network (CNN) when the image passes through it, and optimizes new images to match their 
 style vectors to the target (see **Fig 2a** for ST on material images). Nonetheless, 
 ST is not generative, since the generation of each new image requires an optimization 
-directly in the image space, and thus are costly. 
+directly in the image space. 
 Our model combines ST with a generative model: In each iteration of the 
 training, we pass both the generated images and the samples through a pre-trained CNN 
 (a [*very deep network*][vgg]) to calculate the discrepancy between their style vectors. 
