@@ -51,13 +51,17 @@ correctly installed by type in the command line ```python```.
 2. Install TensorFlow (CPU version) [here](https://www.tensorflow.org/install/) or
 if you are on Windows, [here](https://www.tensorflow.org/install/install_windows).
 
-3. Once done, go to the folder where you hold this code, type in the console: ```
+3. Once done, go to the folder where you hold this code, type in the console: \
+```
 pip install -r requirement.txt
-```. This should install all dependancies.
+```. 
+This should install all dependancies.
 
-4. You can then run the code by typing in: ```
+4. You can then run the code by typing in: 
+```
 python main.py
-```. Alternatively, you can install [Pycharm](https://www.jetbrains.com/pycharm/download) 
+```. 
+Alternatively, you can install [Pycharm](https://www.jetbrains.com/pycharm/download) 
 and run/edit everything from there.
 
 <!--For **Linux** users, you can install prerequisits using the commands below:-->
