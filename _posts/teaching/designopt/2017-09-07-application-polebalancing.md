@@ -115,7 +115,7 @@ In our case, we define reward as 1 when the system does not fail, or 0
 otherwise. The decay parameter $$\gamma$$ defines a long term 
 *value* of the controller $$\pi$$: $$V_k(\pi,s_k) = r_k + 
 \gamma V_{k+1}(\pi,T(s_k,a_k))$$. $$\gamma$$ describes how important 
-future rewards are to the current control decision: larger decay
+future rewards are to the current control decision: larger decay (small $$\gamma$$)
 leads to more greedy decisions.
   
 The goal of optimal control is thus to find a controller $$\pi$$ that maximizes 
@@ -128,10 +128,10 @@ Thus $$V_0(\pi)$$ becomes a random variable parameterized by $$w$$.
 #### Q learning
 When the transition is not known to the controller, one can use 
 **Q learning** to indirectly solve the optimization problem. I will skip 
-details and go directly to the solution. Given a trail with $$K$$ time steps
+details and go directly to the solution. Given a trial run with $$K$$ time steps
 based on the current controller, we collect the instantaneous 
-rewards $$r_k$$, actions $$a_k$$, and the controller outputs $$\pi_k$$. 
-We minimize the following loss function
+rewards $$r_k$$, actions $$a_k$$, and the controller outputs $$\pi_k$$ for $$k=1,...,K$$. 
+We can minimize the following loss function
 
 $$ f(w) = -\sum_{k=1}^K (\sum_{j=k}^K \gamma^{j-k}r_j) (a_k\log(\pi_k)+(1-a_k)\log(1-\pi_k))$$.
 
