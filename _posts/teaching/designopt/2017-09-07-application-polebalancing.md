@@ -137,7 +137,7 @@ $$ f(w) = -\sum_{k=1}^K (\sum_{j=k}^K \gamma^{j-k}r_j) (a_k\log(\pi_k)+(1-a_k)\l
 
 In this loss function, the first term $$\sum_{j=k}^K \gamma^{j-k}r_j$$ represents
 the value at time step $$k$$, the second term $$a_k\log(\pi_k)+(1-a_k)\log(1-\pi_k)$$ is close to
-$$0$$ when the favored action is chosen, and $$-\Inf$$ when the unfavored action is chosen.
+$$0$$ when the favored action is chosen, and $$-\inf$$ when the unfavored action is chosen.
 Essentially, this loss is minimized when all chosen control decisions $$a_k$$ lead
 to high value. Thus by tuning $$w$$, we correct the mistakes we made in the 
 trial (i.e., high value from unfavored move, or low value from favored move).
