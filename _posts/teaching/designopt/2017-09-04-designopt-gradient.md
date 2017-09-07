@@ -70,7 +70,77 @@ the following update scheme:
 $$ \theta_{k+1} = \theta_k - v_t $$ and $$ v_t = \gamma v_{t-1} + \eta \nabla_{\theta} F$$.
 
 ### **AdaDelta and RMSprop <a name="adadelta"></a>**
+#### AdaGrad([paper](http://www.jmlr.org/papers/volume12/duchi11a/duchi11a.pdf))
+Before talking about AdaDelta or RMSprop algorithm, let's take a look at teh AdaGrad first. The AdaGrade update rule is given by the following formula:
+
+$$ G^{k} = G^{k-1} + \nabla J(\theta ^{k-1})^{2}$$
+
+$$ \theta ^{k} = \theta ^{k-1} - \frac{\alpha}{\sqrt{G^{k-1}}}\cdot \nabla J(\theta ^{k-1})$$
+
+G is the historical gradient information. For each parameter we store sum of squares of its all historical gradients, which is to be used to scale the learning rate in later calculation. Unlike SGD, the learning rate of AdaGrad is different for each of the parameters. The parameter value will be large if the historical gradients were small and the value will be small whenever historical gradients were large.
+
+In some of the cases the learning rate keep decreasing from iteration to iteration and finally reach near zeros at a large iteration step, which is a potential problem and solved by the AdaDelta algorithm shown as following.
+
+#### AdaDelta([paper](https://arxiv.org/abs/1212.5701))
+Adadelta combines two ideas, first one is to scale learning rate based on historical gradient while taking into account only recent time window - not the whole history, unlike AdaGrad. The second one is to use component that serves as acceleration term, that accumulates historical updates, similar to momentum.
+
+The update rule is shown as following steps:
+- Compute gradient $$g_t$$ at current time t
+
+- Accumulate gradients(AdaGrad-like step)
+
+$$E[g^2]_{t} = \rho E[\Delta x^{2}]_{t-1} + (1-\rho)\Delta x_{t}^{2}$$
+
+- Compute update
+
+$$\Delta x_{t}=-\frac{\sqrt(E[\Delta x^{2}]_{t-1} + \epsilon)}{\sqrt{E[g^{2}]_{t} + \epsilon}}g_{t}$$
+
+- Accumulate updates(momentum-like step)
+
+$$E[\Delta x^{2}]_{t}=\rho E[\Delta x^{2}]_{t-1} + (1-\rho)\Delta x_{t}^{2}$$
+
+- Apply the update
+
+$$x_{t+1} = x_{t} + \Delta x_t$$
+
+where $$\rho$$ is a decay constant and $$\epsilon$$ is there for numerical stability (usually very small number).
+
+#### RMSprop
+The purpose of RMSprop is similar to Adadelta, which is used to resolve the diminishing learning rate issue for AdaGrad, whose update process is shown as below:
+
+$$E[g^2]_t = 0.9E[g^2]_{t-1} + 0.1g^{2}_{t}$$
+
+$$\theta_{t+1} = \theta - \frac{\eta}{\sqrt{E[g^2]_t + \epsilon}}g_t$$
+
 
 ### **Adam and beyond <a name="adam"></a>**
+#### Adam([paper](https://arxiv.org/abs/1412.6980))
+Adam is another optimization algorithm that has be widely used in neural network community. It is similar to AdaGrad, but with adaptive parameters choice. The updating rule for Adam is determined based on estimation of first(mean) and second raw moment of historical gradients. These numbers are corrected at each iteration.
+
+Adam update rule consists of the following steps:
+- Compute gradient $$g_t$$ at current time t
+
+- Update biased first moment estimation
+
+$$m_t=\beta_1 m_{t-1} + (1-\beta_1)g_t$$
+
+- Update biased second raw moment estimation
+
+$$v_t=\beta_2 v_{t-1} + (1-\beta_2)g_{t}^{2}$$
+
+- Compute bias-corrected first moment estimation
+
+$$\hat{m}_t = \frac{m_t}{1-\beta^{t}_{1}}$$
+
+- Compute bias-corrected second raw moment estimation
+
+$$\hat{v}_t=\frac{v_t}{1-\beta^{t}_2}$$
+
+- Update parameters
+
+$$\theta_t = \theta_{t-1}-\alpha \frac{\hat{m}_t}{\sqrt{\hat{v}_t}+\epsilon}$$
+
+#### Other algorithms
+There are more advanced algorithms appearing from time to time, ex. AdaMax, replacing the second order moment $$v_0$$ with an infinite-order moment to make the process more stable; [Nadam](https://www.openreview.net/pdf?id=OM0jvwB8jIp57ZJjtNEZ), combineing Adam and NAG(Nesterov-accelerated gradient) together, which help the process take more accurate step in the gradient direction.
 
 ### **Summary <a name="summary"></a>**
