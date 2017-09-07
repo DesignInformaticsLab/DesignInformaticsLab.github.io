@@ -25,9 +25,10 @@ MathJax.Hub.Queue(function() {
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 ### Introduction
-![example](/../master/readme/animation.gif)
 
-In this application, you will learn how to use OpenAI gym to create a 
+<img src="/_teaching/designopt/polebalancing/animation.gif" alt="Drawing" style="height: 400px;"/> 
+
+In this tutorial, you will learn how to use OpenAI gym to create a 
 controller for the classic pole balancing problem. The problem will be solved
 using Reinforcement Learning. While this topic requires much involved 
 discussion, here we present a simple formulation of the problem that can be
@@ -36,24 +37,28 @@ can be solved by classic control theory, e.g., through a PID controller.
 However, our solution does not require linearization of the system.
 
 ### Get Ready
+
 #### Downloading this repo
-To download the [code][polecode], you can either click on the green button to download 
-as a zip, or use [git][giturl]. Please see a git tutorial [here][gitdoc].
+To download the [code](https://github.com/hope-yao/cartpole), 
+you can either click on the green button (Clone or download) to download 
+as a zip, or use [git](https://git-scm.com/).
 
 #### Install prerequisites
 
-1. You will first need to install [Python 3.5][pythonurl]. Check if python is 
+1. You will first need to install [Python 3.5](https://www.python.org/downloads/release/python-352/). Check if python is 
 correctly installed by type in the command line ```python```.
-2. Install TensorFlow (CPU version) [here](https://www.tensorflow.org/install/).
-3. Once done, go to the folder where you hold this code, type in
-```
+
+2. Install TensorFlow (CPU version) [here](https://www.tensorflow.org/install/) or
+if you are on Windows, [here](https://www.tensorflow.org/install/install_windows).
+
+3. Once done, go to the folder where you hold this code, type in the console: ```
 pip install -r requirement.txt
-``` 
-This should install all dependancies.
-4. You can then run the code by typing in 
-```
+```. This should install all dependancies.
+
+4. You can then run the code by typing in: ```
 python main.py
-```
+```. Alternatively, you can install [Pycharm](https://www.jetbrains.com/pycharm/download) 
+and run/edit everything from there.
 
 <!--For **Linux** users, you can install prerequisits using the commands below:-->
 <!--```-->
@@ -63,6 +68,7 @@ python main.py
 <!--```-->
 
 ### The design problem
+
 #### Problem statement
 The simple pole balancing (inverse pendulum) setting consists of a pole 
 and a cart. The system states are the cart displacement $$x$$, 
@@ -79,7 +85,7 @@ $$\dot{\theta}$$. The parameters of the default system is as follows:
 | theta_threshold      | 12 (degrees)       |
 | delta_t      | 2.4       |
 
-The system equations are ***.
+<!--The system equations are ***.-->
 
 The controller takes in the system states, and outputs a fixed force on the cart
 to either left or right. The controller needs to be designed so that within
@@ -136,7 +142,7 @@ speeds up the training process.
 #### Controller model
 The controller is modeled as a single-layer neural network:
 
-![MLP](/../master/readme/cart-pole-controller.png)
+<img src="/_teaching/designopt/polebalancing/cart-pole-controller.png" alt="Drawing" style="height: 400px;"/> 
 
 It is found that a single layer is already sufficient for this environment setting. 
 If needed, you can replace the network with more complicated ones. 
@@ -157,7 +163,7 @@ which we will discuss later in the class.
 ### Results
 With default problem settings, we can get a convergence curve similar this: 
 
-![iteration](/../master/readme/iteration.png)
+<img src="/_teaching/designopt/polebalancing/iteration.png" alt="Drawing" style="height: 400px;"/> 
 
 > Y axis of the main plot is the total reward a policy achieves, 
 X axis is the number of training epochs. 
@@ -166,9 +172,11 @@ pole angles in the most recent trial. It can be seen that the learning
 achieves a good controller in the end.
 
 To store videos, you will need to uncomment the line:
+
 ```
 # self.env = wrappers.Monitor(self.env, dir, force=True, video_callable=self.video_callable)
 ```
+
 By doing this, a serial of the simulation videos will be saved in the folder ```/tmp/trial```.
 
 ### Generalization of the problem
@@ -197,12 +205,12 @@ can also be found at [this paper](http://ieeexplore.ieee.org/stamp/stamp.jsp?arn
 <!--$python main.py <lr> <momentum>-->
 <!--```-->
 
-## TODO
-- Move all code to ipynb
-- Add more intro to RL
+<!--## TODO-->
+<!--- Move all code to ipynb-->
+<!--- Add more intro to RL-->
 
-[ipython](https://ipython.org/ipython-doc/2/install/install.html)
+<!--[ipython](https://ipython.org/ipython-doc/2/install/install.html)-->
 
-[tensorflow](https://www.tensorflow.org/install/) 
+<!--[tensorflow](https://www.tensorflow.org/install/) -->
 
-[gym](https://gym.openai.com/docs) 
+<!--[gym](https://gym.openai.com/docs)--> 
