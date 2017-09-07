@@ -1,7 +1,7 @@
 ---
 categories: designopt_tutorial
 layout: opt_default
-title:  Gradient Descent Application: Pole Balancing
+title:  Gradient Descent Application - Pole Balancing
 published: true
 ---
 
