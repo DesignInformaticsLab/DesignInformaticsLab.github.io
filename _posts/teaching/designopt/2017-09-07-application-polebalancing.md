@@ -46,7 +46,8 @@ as a zip, or use [git](https://git-scm.com/).
 #### Install prerequisites
 
 1. You will first need to install [Python 3.5](https://www.python.org/downloads/release/python-352/). Check if python is 
-correctly installed by type in the command line ```python```.
+correctly installed by type in the command line ```python```. 
+**NOTE**: Please choose to install **pip**, and include python in your environment path.
 
 2. Install TensorFlow (CPU version) [here](https://www.tensorflow.org/install/) or
 if you are on Windows, [here](https://www.tensorflow.org/install/install_windows).
