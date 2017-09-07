@@ -113,8 +113,8 @@ the action $$a_k$$. In our case, the transition is given by the system equations
 The reward function defines an instantaneous reward $$r_k = r(s_k)$$.
 In our case, we define reward as 1 when the system does not fail, or 0 
 otherwise. The decay parameter $$\gamma$$ defines a long term 
-*value* of the controller $$\pi$$: $$V_k(\pi) = r_k + 
-\gamma T(s_k,a_k)V_{k+1}(\pi)$$. $$\gamma$$ describes how important 
+*value* of the controller $$\pi$$: $$V_k(\pi,s_k) = r_k + 
+\gamma V_{k+1}(\pi,T(s_k,a_k))$$. $$\gamma$$ describes how important 
 future rewards are to the current control decision: larger decay
 leads to more greedy decisions.
   
