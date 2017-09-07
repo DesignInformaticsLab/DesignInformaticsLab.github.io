@@ -119,11 +119,11 @@ future rewards are to the current control decision: larger decay (small $$\gamma
 leads to more greedy decisions.
   
 The goal of optimal control is thus to find a controller $$\pi$$ that maximizes 
-the expectation $$\mathbb{E}[V_0(\pi)]$$. Specifically, we define the 
+the expectation $$\mathbb{E}_{s_0,a_k}[V_0(\pi,s_0)]$$. Specifically, we define the 
 controller as a function of the states that outputs a number between 0 and 1: $$\pi(s,w)$$. 
 This number is treated as a probability for choosing action 0 (say, force to the left), 
 and thus the probability for the other action is $$1-\pi(s,w)$$.
-Thus $$V_0(\pi)$$ becomes a random variable parameterized by $$w$$.
+Thus $$V_0(\pi,s_0)$$ is a random variable parameterized by $$w$$.
 
 #### Q learning
 When the transition is not known to the controller, one can use 
@@ -135,12 +135,14 @@ We can minimize the following loss function
 
 $$ f(w) = -\sum_{k=1}^K (\sum_{j=k}^K \gamma^{j-k}r_j) (a_k\log(\pi_k)+(1-a_k)\log(1-\pi_k))$$.
 
-Essentially, this objective is maximized when control decisions all lead
+In this loss function, the first term $$\sum_{j=k}^K \gamma^{j-k}r_j$$ represents
+the value at time step $$k$$, the second term $$a_k\log(\pi_k)+(1-a_k)\log(1-\pi_k)$$ is close to
+$$0$$ when the favored action is chosen, and $$-\Inf$$ when the unfavored action is chosen.
+Essentially, this loss is minimized when all chosen control decisions $$a_k$$ lead
 to high value. Thus by tuning $$w$$, we correct the mistakes we made in the 
-trial (high value from unlikely move, or low value from favored move).
+trial (i.e., high value from unfavored move, or low value from favored move).
 
-In the code, you may notice that the discounted rewards 
-$$\sum_{j=k}^K \gamma^{j-k}r_j$$ are normalized.
+In the code, you may notice that the values are normalized.
 According to [this paper](https://arxiv.org/abs/1602.07714), this 
 speeds up the training process.
 
