@@ -24,6 +24,8 @@ MathJax.Hub.Queue(function() {
 </script>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
+## Gradient Descent Application - Pole Balancing
+
 ### Introduction
 
 <img src="/_teaching/designopt/polebalancing/animation.gif" alt="Drawing" style="height: 400px;"/> 
