@@ -23,6 +23,8 @@ MathJax.Hub.Queue(function() {
 </script>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
+## Modern Gradient Descent Algorithms
+
 This is a concise summary of recent developments in gradient descent algorithms. The algorithms
 we discuss are mostly used for problems that (1) require a large amount of data for gradient calculation 
  (e.g., for machine learning and optimal control), 
@@ -150,7 +152,7 @@ $$\theta_{t+1}= \theta_{t} + \Delta \theta_{t} $$.
 
 ### **Adam and beyond <a name="adam"></a>**
 
-#### Adam([paper](https://arxiv.org/abs/1412.6980))
+#### Adam ([paper](https://arxiv.org/abs/1412.6980))
 
 Adam is another optimization algorithm that has be widely used in neural network community. 
 It is similar to AdaGrad, but with adaptive parameters choice. The updating rule 
