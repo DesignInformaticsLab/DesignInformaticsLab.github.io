@@ -25,33 +25,39 @@ MathJax.Hub.Queue(function() {
 
 ## Probability and Statistics Review
 
-The topic on probability and statistics is seemingly off for an optimization class, but in fact closely related. There are
-several reasons to pick up basic probability and statistics background before we move forward in the class.
+The topic on probability and statistics is seemingly off for an optimization class, but in fact it is a closely 
+related topic. There are several reasons to pick up basic probability and statistics background before 
+we move forward in the class.
 
-1. **Response surface**: The evaluation of engineering systems often requires significant computational cost, which makes optimization algorithm
-unafforable or even intractable. In these case, response surface methods can help. A response surface is a **statistical** model
-that approximates the true physical responses of the system to be designed, allowing fast prediction of system performance
+1. **Response surface**: The evaluation of engineering systems often requires significant computational cost, 
+which makes optimization algorithm unafforable or even intractable. In these case, response surface methods 
+can help. A response surface is a **statistical** model that approximates the true physical responses of 
+the system to be designed, allowing fast prediction of system performance
 without running the actual simulations or experiments. 
 
-2. **Parameter estimation**: Some systems under design may contain unknown parameters, e.g., material elasticity or battery resistance.
-To be able to optimize such systems, we need to first identify these parameters. Parameter estimation is essentially a regression problem.
+2. **Parameter estimation**: Some systems under design may contain unknown parameters, e.g., material 
+elasticity or battery resistance. To be able to optimize such systems, we need to first identify these 
+parameters. Parameter estimation is essentially a regression problem.
 
-3. **Reliability based design optimization**: Some design optimization problems have probabilistic objective, e.g., the profit of
-selling a product, or fatigue of a material, due to uncontrollable factors, e.g., consumer choices, or material initial cracks. In these 
-cases, it is important that we not only design for good average performance, but also for minimal chance of failure. For example, one 
-can define the objective as $$F(x) = p(f(x)>f^*)$$ where $$f^*$$ is an upper bound. To optimize for such an objective, one will
+3. **Reliability based design optimization**: Some design optimization problems have probabilistic 
+objective, e.g., the profit of selling a product, or fatigue of a material, due to uncontrollable 
+factors, e.g., consumer choices, or material initial cracks. In these 
+cases, it is important that we not only design for good average performance, but also for minimal 
+chance of failure. For example, one can define the objective as $$F(x) = p(f(x)>f^*)$$ where 
+$$f^*$$ is an upper bound. To optimize for such an objective, one will
 need to quantify the probabilistic distribution of $$f(x)$$.
  
 ### Probability vs. statistics
  
-**Probability** is about the **modeling** of random variables, the derivation and analysis of these models through deduction.
- E.g., deducting the probability for any two students with the same birthday in a classroom is a probability problem.
+**Probability** theory is about **modeling** of random variables, the derivation and analysis of 
+these models through deduction. E.g., deducting the probability for any two students with the same birthday 
+in a classroom is a probability problem.
  
 **Statistics** is about the analysis of **data**, the hypotheses and tests derived from the data through induction.
 E.g., testing the hypothesis that people born more often in the fall (I made it up) is a statistics problem.
 
-The two are related. Especially, insights gain from statistics are often based on probabilistic models.
- 
+The two are also related.
+
 ### Continuous random variables
 
 Probability density function (pdf)} $$f_X(x)$$ of random variable $$X$$ describes the probability:
@@ -137,8 +143,6 @@ $$\mu_{\bar{X}} = E(\frac{1}{n}\sum_{i=1}^n X_i) = \mu$$.
 The variance is
 
 $$\sigma^2_{\bar{X}} = E\left((\frac{1}{n}\sum_{i=1}^n X_i - \mu)^2\right) = \frac{\sigma^2}{n}$$.
-
-See derivation from discrete random variable.
 
 Therefore, the average of normal random variables is a random variable:
 
