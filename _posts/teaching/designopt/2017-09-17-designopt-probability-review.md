@@ -49,14 +49,15 @@ need to quantify the probabilistic distribution of $$f(x)$$.
  
 ### Probability vs. statistics
  
-**Probability** theory is about **modeling** of random variables, the derivation and analysis of 
-these models through deduction. E.g., deducting the probability for any two students with the same birthday 
-in a classroom is a probability problem.
+**Probability** theory is about the derivation and analysis of 
+**models** that may help to explain real-world observations through deduction. E.g., we can deduct the 
+probability of having two students with the same birthday 
+in the class without using data.
  
-**Statistics** is about the analysis of **data**, the hypotheses and tests derived from the data through induction.
-E.g., testing the hypothesis that people born more often in the fall (I made it up) is a statistics problem.
-
-The two are also related.
+**Statistics** is about the analysis of **data** that may help to derive hypotheses
+and models through induction.
+E.g., we can test the hypothesis that people born more often in the fall (I made it up) if we
+observe such a trend from the data.
 
 ### Continuous random variables
 
