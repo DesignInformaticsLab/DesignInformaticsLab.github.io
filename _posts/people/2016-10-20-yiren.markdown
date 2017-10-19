@@ -4,4 +4,5 @@ position: Assistant Professor
 link: semte.engineering.asu.edu/ren-yi/
 categories: people
 image: yiren2012jul.png
+project: "Stay hungry. Stay foolish."
 ---
