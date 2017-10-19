@@ -4,4 +4,5 @@ position: Ford, MAE Bachelor (2015)
 link:
 categories: alumni
 image:
+project: Racetrack optimization
 ---

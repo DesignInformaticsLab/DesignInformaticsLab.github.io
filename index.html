@@ -54,7 +54,7 @@ date: 2016-05-30
       {% else %}
         <img src="{{ site.url }}/_images/people/missing_people.png">
       {% endif %}
-      <br><a href="http://{{ people.link }}">{{ people.name }}, {{ people.position }} </a><br>
+      <br><a href="http://{{ people.link }}">{{ people.name }},</a><br> {{ people.position }}, project: {{ people.project }}
     </div>
     {% endif %}
   {% endfor %}
@@ -70,7 +70,7 @@ date: 2016-05-30
         {% else %}
           <img src="{{ site.url }}/_images/people/missing_people.png">
         {% endif %}
-        <br><a href="http://{{ people.link }}">{{ people.name }}, {{ people.position }} </a><br>
+        <br><a href="http://{{ people.link }}">{{ people.name }},</a><br> {{ people.position }}, project: {{ people.project }}
       </div>
     {% endif %}
   {% endfor %}

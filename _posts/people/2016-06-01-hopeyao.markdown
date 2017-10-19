@@ -4,4 +4,5 @@ position: MAE PhD
 link:
 categories: people
 image: hope-yao.png
+project: Adversarial attack and robust classification 
 ---
