@@ -1,5 +1,5 @@
 ---
-name: Malcolm Reagan
+name: Malcolm Regan
 position: EE Undergrad
 link:
 categories: people
