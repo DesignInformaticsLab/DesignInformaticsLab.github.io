@@ -6,7 +6,7 @@ published: true
 categories: news
 ---
 
-**Participants**: Ruijin Cang (PhD student), Houpu Yao (PhD student), Dr. Hechao Li (PhD student, graduated), 
+**Participants**: Ruijin Cang (PhD student), Houpu Yao (PhD student), Hechao Li (PhD student, graduated), 
 Shaohua Chen (PhD student), Yaopengxiao Xu (PhD student), [Yi Ren][yiren] (Asst. Prof.), 
 [Yang Jiao][yangjiao] (Asst. Prof.), [Yongming Liu][yongming] (Prof.)
 
