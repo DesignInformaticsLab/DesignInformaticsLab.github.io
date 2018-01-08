@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body>
+
+<aside>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><image style="height: 40px; margin-top: 5px; margin-left: 15px;" src="/_images/asulogo.png" /></li>
+                <li><a href="{{ site.url }}/_pages/teaching/mechdesign_index.html">ASU MEE342: Principles of Mechanical Design</a></li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+
+
+<main>
+    <article>
+        {{ content }}
+    </article>
+    {% include footer.html %}
+</main>
+</body>
+
+</html>
