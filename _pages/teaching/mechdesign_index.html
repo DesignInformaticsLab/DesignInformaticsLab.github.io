@@ -16,6 +16,13 @@ category: course_mechdesign
 {% endfor %}
 <br>
 
+<b>Homework</b><br>
+{% for post in site.posts %}
+{% if post.categories contains 'mechdesign_homework' AND post.published %}
+* <a href="{{ post.url }}">{{ post.title }}</a><br>
+{% endif %}
+{% endfor %}
+<br>
 <!-- -->
 <!--<b>Supplementary Materials</b><br>-->
 <!--{% for post in site.posts %}-->
