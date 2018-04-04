@@ -20,12 +20,15 @@ To start, define an explicit first-order ODE in the form:
 This function can be described in MATLAB as:
 
 ```matlab
-function [x_dot] = myfunc(x)
+function [x_dot] = myfunc(t,x)
 
 x_dot = f(x); % write out your function f here
 
 end
 ```
+
+Note that the first argument of `myfunc` is time. If your function does not take time explicitly, you
+will still need to put a placeholder there.
 
 After your function is declared, choose a time-span and an initial condition and call 
 the function as follows:
