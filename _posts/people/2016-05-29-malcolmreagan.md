@@ -1,8 +1,8 @@
 ---
 name: Malcolm Regan
-position: EE Undergrad
+position: NCSU PhD, EE Bachelor (2018)
 link:
-categories: people
+categories: alumni
 image:
 project: Adversarial attack and robust classification
 ---

@@ -1,8 +1,8 @@
 ---
 name: Nathan Cahill
-position: MAE PhD
+position: Orbital ATK, MAE PhD
 link:
-categories: alumni (w/ Prof. T. Sugar)
-image:
+categories: alumni (w/ Dr. T. Sugar)
+image: nathan.jpg
 project: Robotics
 ---
