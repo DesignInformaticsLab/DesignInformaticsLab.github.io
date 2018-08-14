@@ -1,9 +1,9 @@
 ---
 categories: designopt_tutorial
 layout: opt_default
-title:  Project Report Guideline
-published: true
----
+title:  Final Project Report Guideline
+published: false
+----------------
 ## Project Report Guideline
 
 ### GENERAL FORMAT

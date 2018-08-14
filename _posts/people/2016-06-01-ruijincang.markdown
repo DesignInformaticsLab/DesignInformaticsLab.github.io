@@ -1,8 +1,8 @@
 ---
 name: Ruijin Cang
-position: MAE PhD
-link:
-categories: people
+position: Research Scientist, HERE Technologies
+link: https://scholar.google.com/citations?user=ZFCf6jgAAAAJ&hl=en&oi=ao
+categories: alumni
 image: ruijincang.png
 project: Computational material design
 ---
