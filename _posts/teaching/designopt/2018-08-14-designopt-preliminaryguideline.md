@@ -3,7 +3,8 @@ categories: designopt_tutorial
 layout: opt_default
 title:  Preliminary Report Guideline
 published: true
----------------
+---
+
 ## Preliminary Report Guideline
 
 ### GENERAL FORMAT
