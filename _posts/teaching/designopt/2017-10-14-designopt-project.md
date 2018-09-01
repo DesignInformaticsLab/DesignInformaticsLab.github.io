@@ -15,23 +15,59 @@ your interests.
 
 ### Research topics
 1. Soft gripper defect design (100%): Switchable adhesive materials have been developed as
-soft grippers for lifting flat surfaces (such as microchips, glasses, solar panels, and
-other products) of significantly larger dimensions with high energy efficiency, and have
-potential in lowering manufacturing costs. Importantly, the magnitude of the adhesive
-force (i.e., the maximal pulling force) is tunable via external stimuli. For example,
-when a voltage is applied, the percolating conductive propylene-based elastomer (cPBE)
-phase carrying a current becomes softened due to joule heating, which leads to
-re-distribution of stress concentration on the contact surface and thus, a decreased
-maximal pulling force. An ideal gripper should possess a large pulling force without the stimuli
-(to be able to pull up heavy objects) and a small pulling force with the stimuli
-(to be able to drop light objects).
-Both forces are influenced by both the material properties and defect patterns on
-the interface. This project investigates the topological design of the interface defects
-that governs the propagation of cracks under pulling, thus achieving high maximal pulling
-force. Please see initial model development
-[here](http://designinformaticslab.github.io/_teaching/designopt/projects/DefectTopology.pdf)
-and the code repo [here](https://github.com/DesignInformaticsLab/fracture_network/tree/master).
+   soft grippers for lifting flat surfaces (such as microchips, glasses, solar panels, and
+   other products) of significantly larger dimensions with high energy efficiency, and have
+   potential in lowering manufacturing costs.
 
+   Importantly, the magnitude of the adhesive
+   force (i.e., the maximal pulling force) is tunable via external stimuli. For example,
+   when a voltage is applied, the percolating conductive propylene-based elastomer (cPBE)
+   phase carrying a current becomes softened due to joule heating, which leads to
+   re-distribution of stress concentration on the contact surface and thus, a decreased
+   maximal pulling force. An ideal gripper should possess a large pulling force without the stimuli
+   (to be able to pull up heavy objects) and a small pulling force with the stimuli
+   (to be able to drop light objects).
+
+   These pulling forces are influenced by both the material properties and defect patterns on
+   the interface. This project investigates the topological design of the interface defects
+   that governs the propagation of cracks under pulling, thus achieving high maximal pulling
+   force. Please see initial model development
+   [here](http://designinformaticslab.github.io/_teaching/designopt/projects/DefectTopology.pdf)
+   and the code repo [here](https://github.com/DesignInformaticsLab/fracture_network/tree/master).
+
+   **Requirement**: Students with a background in Python programming is preferred.
+
+2. Social grace in self-driving (100%): Self-driving cars are conservative
+   in the way they drive. However, it is not clear whether their conservative behaviors
+   are always seen as socially graceful. Let's look at a specific counter-example: When being the leading car waiting for a left turn, the self-driving car may not understand the tacit
+   rule that it should move itself forward a bit so that cars behind it can have a better
+   chance to get through during their turn. Further, the self-driving car will not understand
+   why cars behind it would honk when it does not move forward.
+
+   This project seeks answers to the following questions:
+
+   * What is the formalism of motion planning to reproduce human-like behavior (moving forward
+   a little bit in this case) when the self-driving car understands the intent of
+   the car behind it?
+
+   * What is the formalism of learning to enable recognition of others' intents when
+   the self-driving car receives a honk?
+
+   Related papers:
+
+   * [Englert et al. "Inverse KKT: Learning cost functions
+   of manipulation tasks from demonstrations"](http://journals.sagepub.com.ezproxy1.lib.asu.edu/doi/pdf/10.1177/0278364917745980)
+
+   * [Sadigh et al. "Planning for Autonomous Cars that Leverage Effects on Human Actions"](https://pdfs.semanticscholar.org/baef/0a1859fc0216c89289c69da88d6dc8399fc7.pdf)
+
+   **Requirement**: Students with a background in Python programming is preferred.
+
+3. Real-time learning of material constitutive models during experiments (100%): The goal of this project
+   is to investigate the use of GPU and convolutional neural networks in accelerating the
+   process of parameter estimation for a material sample under loading. More details will be updated.
+
+   **Requirement**: Students with a background in Python programming is preferred.
+   
 ### Autonomous driving
 
 1. Share ride (100%): Consider a city as a graph with finite number of nodes and edges. Each request is represented by
@@ -41,17 +77,7 @@ Let a finite number of cars be at a subset of nodes. What is the best routing st
 
 * Related papers: [Alonso-Mora et al. "On-demand high-capacity ride-sharing via dynamic trip-vehicle assignment"](http://www.pnas.org/content/early/2017/01/01/1611675114.full).
 
-2. Intent decoding and vehicle control (100%): Consider the problem of understanding
-the intent of an agent (e.g., a vehicle) through observations of its trajectory,
-and react accordingly.
-How would the problem change if you (another agent) are interacting with that agent?
-
-* Related papers: [Englert et al. "Inverse KKT: Learning cost functions
-of manipulation tasks from demonstrations"](http://journals.sagepub.com.ezproxy1.lib.asu.edu/doi/pdf/10.1177/0278364917745980)
-
-[Sadigh et al. "Planning for Autonomous Cars that Leverage Effects on Human Actions"](https://pdfs.semanticscholar.org/baef/0a1859fc0216c89289c69da88d6dc8399fc7.pdf)
-
-3. Race track optimization (100%): Please see this previous
+2. Race track optimization (100%): Please see this previous
 [project report](http://designinformaticslab.github.io/_teaching/designopt/projects/2015/desopt_2015_03.pdf), and
 propose to improve (1) the modeling, (2) the problem formulation, (3) or the optimization algorithm based on 
 the report.
