@@ -13,6 +13,25 @@ get by picking the topic.
 I will keep adding ideas and references to this list depending on
 your interests.
 
+### Research topics
+1. Soft gripper defect design (100%): Switchable adhesive materials have been developed as
+soft grippers for lifting flat surfaces (such as microchips, glasses, solar panels, and
+other products) of significantly larger dimensions with high energy efficiency, and have
+potential in lowering manufacturing costs. Importantly, the magnitude of the adhesive
+force (i.e., the maximal pulling force) is tunable via external stimuli. For example,
+when a voltage is applied, the percolating conductive propylene-based elastomer (cPBE)
+phase carrying a current becomes softened due to joule heating, which leads to
+re-distribution of stress concentration on the contact surface and thus, a decreased
+maximal pulling force. An ideal gripper should possess a large pulling force without the stimuli
+(to be able to pull up heavy objects) and a small pulling force with the stimuli
+(to be able to drop light objects).
+Both forces are influenced by both the material properties and defect patterns on
+the interface. This project investigates the topological design of the interface defects
+that governs the propagation of cracks under pulling, thus achieving high maximal pulling
+force. Please see initial model development
+[here](http://designinformaticslab.github.io/_teaching/designopt/projects/DefectTopology.pdf)
+and the code repo [here](https://github.com/DesignInformaticsLab/fracture_network/tree/master).
+
 ### Autonomous driving
 
 1. Share ride (100%): Consider a city as a graph with finite number of nodes and edges. Each request is represented by
@@ -33,7 +52,7 @@ of manipulation tasks from demonstrations"](http://journals.sagepub.com.ezproxy1
 [Sadigh et al. "Planning for Autonomous Cars that Leverage Effects on Human Actions"](https://pdfs.semanticscholar.org/baef/0a1859fc0216c89289c69da88d6dc8399fc7.pdf)
 
 3. Race track optimization (100%): Please see this previous
-[project report](http://designinformaticslab.github.io/_teaching//designopt/projects/2015/desopt_2015_03.pdf), and
+[project report](http://designinformaticslab.github.io/_teaching/designopt/projects/2015/desopt_2015_03.pdf), and
 propose to improve (1) the modeling, (2) the problem formulation, (3) or the optimization algorithm based on 
 the report.
 
