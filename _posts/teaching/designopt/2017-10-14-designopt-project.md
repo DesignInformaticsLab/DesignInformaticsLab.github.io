@@ -37,6 +37,8 @@ your interests.
 
    **Requirement**: Students with a background in Python programming is preferred.
 
+   **What do you learn**: TensorFlow, Design sensitivity analysis
+
 2. Social grace in self-driving (100%): Self-driving cars are conservative
    in the way they drive. However, it is not clear whether their conservative behaviors
    are always seen as socially graceful. Let's look at a specific counter-example: When being the leading car waiting for a left turn, the self-driving car may not understand the tacit
@@ -62,12 +64,16 @@ your interests.
 
    **Requirement**: Students with a background in Python programming is preferred.
 
+   **What do you learn**: Game theory, Model predictive control
+
 3. Real-time learning of material constitutive models during experiments (100%): The goal of this project
    is to investigate the use of GPU and convolutional neural networks in accelerating the
    process of parameter estimation for a material sample under loading. More details will be updated.
 
    **Requirement**: Students with a background in Python programming is preferred.
-   
+
+   **What do you learn**: GPU acceleration, TensorFlow
+
 ### Autonomous driving
 
 1. Share ride (100%): Consider a city as a graph with finite number of nodes and edges. Each request is represented by
