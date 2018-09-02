@@ -74,6 +74,20 @@ your interests.
 
    **What do you learn**: GPU acceleration, TensorFlow
 
+4. Understanding Power Loss Due to Mechanical Antagonism (100%): Comparatively slow growth
+   in power storage and generation makes power-efficient designs desirable for legged robot
+   systems. One important cause of power losses in robotic systems is the mechanical
+   antagonism phenomenon, i.e. one or more motors being used as brakes while the others
+   exert positive energy. This project aims to develop a rigorous understanding of
+   mechanical antagonism in multiactuator robotic limbs, and investigate the problem of
+   minimizing mechanical antagonism in redundant manipulators.
+
+   This project will be based on a previous paper that my student wrote. The aim is to
+   improve the paper and prepare a draft for the ASME Journal of Mechanisms and Robotics.
+
+   **Requirement**: Background in robotics.
+
+
 ### Autonomous driving
 
 1. Share ride (100%): Consider a city as a graph with finite number of nodes and edges. Each request is represented by
