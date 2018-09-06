@@ -87,7 +87,6 @@ your interests.
 
    **Requirement**: Background in robotics.
 
-
 ### Autonomous driving
 
 1. Share ride (100%): Consider a city as a graph with finite number of nodes and edges. Each request is represented by
