@@ -75,7 +75,8 @@ $$ \theta_{k+1} = \theta_k - v_t $$ and $$ v_t = \gamma v_{t-1} + \eta \nabla_{\
 
 If one considers gradient descent as a proportional controller, then the Momentum method is similar to 
 a discrete-time integral controller: It is good at correcting persistent error, and thus has better performance
-at addressing ill-conditioned problems than gradient descent.
+at addressing ill-conditioned problems than gradient descent. See this
+[paper](https://www4.comp.polyu.edu.hk/~cslzhang/paper/CVPR18_PID.pdf) on the connection between PID and momentum.
 
 #### Nestrov Accelerated Gradient
 
