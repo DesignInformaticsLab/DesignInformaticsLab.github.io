@@ -32,7 +32,7 @@ your interests.
    the interface. This project investigates the topological design of the interface defects
    that governs the propagation of cracks under pulling, thus achieving high maximal pulling
    force. Please see initial model development
-   [here](http://designinformaticslab.github.io/_teaching/designopt/projects/DefectTopology.pdf)
+   [here](http://designinformaticslab.github.io/_teaching/designopt/DefectTopology.pdf)
    and the code repo [here](https://github.com/DesignInformaticsLab/fracture_network/tree/master).
 
    **Requirement**: Students with a background in Python programming is preferred.
