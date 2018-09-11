@@ -32,37 +32,38 @@ MathJax.Hub.Queue(function() {
 
 In this tutorial, you will learn how to use OpenAI gym to create a 
 controller for the classic pole balancing problem, and test what you learned
-on a rocket landing problem. Both will be solved using [Reinforcement Learning]().
-While fully understanding RL would require background knowledge that we have not
-yet covered in this class (Markov Decision Process, Dynamic Programming,
-and Policy Search), here we present a thought process of formulating an
- optimization problem based on design requirements, and show that gradient descent
- can be applied to solve this problem.
+on a rocket landing problem. Both will be solved using Reinforcement Learning.
+While fully understanding RL would require background knowledge beyond
+what we have covered in this class (namely, Markov Decision Process, Dynamic Programming,
+and Policy Search), here we present one particular formulation of an
+ optimization problem for designing a controller, and show that
+ gradient descent can be applied to solve this problem.
+
 It should be noted that a controller for pole balancing
 can be designed and analyzed through classic control theory, by linearizing
-its dynamics. The presented solution here will not require knowledge about the
-dynamical system (is it good news or not?).
+its dynamics. The presented solution here does not require knowledge about the
+dynamical system, nor does it require linearization (is it good news or not?).
 
 ### Get Ready
 
-This section discusses the preparation you need to kickstart the project.
+This section discusses the preparation you need to kick start the project.
 We will start with a minimalistic guideline, and then introduce all gadgets
 involved (Git, Github, Python, and TensorFlow) for those who are interested.
-Lastly, we introduce Docker.
 
 #### A minimalistic guideline to get things to work (without Docker)
 
-This guideline is written for Windows users and tested on Windows.
-For Linux and Mac users, you can still follow the guideline, although you should
+This guideline is written for Windows users and tested on Windows only.
+For Linux and Mac users, you can follow the guideline, although you should
 already have Python and Git installed by default.
 
-1. To download the [code](https://github.com/hope-yao/cartpole),
+1. To download the cartpole sample [code](https://github.com/hope-yao/cartpole),
 you can either click on the green button (Clone or download) to download 
 as a zip, or use [Git](https://git-scm.com/)(See intro to Git).
 
 2. You will install [Python 3.5](https://www.python.org/downloads/release/python-352/).
-Check if python is correctly installed by type in the command line ```python```. To do so, launch the
-command prompt or Windows Powershell (go to start and search ```cmd``` or ```powershell```).
+Check if Python is correctly installed by typing in the command line ```python```.
+To do so, launch the
+command prompt (go to start and search ```cmd```).
 **IMPORTANT**: When you install Python, please choose to
 install **pip**, and choose to **include Python in your environment path**.
 
@@ -82,7 +83,10 @@ This should install all dependencies.
 python main.py
 ```. 
 
-#### A little more details on gadgets involved
+#### A little more details on the gadgets involved
+
+The following would be useful if you plan to build your course project using
+Python, TensorFlow, or Github.
 
 1. **Development Environment**: I recommend [Pycharm](https://www.jetbrains.com/pycharm/download).
 This is an environment where you can manage all Python versions, packages, and version control,
@@ -96,7 +100,7 @@ which I will explain next. **NOTE**: As a student, you can get a free license fo
 
 2. **Version control**: The idea of version control is to keep track of all changes
 you make throughout the project so that you can always trace back to
-an earlier version of your project. It also makes it much easier for collaboration,
+an earlier version of your project. It also make collaboration more seamless,
 e.g., by automatically merging together different versions of the same
 document produced by members of a team. **Git** is arguably the most popular
 version control package out there right now. Once you install git, you can ask it to track
@@ -104,7 +108,7 @@ any document you work on, e.g., texts, codes, etc. Here we use git to both *clon
 an existing project from github, and to version control that cloned project locally.
 
 3. **Github**: Github is the place where your store your project for free, as long as
-the project is made publicly available. It is becoming a standard in academia that
+the project is made publicly available. It is becoming a standard in academia and some industry that
 codes and data be published on github so that results claimed by researchers can be reproduced.
 In this class, you are required to publish your project on github so that your models
 can be reused by future students (depending on your choice of
@@ -117,6 +121,7 @@ If you successfully get the example code to run, and wonder what happened
 under the hood, please read on.
 
 #### Problem statement
+
 The simple pole balancing (inverse pendulum) setting consists of a pole
 and a cart. The system states are the cart displacement $$x$$, 
 cart velocity $$\dot{x}$$, pole angle $$\theta$$, and pole angular velocity 
