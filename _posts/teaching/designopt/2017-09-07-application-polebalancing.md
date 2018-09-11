@@ -289,7 +289,7 @@ about the following questions.
 
 * What do you think is a good objective function to use for the training?
 
-* How should the network architecture look like?
+* How will you formulate the problem if the dynamics of the rocket is known?
 
 
 
