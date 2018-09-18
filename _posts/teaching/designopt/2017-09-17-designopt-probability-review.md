@@ -44,7 +44,7 @@ objective, e.g., the profit of selling a product, or fatigue of a material, due 
 factors, e.g., consumer choices, or material initial cracks. In these 
 cases, it is important that we not only design for good average performance, but also for minimal 
 chance of failure. For example, one can define the objective as $$F(x) = p(f(x)>f^*)$$ where 
-$$f^*$$ is an upper bound. To optimize for such an objective, one will
+$$f^*$$ is a lower bound. To optimize for such an objective, one will
 need to quantify the probabilistic distribution of $$f(x)$$.
  
 ### Probability vs. statistics
@@ -183,7 +183,7 @@ distribution as an example, we have
 
 $$l(\theta; x_1,\cdots,x_n) = \sum_{i=1}^n (\frac{(x_i-\mu)^2}{2\sigma^2} + \log \sqrt{2\pi} + \log\sigma)$$
 
-The optimal solution is $$\mu_{MLE} = \frac{\sum_{i=1}^n x_i}/n $$, and $$\sigma_{MLE}^2 = \frac{\sum_{i=1}^n (x_i-\mu)^2}{n} $$.
+The optimal solutions are $$\mu_{MLE} = \frac{\sum_{i=1}^n x_i}{n} $$, and $$\sigma_{MLE}^2 = \frac{\sum_{i=1}^n (x_i-\mu)^2}{n} $$.
 
 Notice that both $$\mu_{MLE}$$ and $$\sigma_{MLE}^2$$ are random variables since $$x_i$$ are random variables.
 
@@ -193,7 +193,7 @@ For $$\sigma_{MLE} = \frac{\sum_{i=1}^n (x_i-\mu)^2}{n} $$, since the calculatio
 plug in $$\mu_{MLE}$$ as an approximation. However, doing so will make $$\sigma_{MLE}$$ a biased estimate. One can check by calculating
 the mean of $$\sigma_{MLE}^2$$
 
-$$\mathbb{E}\sigma_{MLE}^2 = \mathbb{E}\frac{\sum_{i=1}^n (x_i-\mu)^2}{n} = \frac{n-1}{n} \sigma^2$$.
+$$\mathbb{E}[\sigma_{MLE}^2] = \mathbb{E}[\frac{\sum_{i=1}^n (x_i-\mu)^2}{n}] = \frac{n-1}{n} \sigma^2$$.
 
 Therefore, we use the [correction](https://en.wikipedia.org/wiki/Bessel%27s_correction) $$\sigma_{MLE}^2 = \frac{\sum_{i=1}^n (x_i-\mu)^2}{n-1}$$.
 
