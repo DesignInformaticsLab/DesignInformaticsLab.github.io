@@ -61,14 +61,14 @@ observe such a trend from the data.
 
 ### Continuous random variables
 
-Probability density function (pdf)} $$f_X(x)$$ of random variable $$X$$ describes the probability:
+Probability density function (pdf) $$f_X(x)$$ of random variable $$X$$ describes the probability:
 
 $$P(x_1 \leq X \leq x_2) = \int_{x_1}^{x_2} f_X(x)dx$$
 
 pdf properties: $$f_X(x) \geq 0, \qquad \int_{-\infty}^{\infty} f_X(x) = 1$$
 
 Let $$X$$ be a continuous random variable with pdf $$f_X(x)$$. The **mean** (expected value) 
-of $$X$$ is $$\mu = E(X) = \int_{-\infty}^{\infty} x f_X(x) dx$$.
+of $$X$$ is $$\mu = \mathbb{E}[X] = \int_{-\infty}^{\infty} x f_X(x) dx$$.
 
 The variance is $$\sigma^2 = \int_{-\infty}^{\infty} (x-\mu)^2 f_X(x) dx$$.
 
@@ -78,7 +78,7 @@ A normal distribution has pdf
 
 $$f_X(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
  
-When $\mu = 0$ and $\sigma = 1$, we have a {\bf standard} normal distribution.
+When $\mu = 0$ and $\sigma = 1$, we have a **standard** normal distribution.
 
 ### How to derive the normal pdf?
 
@@ -195,6 +195,6 @@ the mean of $$\sigma_{MLE}^2$$
 
 $$\mathbb{E}[\sigma_{MLE}^2] = \mathbb{E}[\frac{\sum_{i=1}^n (x_i-\mu)^2}{n}] = \frac{n-1}{n} \sigma^2$$.
 
-Therefore, we use the [correction](https://en.wikipedia.org/wiki/Bessel%27s_correction) $$\sigma_{MLE}^2 = \frac{\sum_{i=1}^n (x_i-\mu)^2}{n-1}$$.
+Therefore, we use the [correction](https://en.wikipedia.org/wiki/Bessel%27s_correction) $$\sigma_{MLE}^2 = \frac{\sum_{i=1}^n (x_i-\mu_{MLE})^2}{n-1}$$.
 
 
