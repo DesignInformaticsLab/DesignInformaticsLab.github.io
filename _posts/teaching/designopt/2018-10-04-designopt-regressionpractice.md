@@ -42,7 +42,7 @@ based on what you observed:
 6. What is the difference between feedforward neural network and Kriging?
 
 ## Sample codes
-A sample code can be downloaded [here](/_teaching/designopt/enginedata.mat).
+A sample code can be downloaded [here](/_teaching/designopt/metamodeling2.m).
 In the following, we briefly go through the code.
 
 ### Data visualization
