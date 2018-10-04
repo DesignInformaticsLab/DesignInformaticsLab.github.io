@@ -25,7 +25,7 @@ MathJax.Hub.Queue(function() {
 
 ## Overview
 In this exercise you will put the regression techniques learned through the last few lectures
-to use. An engine fuel efficiency data can be downloaded [here](../_teaching/designopt/enginedata.mat).
+to use. An engine fuel efficiency data can be downloaded [here](/_teaching/designopt/enginedata.mat).
 Use the data to create regression models and answer the following questions
 based on what you observed:
 
@@ -42,7 +42,7 @@ based on what you observed:
 6. What is the difference between feedforward neural network and Kriging?
 
 ## Sample codes
-A sample code can be downloaded [here](../_teaching/designopt/enginedata.mat).
+A sample code can be downloaded [here](/_teaching/designopt/enginedata.mat).
 In the following, we briefly go through the code.
 
 ### Data visualization
