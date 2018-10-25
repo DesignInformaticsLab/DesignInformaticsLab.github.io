@@ -26,6 +26,8 @@ MathJax.Hub.Queue(function() {
 
 ## Application of Reduced Gradient - Topology Optimization
 
+<img src="/_images/tutorial_topopt/Picture1.gif" alt="Drawing" style="height: 300px;"/>
+
 ### Introduction
 
 In this tutorial, you will learn to implement an optimization algorithm for 
@@ -116,7 +118,7 @@ $$ = [..., - {\bf u}^T_i \frac{\partial \bar{\bf K}_e \Delta E x_i^3}{\partial x
 $$ = [..., - 3\Delta E x_i^2 {\bf u}^T_i \bar{\bf K}_e {\bf u}_i, ...]$$
 
 ### The algorithm
-The seudo code for compliance minimization is the following:
+The pseudo code for compliance minimization is the following:
 
 
 1. Problem setup (see details below)
@@ -144,7 +146,7 @@ $$\Delta x = 1000$$ (or any number larger than $$\epsilon$$)
          
     3.7. Move $${\bf x}'_{k+1}$$ back to the feasible domain:
     If $${\bf 1}^T{\bf x}_{k} < v$$ and $$-{\bf 1}^T\frac{df}{d{\bf x}}<0$$, then $${\bf x}'_{k+1}$$ satisfies $$g$$.
-     with $$\mu = 0$$. If $${\bf x}'_{k+1}$$ does not satisfy $$g$$, we will increase $$\mu$$ using a binary search, i.e., 
+     with $$\mu = 0$$. If $${\bf x}'_{k+1}$$ does not satisfy $$g$$, we will increase $$\mu$$ using bisection, i.e.,
      search in $$[0,\mu_{max}]$$ where $$\mu_{max}$$ is a large positive number. Also, we 
      will truncate $${\bf x}'_{k+1}$$ between 0 and 1. 
 
@@ -232,7 +234,7 @@ H = sparse(iH,jH,sH);
 Hs = sum(H,2);
 {% endhighlight %}
 
-The design sensitivity can then filtered by
+The design sensitivity can then be filtered by
 
 {% highlight MATLAB %}
     dc(:) = H*(x(:).*dc(:))./Hs./max(1e-3,x(:));
@@ -358,3 +360,11 @@ end
 % caused by the use of the program.                                        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ```
+
+### Local density constraint
+Local density constraint has been discussed in [Wu. et al](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7829422).
+This formulation of topology optimization derives more porous-like structures
+that are robust against local defects.
+
+[Here](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7829422)
+is an implementation of the algorithm from the paper, using an Augmented Lagrangian Method.
