@@ -26,7 +26,7 @@ MathJax.Hub.Queue(function() {
 
 ## Application of Reduced Gradient - Topology Optimization
 
-<img src="/_images/tutorial_topopt/Picture1.gif" alt="Drawing" style="height: 300px;"/>
+<img src="/_images/tutorial_topopt/infill.gif" alt="Drawing" style="height: 300px;"/>
 
 ### Introduction
 
