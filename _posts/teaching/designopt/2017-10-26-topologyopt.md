@@ -242,7 +242,8 @@ The design sensitivity can then be filtered by
 
 
 ### The template code
-```
+
+{% highlight MATLAB %}
 %%%% Modified by Max Yi Ren (ASU) %%%%%%%%%%%%%%%%%%%%%%%
 
 %%%% AN 88 LINE TOPOLOGY OPTIMIZATION CODE Nov, 2010 %%%%
@@ -359,7 +360,7 @@ end
 % free from errors. Furthermore, we shall not be liable in any event       %
 % caused by the use of the program.                                        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-```
+{% endhighlight %}
 
 ### Local density constraint
 Local density constraint has been discussed in [Wu. et al](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7829422).
