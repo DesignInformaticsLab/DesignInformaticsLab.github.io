@@ -3,18 +3,18 @@ categories: designopt_tutorial
 layout: opt_default
 title:  Hybrid Vehicle Optimal Control
 published: true
----------------
+---
 
 This is a brief description of the
 Equivalent Consumption Minimization Strategy (ECMS) code provided by
-Dr. Emrah Bayrak. The code can be downloaded [here](/_teaching/designopt/ECMS.zip). The entrance
+Dr. [Emrah Bayrak](http://www.aebayrak.com/). The code can be downloaded [here](/_teaching/designopt/ECMS.zip). The entrance
 file is ```fMPG.m```.
 
 ## Description of files
 Below are descriptions of all files. For instructions on the modification,
 see the next section.
 
-### Files need modification
+### Files that need modification
 
 * ```fMPG.m```: This file takes in a ```gear_ratio``` (scalar) and a
 drive ```cycle``` name (string). To run the code, please prepare a
@@ -35,7 +35,7 @@ the powertrain mode is feasible for the given drive cycle (```ISfeas```).
 * ```hev_vehicle.m```: Defines all vehicle parameters. **You will need to
 modify this file for your vehicle.**
 
-### Files do not need modification
+### Files that do not need modification
 
 * ```hev_finaldrive.m```: Defines the transmission torque and speed
 based on vehicle torque and speed.
@@ -55,7 +55,7 @@ voltage and current.
 
 * ```PoP_motor42.m```: Defines motor power consumption and max torque.
 
-### Major modifications
+### Instruction on modifications
 
 On line 63-64, 126-128 of ```fMPG.m```, and line 70-72 of ```hybrid_ECMS_ATC.m```,
 you need to complete the code for computing the motor torque and speed from
