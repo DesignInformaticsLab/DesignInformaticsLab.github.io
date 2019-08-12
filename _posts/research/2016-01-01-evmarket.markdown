@@ -5,7 +5,7 @@ title: "Public Investment and Electric Vehicle Design: A Model-based Market Anal
                 Application to a USA-China Comparison Study"
 author: Kang, N., Ren, Y.
 authorlink:
-categories: project-esd
+categories: project-past
 publishdate: 2016
 image: _images/dsjnamwoo2015/image.png
 summaryimg: _images/dsjnamwoo2015/summaryimg.png

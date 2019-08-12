@@ -6,7 +6,7 @@ title:  "Crowdsourcing for Search of Disaster Victims:
                        A Preliminary Study for Search System Design"
 author: Burnap, A., Barto, C., Johnson-Roberson, M., Ren, Y., Gonzalez, R. and Papalambros, P.Y.
 authorlink:
-categories: project-crowdsourcing
+categories: project-past
 publishdate: 2015
 image: _images/iced2015a/image.png
 summaryimg: _images/iced2015a/summaryimg.png

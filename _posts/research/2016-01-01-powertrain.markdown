@@ -6,7 +6,7 @@ title:  "Topology Generation for Hybrid Electric Vehicle
          Architecture Design"
 author: Bayrak, A.E., Ren, Y.
 authorlink:
-categories: project-esd
+categories: project-past
 publishdate: 2016
 image: _images/jmd2016e/image.png
 summaryimg:

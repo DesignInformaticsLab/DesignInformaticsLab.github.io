@@ -6,7 +6,7 @@ title:  "Quantification of Effects of Complex Product
          Attributes Using Adaptive Questionnaire and Preference Learning"
 author: Kang, N., Ren, Y., Feinberg, F. and Papalambros, P.Y.
 authorlink:
-categories: project-crowdsourcing
+categories: project-past
 publishdate: 2016
 image: _images/complexattribute/image.png
 summaryimg: _images/complexattribute/summaryimg.png

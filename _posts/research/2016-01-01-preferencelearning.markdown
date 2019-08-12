@@ -6,7 +6,7 @@ title:  "Improving Design Preference Prediction
          Accuracy using Feature Learning"
 author: Burnap, A., Pan, Y., Liu, Y., Ren, Y., Lee, H., Gonzalez, R. and Papalambros, P.Y.
 authorlink:
-categories: project-esd
+categories: project-past
 publishdate: 2015
 image: _images/jmd2016a/image.png
 summaryimg: _images/jmd2016a/summaryimg.png

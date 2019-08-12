@@ -4,7 +4,7 @@ shorttitle: "Learning an Optimization Algorithm through Human Design Iterations"
 title:  "Learning an Optimization Algorithm through Human Design Iterations"
 author: 
 authorlink:
-categories: project-crowdsourcing
+categories: project-past
 publishdate: 2017
 image: _images/ecoracer/image.png
 summaryimg: _images/ecoracer/summaryimg.png

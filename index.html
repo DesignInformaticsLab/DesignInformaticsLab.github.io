@@ -2,19 +2,33 @@
 layout: default
 date: 2016-05-30
 ---
+<div id="notification">
+  <b>We are looking for new PhD students for a NSF project on human-robot interactions.
+    For prospective students, please see details <a href="">here</a>. </b>
+</div>
+
 <div id="mission">
   <b>Mission:</b><br>
-  We study <i>computational</i> and <i>data-driven</i> methods that will augment or transform
-  the activities of engineering and industrial design. Formally, we consider design activities
-  the process of defining and solving optimization problems that are potentially high-dimensional,
-  and seek search methods that leverage human knowledge and heuristics, learning algorithms,
-  physics-based models, and computing hardware to achieve scalable design beyond the capacity of
-  experienced human designers and existing algorithms.
-  Challenges lie across multiple disciplines including optimization, machine learning,
-  crowdsourcing, and engineering system design and control.
-  Key real-world applications include computational material design and manufacturing,
-  vehicle and robotics system design and control,
-  and the automation of industrial design for functionalities and preferences.
+  The central objective of our studies is to develop necessary engineering design principles
+  for learning machines (e.g., neural networks) and
+  intelligent systems composed of such machines (e.g., self-driving cars).
+  Specifically, we study
+  <ul>
+    <li> (1) methods for identifying worst-case risks
+      (e.g., corner cases in self-driving and adversarial attacks against vision systems),</li>
+
+    <li> (2) theories for enabling competence awareness of learning machines and intelligent systems
+      (e.g., self-awareness of driving ability during a heavy storm),</li>
+
+    <li> and (3) new education tools to prepare future engineers and designers with
+  knowledge to conduct responsible risk specifications and design for
+      intelligent engineering products.</li>
+  </ul>
+  Challenges lie across disciplines including system engineering, statistical learning,
+  optimization, and optimal control.
+  Real-world values of our research include socially adept human-robot interactions,
+  accelerated computational material discovery,
+  and robust machine learning.
 </div>
 
 <!--Dr. Yi Ren's research interest is in the-->
@@ -28,26 +42,31 @@ date: 2016-05-30
 
 <div id="news">
   <b>News:</b><br>
+  {% assign count = 0 %}
   {% for post in site.posts %}
-  {% if post.categories contains 'news' %}
-  <a href="{{ post.url }}">[{{post.date | date: "%b %-d, %Y"}}]   {{ post.title }}</a><br>
-  {% endif %}
+    {% if post.categories contains 'news' and count <= 15 %}
+      {% assign count = count | plus: 1 %}
+      <a href="{{ post.url }}">[{{post.date | date: "%b %-d, %Y"}}]   {{ post.title }}</a><br>
+    {% endif %}
   {% endfor %}
 </div>
 
 <br>
 <div id="slides">
   <b>Projects:</b><br>
+  {% assign count = 0 %}
   {% for post in site.posts %}
-    {% if post.categories contains 'project-crowdsourcing' %}
-    <div id="slideimage">
-      <a href="{{ post.url }}" title="{{ post.shorttitle }}"><img src="{{ site.url }}/{{ post.image}}"></a>
-    </div>
+    {% if post.categories contains 'project-current' and count <= 10 %}
+      {% assign count = count | plus: 1 %}
+      <div id="slideimage">
+        <a href="{{ post.url }}" title="{{ post.shorttitle }}"><img src="{{ site.url }}/{{ post.image}}"></a>
+      </div>
     {% endif %}
-    {% if post.categories contains 'project-esd' %}
-    <div id="slideimage">
-      <a href="{{ post.url }}" title="{{ post.shorttitle }}"><img src="{{ site.url }}/{{ post.image}}"></a>
-    </div>
+    {% if post.categories contains 'project-past' and count <= 10 %}
+      {% assign count = count | plus: 1 %}
+      <div id="slideimage">
+        <a href="{{ post.url }}" title="{{ post.shorttitle }}"><img src="{{ site.url }}/{{ post.image}}"></a>
+      </div>
     {% endif %}
   {% endfor %}
 </div>
@@ -63,7 +82,8 @@ date: 2016-05-30
       {% else %}
         <img src="{{ site.url }}/_images/people/missing_people.png">
       {% endif %}
-      <br><a href="http://{{ people.link }}">{{ people.name }},</a><br> {{ people.position }}, project: {{ people.project }}
+      <br><a href="http://{{ people.link }}">{{ people.name }},</a><br> {{ people.position }}
+      <!--, project: {{ people.project }}-->
     </div>
     {% endif %}
   {% endfor %}
@@ -79,7 +99,8 @@ date: 2016-05-30
         {% else %}
           <img src="{{ site.url }}/_images/people/missing_people.png">
         {% endif %}
-        <br><a href="http://{{ people.link }}">{{ people.name }},</a><br> {{ people.position }}, project: {{ people.project }}
+        <br><a href="http://{{ people.link }}">{{ people.name }},</a><br> {{ people.position }}
+        <!--, project: {{ people.project }}-->
       </div>
     {% endif %}
   {% endfor %}

@@ -4,7 +4,7 @@ shorttitle:  "Feature Extraction for Synthesis and Design of Complex Material Mi
 title:  "Feature Extraction for Synthesis and Design of Complex Material Microstructures"
 author: Ruijin Cang, Dr. Yang Jiao, Dr. Yongming Liu
 authorlink:
-categories: project-esd
+categories: project-current
 publishdate: 2017
 image: _images/materialdesign/image.jpg
 

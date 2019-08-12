@@ -21,7 +21,7 @@
 }
 
 .r_phone #slides{
-	display: none;
+	//display: none;
 }
 
 .r_phone .people{
@@ -198,7 +198,7 @@ footer {
 }
 
 #mission {
-  	font-size: 80%;
+  	font-size: 100%;
   	width: 50%;
   	float: left;
   	padding: 10px 5% 0 0;
@@ -207,14 +207,14 @@ footer {
 }
 
 #news {
-  	font-size: 80%;
+  	font-size: 100%;
   	width: 50%;
   	float: left;
-  	padding: 10px 5% 0 0;
+  	padding: 10px 0 0 0;
 }
 
 #projecticon {
-  font-size: 80%;
+  font-size: 100%;
   height: 240px;
   width: 200px;
   float: left;
@@ -222,7 +222,7 @@ footer {
   text-align: center;
   img {
 	height: 150px;
-	width: 150px;
+	//width: 150px;
   }
   overflow: auto;
 }
@@ -245,16 +245,16 @@ footer {
 }
 
 #slides {
-  font-size: 80%;
+  font-size: 100%;
   margin-top: 20px;
   float: left;
   width: 100%;
 }
 
-#slideimage, {
+#slideimage {
   text-align: center;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   img {
 	width:100%;
 	height:100%;
@@ -264,21 +264,31 @@ footer {
   }
   float: left;
   margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+#notification {
+	background-color: aliceblue;
+	padding: 10px;
+	margin-top: 10px;
+	text-align: center;
+	border: 1px solid;
 }
 
 .people {
-  font-size: 80%;
+  font-size: 100%;
   width: 100%;
   float: left;
-  padding: 10px 5% 0 0;
+  margin: 20px 5% 0 0;
 }
 
 .member {
-  height: 240px;
-  width: 110px;
+  height: 220px;
+  width: 120px;
   float: left;
   margin: 5px;
   text-align: center;
+  background-color: aliceblue;
   img {
 	height: 100px;
   }
@@ -330,5 +340,4 @@ table tr th :last-child, table tr td :last-child {
 //  padding-left: 10px;
 //  border-right: 2px solid #aaaaaa;
 //}ff
-
 

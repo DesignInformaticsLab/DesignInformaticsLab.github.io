@@ -7,9 +7,9 @@ date: 2016-06-02
 category: header
 ---
 <div class="topic">
-    <b>Crowdsourcing and Human Computation</b><br>
+    <b>Current Projects</b><br>
     {% for post in site.posts %}
-        {% if post.categories contains 'project-crowdsourcing' %}
+        {% if post.categories contains 'project-current' %}
             <div id="projecticon">
                 <img src="{{ site.url }}/{{ post.image }}"><br>
                 <a href="{{ post.url }}">{{ post.shorttitle }}</a>
@@ -19,9 +19,9 @@ category: header
     {% endfor %}
 </div>
 <div class="topic">
-    <b>Engineering System Design</b><br>
+    <b>Past Projects</b><br>
     {% for post in site.posts %}
-        {% if post.categories contains 'project-esd' %}
+        {% if post.categories contains 'project-past' %}
             <div id="projecticon">
                 <img src="{{ site.url }}/{{ post.image }}"><br>
                 <a href="{{ post.url }}">{{ post.shorttitle }}</a>

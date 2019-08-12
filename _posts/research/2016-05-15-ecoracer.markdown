@@ -4,7 +4,7 @@ shorttitle: "ecoRacer: Can Human Find Optimal Solutions Faster for An NP-Complet
 title:  "ecoRacer: Can Human Find Optimal Solutions Faster for An NP-Complete Problem?"
 author: Ren, Y., Bayrak, A., and Papalambros, P.Y.
 authorlink:
-categories: project
+categories: project-past
 publishdate: 2015
 image: _images/ecoracer/image.png
 summaryimg: _images/ecoracer/summaryimg.png

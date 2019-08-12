@@ -4,7 +4,7 @@ shorttitle:  "Generative explainable models for 3D shapes"
 title:  "Generative explainable models for 3D shapes"
 author: Hope Yao, Malcolm Regan, and Max Yi Ren
 authorlink:
-categories: project-crowdsourcing
+categories: project-past
 publishdate: 2017
 image: _images/impressionist/image.png
 summaryimg: _images/impressionist/summaryimg.png

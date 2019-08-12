@@ -1,8 +1,8 @@
 ---
 name: Hope Yao
-position: MAE PhD
+position: SAIC USA, <b>MAE PhD</b> (2019)
 link:
-categories: people
+categories: alumni
 image: hope-yao.png
 project: Adversarial attack and robust classification 
 ---

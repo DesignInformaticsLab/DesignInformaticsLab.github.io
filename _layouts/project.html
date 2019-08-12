@@ -5,14 +5,14 @@ layout: default
 <div id="project">
     <h3>{{ page.title }}</h3>
     {% if page.author %}
-        Current students and collaborators: {{ page.author }}<br><br>
+        Collaborators: {{ page.author }}<br><br>
     {% endif %}
 
-    <b> Summary </b><br>
+    <b> Abstract </b><br>
     <a>{{ page.abstract }}</a>
     <br><br>
 
-    <b> Gallery </b><br>
+    <b> Images </b><br>
     {% if page.summaryimg %}
         <img src="{{ site.url }}/{{ page.summaryimg }}">
         <div class=caption>{{ page.imgcaption }}</div><br>
