@@ -7,7 +7,7 @@ categories: news
 
 ### Openings for NSF-NRI: Scalable and Customizable Intent Inference and Motion Planning for Socially-Adept Autonomous Vehicles
 
-<img src="/_images/savi/overview_nri.png" alt="Drawing" style="height: 400px;"/>
+<img src="/_images/savi/overview_nri.png" alt="Drawing" style="width: 90%;"/>
 <!--<a class="caption">**Summary of the project**</a>-->
 
 ### What is the project about?
