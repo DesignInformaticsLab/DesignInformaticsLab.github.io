@@ -1,5 +1,5 @@
 ---
-categories: designopt_tutorial
+categories: designopt_project
 layout: opt_default
 title:  Preliminary Report Guideline
 published: true

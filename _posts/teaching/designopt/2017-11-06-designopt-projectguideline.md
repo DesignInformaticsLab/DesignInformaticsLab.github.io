@@ -1,5 +1,5 @@
 ---
-categories: designopt_tutorial
+categories: designopt_project
 layout: opt_default
 title:  Final Project Report Guideline
 published: false
