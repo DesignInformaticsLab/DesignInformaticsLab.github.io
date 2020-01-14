@@ -1,0 +1,25 @@
+---
+layout: linear_default
+title:  "Linear Algebra in Engineering"
+date:   2020-01-13 00:00:00
+published: true
+category: course_linear
+---
+
+<b><a href="{{ site.url}}/linearalgebra/2020/01/13/syllabus.html">Syllabus</a></b><br><br>
+
+<b>Lecture Notes</b><br>
+{% for post in site.posts %}
+{% if post.categories contains 'linear_lecture' AND post.published %}
+* <a href="{{ post.url }}">{{ post.title }}</a><br>
+{% endif %}
+{% endfor %}
+<br>
+
+<b>Homework and Quiz</b><br>
+{% for post in site.posts %}
+{% if post.categories contains 'linear_homework' AND post.published %}
+* <a href="{{ post.url }}">{{ post.title }}</a><br>
+{% endif %}
+{% endfor %}
+<br>
