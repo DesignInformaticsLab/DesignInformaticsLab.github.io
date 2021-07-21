@@ -78,7 +78,7 @@ h3 {
 }
 a,
 a:visited {
-	color: $link-color;
+	color: black;
 	//text-decoration: underline;
 	//font-weight: bold;
 }
@@ -129,7 +129,7 @@ p {
 }
 a:-webkit-any-link
 {
-  border-bottom: solid 2px rgba(12,56,100,.5);
+  border-bottom: solid 2px darkgray;
   text-decoration: none;
 }
 
@@ -268,11 +268,16 @@ footer {
 }
 
 #notification {
-	background-color: aliceblue;
+	background-color: black;
+	color: white;
 	padding: 10px;
 	margin-top: 10px;
 	text-align: center;
 	border: 1px solid;
+}
+
+#notification a{
+	color: white;
 }
 
 .people {

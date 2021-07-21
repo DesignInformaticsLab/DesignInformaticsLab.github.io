@@ -3,32 +3,28 @@ layout: default
 date: 2016-05-30
 ---
 <div id="notification">
-  <b>We are looking for new PhD students for a NSF project on human-robot interactions.
-    For prospective students, please see details <a href="https://designinformaticslab.github.io/news/2019/08/12/nri-students.html">here</a>. </b>
+  <b>We are looking for a new PhD student for an NSF project on model attribution.
+    For prospective students, please <a href="mailto: yiren@asu.edu">email</a> me. </b>
 </div>
 
 <div id="mission">
   <b>Mission:</b><br>
-  The central objective of our studies is to develop necessary engineering design principles
-  for learning machines (e.g., neural networks) and
-  intelligent systems composed of such machines (e.g., self-driving cars).
-  Specifically, we study
+  We study engineering design principles for machines that learn and interact with human beings.
+  Focused research topics include
   <ul>
     <li> (1) methods for identifying worst-case risks
-      (e.g., corner cases in self-driving and adversarial attacks against vision systems),</li>
+      (e.g., corner cases in self-driving and adversarial attacks against learning machines such as neural networks),</li>
 
-    <li> (2) theories for enabling competence awareness of learning machines and intelligent systems
-      (e.g., self-awareness of driving ability during a heavy storm),</li>
+    <li> (2) theories for enabling competence awareness of intelligent systems
+      (e.g., risk certification of self-driving cars during interactions with human beings),</li>
 
-    <li> and (3) new education tools to prepare future engineers and designers with
-  knowledge to conduct responsible risk specifications and design for
-      intelligent engineering products.</li>
+    <li> and (3) new educational tools to prepare future engineers and designers with
+  knowledge to conduct risk specifications and design for intelligent engineering products.</li>
   </ul>
-  Challenges lie across disciplines including system engineering, statistical learning,
-  optimization, and optimal control.
+  Challenges lie across disciplines including system engineering, machine learning,
+  optimization, optimal control, and game theory.
   Real-world values of our research include socially adept human-robot interactions,
-  accelerated computational material discovery,
-  and robust machine learning.
+  accelerated computational material discovery, and robust machine learning.
 </div>
 
 <!--Dr. Yi Ren's research interest is in the-->
@@ -44,33 +40,33 @@ date: 2016-05-30
   <b>News:</b><br>
   {% assign count = 0 %}
   {% for post in site.posts %}
-    {% if post.categories contains 'news' and count <= 15 %}
+    {% if post.categories contains 'news' and count <= 12 %}
       {% assign count = count | plus: 1 %}
       <a href="{{ post.url }}">[{{post.date | date: "%b %-d, %Y"}}]   {{ post.title }}</a><br>
     {% endif %}
   {% endfor %}
 </div>
 
-<br>
-<div id="slides">
-  <b>Projects:</b><br>
-  {% assign count = 0 %}
-  {% for post in site.posts %}
-    {% if post.categories contains 'project-current' and count <= 10 %}
-      {% assign count = count | plus: 1 %}
-      <div id="slideimage">
-        <a href="{{ post.url }}" title="{{ post.shorttitle }}"><img src="{{ site.url }}/{{ post.image}}"></a>
-      </div>
-    {% endif %}
-    {% if post.categories contains 'project-past' and count <= 10 %}
-      {% assign count = count | plus: 1 %}
-      <div id="slideimage">
-        <a href="{{ post.url }}" title="{{ post.shorttitle }}"><img src="{{ site.url }}/{{ post.image}}"></a>
-      </div>
-    {% endif %}
-  {% endfor %}
-</div>
-<br><br>
+<!--<br>-->
+<!--<div id="slides">-->
+<!--  <b>Projects:</b><br>-->
+<!--  {% assign count = 0 %}-->
+<!--  {% for post in site.posts %}-->
+<!--    {% if post.categories contains 'project-current' and count <= 10 %}-->
+<!--      {% assign count = count | plus: 1 %}-->
+<!--      <div id="slideimage">-->
+<!--        <a href="{{ post.url }}" title="{{ post.shorttitle }}"><img src="{{ site.url }}/{{ post.image}}"></a>-->
+<!--      </div>-->
+<!--    {% endif %}-->
+<!--    {% if post.categories contains 'project-past' and count <= 10 %}-->
+<!--      {% assign count = count | plus: 1 %}-->
+<!--      <div id="slideimage">-->
+<!--        <a href="{{ post.url }}" title="{{ post.shorttitle }}"><img src="{{ site.url }}/{{ post.image}}"></a>-->
+<!--      </div>-->
+<!--    {% endif %}-->
+<!--  {% endfor %}-->
+<!--</div>-->
+<!--<br><br>-->
 
 <div class="people">
   <b>People:</b><br>

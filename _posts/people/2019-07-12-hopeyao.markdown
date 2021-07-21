@@ -1,6 +1,6 @@
 ---
 name: Hope Yao
-position: SAIC USA, <b>MAE PhD</b> (2019)
+position: JD, <b>MAE PhD</b> (2019)
 link:
 categories: alumni
 image: hope-yao.png

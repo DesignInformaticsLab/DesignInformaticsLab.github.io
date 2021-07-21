@@ -1,6 +1,6 @@
 ---
 name: Nathan Cahill
-position: Orbital ATK, <b>MAE PhD</b> (2017)
+position: Orbital ATK, <b>MAE PhD</b> w/ Tom Sugar (2017)
 link:
 categories: alumni
 image: nathan.jpg
