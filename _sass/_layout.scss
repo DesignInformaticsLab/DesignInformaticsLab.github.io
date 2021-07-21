@@ -28,15 +28,20 @@
   font-size: 55%;
 }
 .r_phone .member{
-  height: 110px;
-  width: 50px;
+  height: 150px;
+  width: 80px;
   float: left;
-  margin: 2px;
-  text-align: center;
+  margin-right: 10px;
+  text-align: left;
   img {
-	height: 50px;
+	height: 50%;
+	-webkit-filter: grayscale(50%);
+	-moz-filter:    grayscale(50%);
+	-o-filter:      grayscale(50%);
   }
-  //overflow: auto;
+  img:hover {
+  	filter: none;
+  }
 }
 
 
@@ -288,14 +293,19 @@ footer {
 }
 
 .member {
-  height: 240px;
-  width: 120px;
+  height: 280px;
+  width: 150px;
   float: left;
-  margin: 5px;
-  text-align: center;
-  background-color: aliceblue;
+  margin-right: 10px;
+  text-align: left;
   img {
-	height: 100px;
+	height: 50%;
+	-webkit-filter: grayscale(50%);
+	-moz-filter:    grayscale(50%);
+	-o-filter:      grayscale(50%);
+  }
+  img:hover {
+	filter: none;
   }
   //overflow: auto;
 }
