@@ -10,41 +10,41 @@ category: course_productdesign
 
 <b>Student Projects</b><br>
     {% for post in site.posts %}
-    {% if post.categories contains 'productdesign_project' AND post.published %}
-    * <a href="{{ post.url }}">{{ post.title }}</a><br>
-    {% endif %}
+        {% if post.categories contains 'productdesign_project' and post.published %}
+            * <a href="{{ post.url }}">{{ post.title }}</a><br>
+        {% endif %}
     {% endfor %}
 <br>
 
 <b>Lecture Notes</b><br>
     {% for post in site.posts %}
-    {% if post.categories contains 'productdesign_lecture' AND post.published %}
-    * <a href="{{ post.url }}">{{ post.title }}</a><br>
-    {% endif %}
+        {% if post.categories contains 'productdesign_lecture' and post.published %}
+            * <a href="{{ post.url }}">{{ post.title }}</a><br>
+        {% endif %}
     {% endfor %}
 <br>
 
 <b>Project Guidelines</b><br>
     {% for post in site.posts %}
-    {% if post.categories contains 'productdesign_guideline' AND post.published %}
-    * <a href="{{ post.url }}">{{ post.title }}</a><br> 
-    {% endif %}
+        {% if post.categories contains 'productdesign_guideline' and post.published %}
+            * <a href="{{ post.url }}">{{ post.title }}</a><br>
+        {% endif %}
     {% endfor %}
 <br>
 
 <b>Design Competitions</b><br>
     {% for post in site.posts %}
-    {% if post.categories contains 'productdesign_competition' AND post.published %}
-    * <a href="{{ post.url }}">{{ post.title }}</a><br>
-    {% endif %}
+        {% if post.categories contains 'productdesign_competition' and post.published %}
+            * <a href="{{ post.url }}">{{ post.title }}</a><br>
+        {% endif %}
     {% endfor %}
 <br>
 
 <b>Tutorials</b><br>
     {% for post in site.posts %}
-    {% if post.categories contains 'productdesign_tutorial' AND post.published %}
-    * <a href="{{ post.url }}">{{ post.title }}</a><br>
-    {% endif %}
+        {% if post.categories contains 'productdesign_tutorial' and post.published %}
+            * <a href="{{ post.url }}">{{ post.title }}</a><br>
+        {% endif %}
     {% endfor %}
 <br>
     <!-- -->
