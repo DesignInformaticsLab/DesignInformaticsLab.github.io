@@ -1,8 +1,8 @@
 ---
 name: Siddharth Das
-position: <b>Robotics Master's</b>
+position: _, Robotics Master's (2021)
 link:
-categories: people
+categories: alumni
 image: das.jpg
 project: Active learning, Differential games
 ---

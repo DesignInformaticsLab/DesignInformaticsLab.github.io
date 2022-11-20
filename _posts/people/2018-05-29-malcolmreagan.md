@@ -1,6 +1,6 @@
 ---
 name: Malcolm Regan
-position: NCSU PhD, EE Bachelor (2018)
+position: _, EE Bachelor (2018)
 link:
 categories: alumni
 image:

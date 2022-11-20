@@ -246,7 +246,7 @@ footer {
   float:left;
   width: 100%;
   margin-bottom: 10px;
-  border-bottom: 1px solid gray;
+  //border-bottom: 1px solid gray;
 }
 
 #slides {
@@ -356,3 +356,18 @@ table tr th :last-child, table tr td :last-child {
 //  border-right: 2px solid #aaaaaa;
 //}ff
 
+.paper {
+	//height: 70px;
+	//margin: 10px;
+}
+.paper img {
+	height: 100%;
+	float: left;
+	margin-right: 20px;
+}
+.paper-cite {
+	margin-bottom: 10px;
+	padding: 10px;
+	padding-left: 170px;
+	height: 90px;
+}

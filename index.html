@@ -2,10 +2,10 @@
 layout: default
 date: 2016-05-30
 ---
-<div id="notification">
-  <b>We are looking for a new PhD student for an NSF project on model attribution.
-    For prospective students, please <a href="mailto: yiren@asu.edu">email</a> me. </b>
-</div>
+<!--<div id="notification">-->
+<!--  <b>We are looking for a new PhD student for an NSF project on model attribution.-->
+<!--    For prospective students, please <a href="mailto: yiren@asu.edu">email</a> me. </b>-->
+<!--</div>-->
 
 <div id="mission">
   <b>Mission:</b><br>
@@ -69,7 +69,7 @@ date: 2016-05-30
 <!--<br><br>-->
 
 <div class="people">
-  <b>People:</b><br>
+  <b>People:</b><br><br>
   {% for people in site.posts %}
     {% if people.categories contains 'people' %}
     <div class="member">
@@ -86,7 +86,7 @@ date: 2016-05-30
 </div>
 
 <div class="people">
-  <b>Alumni:</b><br>
+  <b>Alumni - <i>Job</i>, Major (Year of graduation):</b><br><br>
   {% for people in site.posts %}
     {% if people.categories contains 'alumni' %}
       <div class="member">

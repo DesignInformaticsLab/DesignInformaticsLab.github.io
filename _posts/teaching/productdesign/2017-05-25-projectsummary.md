@@ -15,7 +15,7 @@ package targeting medium-end and high-end bike users. | [**business plan**][1]
 <img src="/_images/productdesign/team1.png" alt="Drawing" style="height: 300px;"/>
 
 <iframe width="420" height="315"
-src="http://www.youtube.com/embed/F3OxNtV9bso">
+src="https://www.youtube.com/embed/F3OxNtV9bso">
 </iframe>
 
 ---
@@ -29,7 +29,7 @@ We design a retractable case that accommodates users' choice of headphones with 
 <img src="/_images/productdesign/team2.png" alt="Drawing" style="height: 300px;"/>
 
 <iframe width="420" height="315"
-src="http://www.youtube.com/embed/uSuAx7yHPyY">
+src="https://www.youtube.com/embed/uSuAx7yHPyY">
 </iframe>
 
 ---
@@ -82,7 +82,7 @@ with a low cost. | [**business plan**][6]
 <img src="/_images/productdesign/team6.png" alt="Drawing" style="height: 400px;"/>
 
 <iframe width="420" height="315"
-src="http://www.youtube.com/embed/3yB4MCMESoI">
+src="https://www.youtube.com/embed/3yB4MCMESoI">
 </iframe>
 
 ---
@@ -106,7 +106,7 @@ and hard earned money. | [**business plan**][7] | [code][7code]
 <img src="/_images/productdesign/team7.png" alt="Drawing" style="height: 300px;"/>
 
 <iframe width="420" height="315"
-src="http://www.youtube.com/embed/bp0MxpqSNWY">
+src="https://www.youtube.com/embed/bp0MxpqSNWY">
 </iframe>
 
 ---
@@ -138,7 +138,7 @@ Never Forgotten car seat will save the life of a child if used correctly. | [**b
 <img src="/_images/productdesign/team9.png" alt="Drawing" style="height: 300px;"/>
 
 <iframe width="420" height="315"
-src="http://www.youtube.com/embed/ALrlZtsYJ70">
+src="https://www.youtube.com/embed/ALrlZtsYJ70">
 </iframe>
 
 

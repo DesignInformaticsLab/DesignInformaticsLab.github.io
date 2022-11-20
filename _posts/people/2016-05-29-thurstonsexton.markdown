@@ -1,6 +1,6 @@
 ---
 name: Thurston Sexton
-position: NIST, MAE Master's (2016)
+position: <i>NIST</i>, MAE Master's (2016)
 link:
 categories: alumni
 image: tbsexton.jpg

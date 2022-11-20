@@ -1,8 +1,8 @@
 ---
-name: Max Yi Ren
-position: Assistant Professor
+name: Yi Ren
+position: Associate Professor
 link: semte.engineering.asu.edu/ren-yi/
 categories: people
 image: yren32.png
-project: "Stay hungry. Stay foolish."
+project:
 ---

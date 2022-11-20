@@ -13,30 +13,30 @@ include: ['_pages', '_papers']
 kramdown:
   input: GFM
 
-scholar:
-  style: apa
-  locale: en
-
-  sort_by: year
-  order: descending
-
-  type_order: article
-  group_by: type
-  group_order: ascending
-
-  source: ./_papers
-  bibliography: references.bib
-  bibliography_template: bibtemplate
-
-  replace_strings: true
-  join_strings:    true
-
-  bibtex_filters:
-  - superscript
-  - latex
-
-  details_dir:    _papers
-  details_layout: bibtex.html
-  details_link:   Details
-
-  query: "@*"
+#scholar:
+#  style: apa
+#  locale: en
+#
+#  sort_by: year
+#  order: descending
+#
+#  type_order: article
+#  group_by: type
+#  group_order: ascending
+#
+#  source: ./_papers
+#  bibliography: references.bib
+#  bibliography_template: bibtemplate
+#
+#  replace_strings: true
+#  join_strings:    true
+#
+#  bibtex_filters:
+#  - superscript
+#  - latex
+#
+#  details_dir:    _papers
+#  details_layout: bibtex.html
+#  details_link:   Details
+#
+#  query: "@*"
