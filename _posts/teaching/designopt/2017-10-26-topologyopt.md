@@ -41,7 +41,7 @@ and [paper](http://www.topopt.dtu.dk/files/TopOpt88.pdf). The template code is a
 ### The compliance minimization problem
 Topology optimization has been commonly used to design structures and materials with optimal mechanical, 
 thermal, electromagnetic, acoustical, or other properties. 
-The structure under design is segmented into $$n$$ finite elements, and a 
+The structure under design is segmented into $n$ finite elements, and a 
 density value $$x_i$$ is assigned to each element $$i \in \{1,2,...,n\}$$: A higher density corresponds to a less porous material 
 element and higher Yong's modulus. Reducing the density to zero is equivalent to creating a hole in the 
 structure. Thus, the set of densities $${\bf x}=\{x_i\}$$ can be used to represent the topology of the 
