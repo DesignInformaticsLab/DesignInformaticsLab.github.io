@@ -49,7 +49,7 @@ structure and is considered as the variables to be optimized. A common topology 
 compliance minimization, where we seek the "stiffest" structure within a certain volume limit to withhold 
 a particular load: 
 
-$$ \min_{\bf x} \quad {\bf f} := {\bf d}^T {\bf K}({\bf x}) {\bf d} $$
+$$ \min_{\bf x} \quad {\bf f} := {\bf u}^T {\bf K}({\bf x}) {\bf u} $$
 
 $$ \text{subject to:} \quad {\bf h} := {\bf K}({\bf x}) {\bf u} = {\bf d}, $$
 
