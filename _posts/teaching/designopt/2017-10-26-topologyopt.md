@@ -51,14 +51,14 @@ a particular load:
 
 $$ \min_{\bf x} \quad {\bf f} := {\bf d}^T {\bf K}({\bf x}) {\bf d} $$
 
-$$ \text{subject to:} \quad {\bf h} := {\bf K}({\bf x}) {\bf d} = {\bf u}, $$
+$$ \text{subject to:} \quad {\bf h} := {\bf K}({\bf x}) {\bf u} = {\bf d}, $$
 
 $$ \quad {\bf g} := V(\textbf{x}) \leq v,$$
 
 $$ \textbf{x} \in [0,1]. $$
 
 Here $$V(\textbf{x})$$ is the total volume; $$v$$ is an upper bound on volume; 
-$${\bf d} \in \mathbb{R}^{n_d\times 1}$$ is the displacement of the structure under the load $${\bf u}$$, 
+$${\bf u} \in \mathbb{R}^{n_d\times 1}$$ is the displacement of the structure under the load $${\bf d}$$, 
 where $$n_d$$ is the degrees of freedom (DOF) of the system (i.e., the number of x- and y-coordinates 
 of nodes from the finite element model of the structure);
 $${\bf K(x)}$$ is the global stiffness matrix for the structure.
@@ -88,7 +88,7 @@ linear ($$V(\textbf{x}) \leq v$$) or simple bounds ($$\textbf{x} \in [0,1]$$). W
 show that these constraints can be easily handled.
 The problem thus involves two sets of variables: We can consider $$\textbf{x}$$ as the **decision variables** 
 and $$\textbf{u}$$ as the state variables that are governed by $$\textbf{x}$$ through the equality constraint
-$${\bf K}({\bf x}) {\bf d} = {\bf u}$$.
+$${\bf K}({\bf x}) {\bf u} = {\bf d}$$.
 
 The reduced gradient (often called design sensitivity) can be calculated as
 
