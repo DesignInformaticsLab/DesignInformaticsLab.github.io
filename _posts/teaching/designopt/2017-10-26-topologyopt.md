@@ -22,8 +22,10 @@ MathJax.Hub.Queue(function() {
     }
 });
 </script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+    
 ## Application of Reduced Gradient - Topology Optimization
 
 <img src="/_images/tutorial_topopt/infill.gif" alt="Drawing" style="height: 300px;"/>
@@ -39,27 +41,27 @@ and [paper](http://www.topopt.dtu.dk/files/TopOpt88.pdf). The template code is a
 ### The compliance minimization problem
 Topology optimization has been commonly used to design structures and materials with optimal mechanical, 
 thermal, electromagnetic, acoustical, or other properties. 
-The structure under design is segmented into $$n$$ finite elements, and a 
-density value $$x_i$$ is assigned to each element $$i \in \{1,2,...,n\}$$: A higher density corresponds to a less porous material 
+The structure under design is segmented into $n$ finite elements, and a 
+density value $x_i$ is assigned to each element $i \in \{1,2,...,n\}$: A higher density corresponds to a less porous material 
 element and higher Yong's modulus. Reducing the density to zero is equivalent to creating a hole in the 
-structure. Thus, the set of densities $${\bf x}=\{x_i\}$$ can be used to represent the topology of the 
+structure. Thus, the set of densities ${\bf x}=\{x_i\}$ can be used to represent the topology of the 
 structure and is considered as the variables to be optimized. A common topology optimization problem is 
 compliance minimization, where we seek the "stiffest" structure within a certain volume limit to withhold 
 a particular load: 
 
-$$ \min_{\bf x} \quad {\bf f} := {\bf d}^T {\bf K}({\bf x}) {\bf d} $$
+$$ \min_{\bf x} \quad {\bf f} := {\bf u}^T {\bf K}({\bf x}) {\bf u} $$
 
-$$ \text{subject to:} \quad {\bf h} := {\bf K}({\bf x}) {\bf d} = {\bf u}, $$
+$$ \text{subject to:} \quad {\bf h} := {\bf K}({\bf x}) {\bf u} = {\bf d}, $$
 
 $$ \quad {\bf g} := V(\textbf{x}) \leq v,$$
 
 $$ \textbf{x} \in [0,1]. $$
 
-Here $$V(\textbf{x})$$ is the total volume; $$v$$ is an upper bound on volume; 
-$${\bf d} \in \mathbb{R}^{n_d\times 1}$$ is the displacement of the structure under the load $${\bf u}$$, 
-where $$n_d$$ is the degrees of freedom (DOF) of the system (i.e., the number of x- and y-coordinates 
+Here $V(\textbf{x})$ is the total volume; $v$ is an upper bound on volume; 
+${\bf u} \in \mathbb{R}^{n_d\times 1}$ is the displacement of the structure under the load ${\bf d}$, 
+where $n_d$ is the degrees of freedom (DOF) of the system (i.e., the number of x- and y-coordinates 
 of nodes from the finite element model of the structure);
-$${\bf K(x)}$$ is the global stiffness matrix for the structure.
+${\bf K(x)}$ is the global stiffness matrix for the structure.
 
 $${\bf K(x)}$$ is indirectly influenced by the topology $${\bf x}$$, through the element-wise stiffness matrix 
 
@@ -69,24 +71,24 @@ and the local-to-global assembly:
 
 $${\bf K(x)} = {\bf G}[{\bf K}_1,{\bf K}_2,...,{\bf K}_n],$$
 
-where the matrix $$\bar{\bf K}_e$$ is predefined according to the finite element type (we use first-order 
+where the matrix $\bar{\bf K}_e$ is predefined according to the finite element type (we use first-order 
 quadrilateral elements throughout this tutorial) and the nodal displacements of the element (we use 
-square elements with unit lengths throughout this tutorial), $${\bf G}$$ is an assembly matrix, $$E(x_i)$$ is 
-the element-wise Young's modulus defined as a function of the density $$x_i$$: 
-$$E(x_i) := \Delta E x_i^p + E_{\text{min}}$$, where $$p$$ (the penalty parameter) is usually set to 3.
+square elements with unit lengths throughout this tutorial), ${\bf G}$ is an assembly matrix, $E(x_i)$ is 
+the element-wise Young's modulus defined as a function of the density $x_i$: 
+$E(x_i) := \Delta E x_i^p + E_{\text{min}}$, where $p$ (the penalty parameter) is usually set to 3.
  This cubic relationship between the topology and the modulus 
 is determined by the material constitutive models, and numerically, it 
-also helps binarize the topologies, i.e., to push the optimal $${\bf x}_i$$ to 1 or 0 (why?). 
-The term $$E_{\text{min}}$$ is added to provide numerical stability.
+also helps binarize the topologies, i.e., to push the optimal ${\bf x}_i$ to 1 or 0 (why?). 
+The term $E_{\text{min}}$ is added to provide numerical stability.
 
 ### Design sensitivity analysis
 This problem has both inequality and equality constraints. However, the inequality ones are only related
-to the topology $$\textbf{x}$$, and are either 
-linear ($$V(\textbf{x}) \leq v$$) or simple bounds ($$\textbf{x} \in [0,1]$$). We will 
+to the topology $\textbf{x}$, and are either 
+linear ($V(\textbf{x}) \leq v$) or simple bounds ($\textbf{x} \in [0,1]$). We will 
 show that these constraints can be easily handled.
-The problem thus involves two sets of variables: We can consider $$\textbf{x}$$ as the **decision variables** 
-and $$\textbf{u}$$ as the state variables that are governed by $$\textbf{x}$$ through the equality constraint
-$${\bf K}({\bf x}) {\bf d} = {\bf u}$$.
+The problem thus involves two sets of variables: We can consider $\textbf{x}$ as the **decision variables** 
+and $\textbf{u}$ as the state variables that are governed by $\textbf{x}$ through the equality constraint
+${\bf K}({\bf x}) {\bf u} = {\bf d}$.
 
 The reduced gradient (often called design sensitivity) can be calculated as
 
@@ -98,7 +100,7 @@ which leads to
 
 $$\frac{df}{d{\bf x}} = -{\bf u}^T \frac{\partial {\bf K}}{\partial {\bf x}}{\bf u}.$$
 
-Recall the relation between $${\bf K}$$ and $${\bf x}$$, and notice that 
+Recall the relation between ${\bf K}$ and ${\bf x}$, and notice that 
 
 $${\bf u}^T {\bf K}{\bf u} = \sum_{i=1}^n {\bf u}^T_i{\bf K}_i{\bf u}_i,$$ 
 
@@ -123,34 +125,34 @@ The pseudo code for compliance minimization is the following:
 
 1. Problem setup (see details below)
 
-2. Algorithm setup: $$\epsilon = 0.001$$ (or any small positive number), $$k = 0$$ (counter for the iteration),
-$$\Delta x = 1000$$ (or any number larger than $$\epsilon$$)
+2. Algorithm setup: $\epsilon = 0.001$ (or any small positive number), $k = 0$ (counter for the iteration),
+$\Delta x = 1000$ (or any number larger than $\epsilon$)
 
-3. While $$norm(\Delta x) \leq \epsilon$$, Do:
+3. While $norm(\Delta x) \leq \epsilon$, Do:
     
-    3.1. Update the stiffness matrix $${\bf K}$$ and the displacement (state) $${\bf u}$$ (finite element analysis)
+    3.1. Update the stiffness matrix ${\bf K}$ and the displacement (state) ${\bf u}$ (finite element analysis)
     
-    3.2. Calculate element-wise compliance $${\bf u}^T_i \bar{\bf K}_e {\bf u}_i$$
+    3.2. Calculate element-wise compliance ${\bf u}^T_i \bar{\bf K}_e {\bf u}_i$
     
     3.3. Calculate partial derivatives 
     $$\frac{df}{dx_i} = - 3\Delta E x_i^2 {\bf u}^T_i \bar{\bf K}_e {\bf u}_i$$
     
-    3.4. The gradient with respect to $$g$$ is a constant vector $$[1,...,1]^T$$
+    3.4. The gradient with respect to $g$ is a constant vector $[1,...,1]^T$
     
-    3.5. Apply filter to $$\frac{df}{d{\bf x}}$$ (See discussion later)
+    3.5. Apply filter to $\frac{df}{d{\bf x}}$ (See discussion later)
     
-    3.6. Update $${\bf x}$$: $${\bf x}'_{k+1} = {\bf x}_{k} - \alpha_k (\frac{df}{d{\bf x}} + \mu {\bf 1})$$,
-    where $$\mu \geq 0$$ is determined as in 3.7. To ensure that the gradient descent is successful, we will either set
-    $$\alpha_k$$ to a small value, or truncate $$\Delta x = - (\frac{df}{d{\bf x}} + \mu {\bf 1})$$ within a range 
+    3.6. Update ${\bf x}$: ${\bf x}'_{k+1} = {\bf x}_{k} - \alpha_k (\frac{df}{d{\bf x}} + \mu {\bf 1})$,
+    where $\mu \geq 0$ is determined as in 3.7. To ensure that the gradient descent is successful, we will either set
+    $\alpha_k$ to a small value, or truncate $\Delta x = - (\frac{df}{d{\bf x}} + \mu {\bf 1})$ within a range 
     (conceptually similar to the idea of trust region).
          
-    3.7. Move $${\bf x}'_{k+1}$$ back to the feasible domain:
-    If $${\bf 1}^T{\bf x}_{k} < v$$ and $$-{\bf 1}^T\frac{df}{d{\bf x}}<0$$, then $${\bf x}'_{k+1}$$ satisfies $$g$$.
-     with $$\mu = 0$$. If $${\bf x}'_{k+1}$$ does not satisfy $$g$$, we will increase $$\mu$$ using bisection, i.e.,
-     search in $$[0,\mu_{max}]$$ where $$\mu_{max}$$ is a large positive number. Also, we 
-     will truncate $${\bf x}'_{k+1}$$ between 0 and 1. 
+    3.7. Move ${\bf x}'_{k+1}$ back to the feasible domain:
+    If ${\bf 1}^T{\bf x}_{k} < v$ and $-{\bf 1}^T\frac{df}{d{\bf x}}<0$, then ${\bf x}'_{k+1}$ satisfies $g$.
+     with $\mu = 0$. If ${\bf x}'_{k+1}$ does not satisfy $g$, we will increase $\mu$ using bisection, i.e.,
+     search in $[0,\mu_{max}]$ where $\mu_{max}$ is a large positive number. Also, we 
+     will truncate ${\bf x}'_{k+1}$ between 0 and 1. 
 
-    3.8. Update $$norm(\Delta x)$$, $$k = k+1$$
+    3.8. Update $norm(\Delta x)$, $k = k+1$
 
 ### Implementation details
 Some details of the template code is explained as follows:
