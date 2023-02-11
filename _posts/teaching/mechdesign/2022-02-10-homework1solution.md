@@ -50,8 +50,6 @@ $$r_1^2 + r_2^2 = C$$ where $$C$$ is a constant, we get
 $$y(l) \propto (C-a)^{-2} + 7a^{-2}$$, where $$a = r_1^2$$. Thus $$y(l)$$ reaches the minimal deflection when
 $$a = \frac{C (7^{1/3})}{1+(7^{1/3})}$$.
 
-<img src="/_images/mechdesign/hw1sln1.png" alt="Drawing" style="height: 200px;"/> 
-
 
 
 
