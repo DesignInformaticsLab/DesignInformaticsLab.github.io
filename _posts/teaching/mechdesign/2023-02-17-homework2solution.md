@@ -51,9 +51,9 @@ The horizontal bar is under compression and is compressed by $\delta_2 = \frac{f
 The beam on the right has a deflection of $\delta_3 = \frac{fl^3}{3EI}$.
 From the geometric relationship $\delta_1 = \delta_2 + \delta_3$, we have
 
-$$ f = \frac{Fl^2A}{2l^2A + 3I}.
+$$ f = \frac{Fl^2A}{2l^2A + 3I}. $$
 
-So the spring rate is $$ k' = \frac{F}{\delta_1} = \frac{3EI}{(1 - \frac{l^2A}{(2l^2A + 3I)})l^3}.
+So the spring rate is $$ k' = \frac{F}{\delta_1} = \frac{3EI}{(1 - \frac{l^2A}{(2l^2A + 3I)})l^3}. $$
 
 We have $k < k'$.
 
