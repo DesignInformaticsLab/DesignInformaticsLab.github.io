@@ -1,7 +1,7 @@
 ---
 categories: mechdesign_homework
 layout: mechdesign_default
-title:  Homework 2
+title:  Homework 2 Solution
 published: true
 ---
 <style TYPE="text/css">
