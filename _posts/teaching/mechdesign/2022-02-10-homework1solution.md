@@ -38,7 +38,7 @@ $$M(x) = -Fl+Fx$$
 Consider changing cross-sections
 
 $$M/I = -\frac{Fl}{I_1} + \frac{Fx}{I_1} + (\frac{F}{I_2}-\frac{F}{I_1})<x-l/2>^1 
-+ (\frac{Fl}{2I_2}-\frac{Fl}{2I_1})<x-l/2>^0$$
++ (-\frac{Fl}{2I_2}+\frac{Fl}{2I_1})<x-l/2>^0$$
 
 With two integrations and using the conditions $$\theta(0) = 0$$ and $$y(0)=0$$, we get
 
