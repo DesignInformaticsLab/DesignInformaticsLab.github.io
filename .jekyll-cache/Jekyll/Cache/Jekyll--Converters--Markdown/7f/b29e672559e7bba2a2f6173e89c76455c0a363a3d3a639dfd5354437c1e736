@@ -1,0 +1,296 @@
+I"I�<style type="text/css">
+code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<h1 id="finite-element-analysis-in-python">Finite Element Analysis in Python</h1>
+
+<p>In this note we go through the creation of a simple Python code that (1) defines element-wise stiffness matrix, 
+(2) assembles the global stiffness matrix, and (3) solves the resulting system of equations by incorporating 
+boundary and loading conditions.</p>
+
+<h2 id="environment">Environment</h2>
+
+<p>TLDR: Use <a href="https://colab.research.google.com/notebooks/intro.ipynb">Colab</a>.</p>
+
+<p>There are two approaches to setting up your coding environment and get things going.</p>
+
+<p>The easiest way is to use an online editor such as <a href="https://colab.research.google.com/notebooks/intro.ipynb">Google Colab</a>.
+In Colab, click <em>File-New notebook</em> at the top left corner. Now you can start coding and also collaborate! 
+The drawbacks of this approach are that (1) debugging is trickier (see <a href="https://stackoverflow.com/questions/52656692/debugging-in-google-colab">this</a>), 
+(2) you have limited memory and CPU (since it is free!), (3) packages have to be installed on the fly, and obviously (4)
+you need to be online. 
+But if you just started using Python, (1-3) are not your immediate concerns.</p>
+
+<p>If you plan to work offline, then you will need to install a few things locally.</p>
+
+<p>(1) <strong>Language</strong>: Please use <a href="https://www.python.org/downloads/">Python 3</a> (Not Python 2 because syntax are different). 
+For Windows users, I recommend <a href="https://www.anaconda.com/">Anaconda</a> instead of the native Python since it comes with
+numerical computing packages (e.g., Numpy and sciPy) that you may encounter issues when installing on Windows.</p>
+
+<p>(2) <strong>Development Environment</strong>: I recommend <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> 
+and <a href="https://code.visualstudio.com/">VScode</a>. Both are free for students. 
+Within the environment, you can code, test, and collaborate with others. 
+It also allows you to manage Python packages more easily.</p>
+
+<p>(3) <strong>Version Control (Optional)</strong>: To collaborate with other people, you will need <a href="https://git-scm.com/">Git</a>, 
+which manages your files (e.g., compare differences between versions or restore to a previous version), 
+and <a href="https://github.com/">Github</a>, which allows you to share your locally managed files with other people, 
+so that you can simultaneous work on the same file and sync through github.</p>
+
+<h2 id="a-running-example">A Running Example</h2>
+
+<p>We use the following truss as a running example (see figure below). Here we have 4 nodes and 4 truss members (edges). 
+We treat each truss member as an element. Each node has two degree of freedom, i.e., displacement in x and y directions.
+So the total degree of freedom without considering boundary conditions is 8, 
+which are labeled as $q_1$ to $q_8$ in the figure. With the boundary conditions, $q_1$, $q_2$, $q_4$, $q_7$, and $q_8$
+are fixed. Loadings are applied at $q_3$ and $q_6$.</p>
+
+<p><img src="/_images/mechdesign/truss.png" alt="Drawing" style="height: 400px;" /></p>
+
+<h2 id="a-truss-class">A Truss Class</h2>
+<p>Here we define a class for a truss. We start with an initialization function that records 
+the following parameters that define the truss: 
+(1) nodes - the elements of this list are x- 
+and y-coordinates of the nodes that define truss members; 
+(2) edges - the elements of this list 
+are pairs of node indices. Each pair defines a truss member; 
+(3) fixed_dofs - this list specifies which degrees of freedom are fixed;
+(4) loads - this list specifies where loads are applied
+(5) E - Young’s modulus, assumed to be constant across the truss
+(6) A - cross section area, assumed to be constant across the truss</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">fixed_dofs</span><span class="p">,</span> <span class="n">loads</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
+        <span class="s">"""
+        :param nodes: A list of nodes with their coordinates in 2D
+        :param edges: Node connections: (0,2) node 0 and 2 are connected
+        :param fixed_dofs: A list of node constraints: (0,2,4) dof # 0, 2, 4 are fixed
+        :param loads: A list of point loads at nodes: (0,1000,0) dof # 1 has a point force of 1000
+        :param E: Young's modulus
+        :param A: Cross section area
+        """</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">nodes</span> <span class="o">=</span> <span class="n">nodes</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">E</span> <span class="o">=</span> <span class="n">E</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">A</span> <span class="o">=</span> <span class="n">A</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">edges</span> <span class="o">=</span> <span class="n">edges</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">fixed_dofs</span> <span class="o">=</span> <span class="n">fixed_dofs</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">loads</span> <span class="o">=</span> <span class="n">loads</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">num_nodes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">dof</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="p">.</span><span class="n">num_nodes</span>
+
+        <span class="bp">self</span><span class="p">.</span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">theta</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">k</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">dof_id</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="bp">self</span><span class="p">.</span><span class="n">dof</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">dof</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>For the running example, we use the following to create a truss. Notice that Python indexing starts with 0. 
+So $q_1$ corresponds to the 0th element rather than the 1st.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">nodes</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span> <span class="p">[</span><span class="mf">40.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span> <span class="p">[</span><span class="mf">40.</span><span class="p">,</span> <span class="mf">30.</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">30.</span><span class="p">]])</span>
+    <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+    <span class="n">fixed_dofs</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+    <span class="n">loads</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">25000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="mf">29.5e6</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">truss</span> <span class="o">=</span> <span class="n">Truss</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">fixed_dofs</span><span class="p">,</span> <span class="n">loads</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="element-wise-stiffness-matrix">Element-wise Stiffness Matrix</h2>
+
+<p>Now we add a function to the truss class that computes the element-wise stiffness matrix based on 
+(1) the orientation, 
+(2) the cross section area,
+(3) the Young’s modulus,
+and (4) the length of the truss member.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># compute the element-wise stiffness matrix
+</span>    <span class="k">def</span> <span class="nf">k_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">l</span><span class="p">):</span>
+        <span class="s">"""
+        :param theta: Orientation of the truss member
+        :param A: Area of the truss member
+        :param E: Young's modulus of the truss member
+        :param l: Length of the truss member
+        :return: Stiffness matrix
+        """</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="o">-</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="n">c</span><span class="o">*</span><span class="n">s</span><span class="p">],</span>
+                         <span class="p">[</span><span class="n">c</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="n">c</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="o">-</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">],</span>
+                         <span class="p">[</span><span class="o">-</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="n">c</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">*</span><span class="n">s</span><span class="p">],</span>
+                         <span class="p">[</span><span class="o">-</span><span class="n">c</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="o">-</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">]])</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">E</span><span class="o">/</span><span class="n">l</span>
+</code></pre></div></div>
+
+<h2 id="global-stiffness-matrix">Global Stiffness Matrix</h2>
+
+<p>Now we assemble the global stiffness matrix. To do so, we iterate over all truss members (edges). 
+For each member, we compute its length (<code class="language-plaintext highlighter-rouge">l</code>) and orientation (<code class="language-plaintext highlighter-rouge">theta</code>), which then allows us to compute 
+its element-wise stiffness by calling <code class="language-plaintext highlighter-rouge">self.k_matrix(theta, self.A, self.E, l)</code>. 
+Lastly, we add the element-wise stiffness matrix to the global one. 
+The positioning of the element-wise matrix in the global one depends on the dof indices of that particular element 
+(which are <code class="language-plaintext highlighter-rouge">[e[0] * 2, e[0] * 2 + 1, e[1] * 2, e[1] * 2 + 1]</code>).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># assemble global stiffness matrix
+</span>    <span class="k">def</span> <span class="nf">compute_stiffness</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">edges</span><span class="p">:</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">-</span> <span class="bp">self</span><span class="p">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+            <span class="n">l</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+            <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">l</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">theta</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">k</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">k_matrix</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">A</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">E</span><span class="p">,</span> <span class="n">l</span><span class="p">))</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">dof_id</span><span class="p">.</span><span class="n">append</span><span class="p">([</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">K</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">ix_</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">dof_id</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="p">.</span><span class="n">dof_id</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])]</span> <span class="o">+=</span> <span class="bp">self</span><span class="p">.</span><span class="n">k</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+</code></pre></div></div>
+
+<h2 id="solve-the-fea-problem">Solve the FEA problem</h2>
+
+<p>We now define one last function for the truss class to solve the FEA problem. 
+In this function, we first call <code class="language-plaintext highlighter-rouge">self.compute_stiffness()</code> to prepare the global stiffness matrix. 
+Then we use the boundary conditions to find the sub matrix 
+corresponding to the actual degrees of freedom of the structure ($q_3$, $q_5$, $q_6$ in the running example). 
+Lastly, we solve the resulting linear system of equation to find the displacement of the actual degrees of freedom.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">compute_stiffness</span><span class="p">()</span>
+        <span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">K</span><span class="p">,</span> <span class="n">fixed_dofs</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">fixed_dofs</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">loads</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">loads</span><span class="p">,</span> <span class="n">fixed_dofs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">loads</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="finding-the-internal-forces-on-a-truss-element">Finding the internal forces on a truss element</h2>
+
+<p>Once we find the displacement, we can compute the forces on each truss member. To do this, we need to use the 
+element-wise stiffness matrix (<code class="language-plaintext highlighter-rouge">k_element</code> in the following code) and displacement (<code class="language-plaintext highlighter-rouge">displacement_element</code>). 
+The multiplication <code class="language-plaintext highlighter-rouge">np.matmul(k_element, displacement_element)</code> gives us the forces in the order of 
+(x-force of 1st node, y-force of 1st node, x-force of 2nd node, y-force of 2nd node).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">displacement</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">truss</span><span class="p">.</span><span class="n">dof</span><span class="p">)</span>
+    <span class="n">free_dofs</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">setdiff1d</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="n">truss</span><span class="p">.</span><span class="n">dof</span><span class="p">),</span> <span class="n">truss</span><span class="p">.</span><span class="n">fixed_dofs</span><span class="p">)</span>
+    <span class="n">displacement</span><span class="p">[</span><span class="n">free_dofs</span><span class="p">]</span> <span class="o">=</span> <span class="n">truss</span><span class="p">.</span><span class="n">solve</span><span class="p">()</span>
+    <span class="n">f_list</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">truss</span><span class="p">.</span><span class="n">edge</span><span class="p">)):</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">truss</span><span class="p">.</span><span class="n">edge</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">truss</span><span class="p">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">-</span> <span class="n">truss</span><span class="p">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">k_element</span> <span class="o">=</span> <span class="n">truss</span><span class="p">.</span><span class="n">k_matrix</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+        <span class="n">dof_element</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">displacement_element</span> <span class="o">=</span> <span class="n">displacement</span><span class="p">[</span><span class="n">dof_element</span><span class="p">]</span>
+        <span class="n">f_element</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">k_element</span><span class="p">,</span> <span class="n">displacement_element</span><span class="p">)</span>
+        <span class="n">f_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">f_element</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Now you can call <code class="language-plaintext highlighter-rouge">f_list[node_id]</code> to get the forces for a specific node.</p>
+
+<h2 id="complete-code-for-the-running-example">Complete Code for the Running Example</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># Class for 2D truss analysis
+</span><span class="k">class</span> <span class="nc">Truss</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">fixed_dofs</span><span class="p">,</span> <span class="n">loads</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
+        <span class="s">"""
+        :param nodes: A list of nodes with their coordinates in 2D
+        :param edge: Node connections: (0,2) node 0 and 2 are connected
+        :param fixed_dofs: A list of node constraints: (0,2,4) dof # 0, 2, 4 are fixed
+        :param loads: A list of point loads at nodes: (0,1000,0) dof # 1 has a point force of 1000
+        :param E: Young's modulus
+        :param A: Cross section area
+        """</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">nodes</span> <span class="o">=</span> <span class="n">nodes</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">E</span> <span class="o">=</span> <span class="n">E</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">A</span> <span class="o">=</span> <span class="n">A</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">edges</span> <span class="o">=</span> <span class="n">edges</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">fixed_dofs</span> <span class="o">=</span> <span class="n">fixed_dofs</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">loads</span> <span class="o">=</span> <span class="n">loads</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">num_nodes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">dof</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="p">.</span><span class="n">num_nodes</span>
+
+        <span class="bp">self</span><span class="p">.</span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">theta</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">k</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">dof_id</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="bp">self</span><span class="p">.</span><span class="n">dof</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">dof</span><span class="p">))</span>
+
+    <span class="c1"># compute the element-wise stiffness matrix
+</span>    <span class="k">def</span> <span class="nf">k_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">l</span><span class="p">):</span>
+        <span class="s">"""
+        :param theta: Orientation of the truss member
+        :param A: Area of the truss member
+        :param E: Young's modulus of the truss member
+        :param l: Length of the truss member
+        :return: Stiffness matrix
+        """</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="o">-</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="n">c</span><span class="o">*</span><span class="n">s</span><span class="p">],</span>
+                         <span class="p">[</span><span class="n">c</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="n">c</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="o">-</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">],</span>
+                         <span class="p">[</span><span class="o">-</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="n">c</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">*</span><span class="n">s</span><span class="p">],</span>
+                         <span class="p">[</span><span class="o">-</span><span class="n">c</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="o">-</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">]])</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">E</span><span class="o">/</span><span class="n">l</span>
+
+    <span class="c1"># assemble global stiffness matrix
+</span>    <span class="k">def</span> <span class="nf">compute_stiffness</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">edges</span><span class="p">:</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">-</span> <span class="bp">self</span><span class="p">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+            <span class="n">l</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+            <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">l</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">theta</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">k</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">k_matrix</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">A</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">E</span><span class="p">,</span> <span class="n">l</span><span class="p">))</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">dof_id</span><span class="p">.</span><span class="n">append</span><span class="p">([</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">K</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">ix_</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">dof_id</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="p">.</span><span class="n">dof_id</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])]</span> <span class="o">+=</span> <span class="bp">self</span><span class="p">.</span><span class="n">k</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">compute_stiffness</span><span class="p">()</span>
+        <span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">K</span><span class="p">,</span> <span class="n">fixed_dofs</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">fixed_dofs</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">loads</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">loads</span><span class="p">,</span> <span class="n">fixed_dofs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">loads</span><span class="p">)</span>
+
+
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span> <span class="p">[</span><span class="mf">40.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span> <span class="p">[</span><span class="mf">40.</span><span class="p">,</span> <span class="mf">30.</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">30.</span><span class="p">]])</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+<span class="n">fixed_dofs</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+<span class="n">loads</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">25000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">E</span> <span class="o">=</span> <span class="mf">29.5e6</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">truss</span> <span class="o">=</span> <span class="n">Truss</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">fixed_dofs</span><span class="p">,</span> <span class="n">loads</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">truss</span><span class="p">.</span><span class="n">solve</span><span class="p">()</span>
+
+<span class="n">displacement</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">truss</span><span class="p">.</span><span class="n">dof</span><span class="p">)</span>
+<span class="n">free_dofs</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">setdiff1d</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="n">truss</span><span class="p">.</span><span class="n">dof</span><span class="p">),</span> <span class="n">truss</span><span class="p">.</span><span class="n">fixed_dofs</span><span class="p">)</span>
+<span class="n">displacement</span><span class="p">[</span><span class="n">free_dofs</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">f_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">truss</span><span class="p">.</span><span class="n">edge</span><span class="p">)):</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="n">truss</span><span class="p">.</span><span class="n">edge</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">truss</span><span class="p">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">-</span> <span class="n">truss</span><span class="p">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">k_element</span> <span class="o">=</span> <span class="n">truss</span><span class="p">.</span><span class="n">k_matrix</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+    <span class="n">dof_element</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">displacement_element</span> <span class="o">=</span> <span class="n">displacement</span><span class="p">[</span><span class="n">dof_element</span><span class="p">]</span>
+    <span class="n">f_element</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">k_element</span><span class="p">,</span> <span class="n">displacement_element</span><span class="p">)</span>
+    <span class="n">f_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">f_element</span><span class="p">)</span>
+</code></pre></div></div>
+:ET

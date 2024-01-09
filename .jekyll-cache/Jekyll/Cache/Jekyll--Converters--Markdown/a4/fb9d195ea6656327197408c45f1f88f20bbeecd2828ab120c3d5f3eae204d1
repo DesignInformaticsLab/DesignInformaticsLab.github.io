@@ -1,0 +1,170 @@
+I"5<style type="text/css">
+code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<h3 id="instructions">Instructions</h3>
+
+<ol>
+  <li>Please submit a single <strong>PDF</strong> file on Canvas.</li>
+  <li>If you have codes, please put them in the same PDF file.</li>
+  <li>This homework is <strong>DUE on Feb. 6</strong>.</li>
+</ol>
+
+<h3 id="disclaimer">Disclaimer</h3>
+<p>Images for Problems 2 and 3 are taken from Shigley’s.</p>
+
+<h3 id="problem-1-10-points">Problem 1 (10 Points)</h3>
+
+<p>For the plane stress <img src="https://render.githubusercontent.com/render/math?math=\sigma_x" /> = -8MPa, 
+<img src="https://render.githubusercontent.com/render/math?math=\sigma_y" /> = 7MPa, 
+<img src="https://render.githubusercontent.com/render/math?math=\tau_{xy}" /> = 6MPa cw, 
+    draw a Mohr’s circle diagram properly labeled,
+   find the principal normal and shear stresses, and determine the angle from the 
+   <img src="https://render.githubusercontent.com/render/math?math=x" /> axis to 
+   <img src="https://render.githubusercontent.com/render/math?math=\sigma_1" />. 
+   Draw stress elements as in Fig. 3-11c and d (Shigley’s) and label all details.</p>
+
+<h3 id="problem-2-30-points">Problem 2 (30 Points)</h3>
+
+<p>A countershaft carrying two V-belt pulleys is shown in the figure. Pulley A receives power from a
+   motor through a belt with the belt tensions shown. The power is transmitted through the shaft and
+   delivered to the belt on pulley B. Assume the belt tension on the loose side at B is 15 percent of
+   the tension on the tight side.</p>
+
+<ul>
+  <li>
+    <p>Determine the tensions in the belt on pulley B, assuming the shaft is running at a constant
+   speed.</p>
+  </li>
+  <li>
+    <p>Find the magnitudes of the bearing reaction forces, assuming the bearings act as simple
+   supports.</p>
+  </li>
+  <li>
+    <p>Draw shear-force and bending-moment diagrams for the shaft. If needed, make one set for the
+   horizontal plane and another set for the vertical plane.</p>
+  </li>
+  <li>
+    <p>At the point of maximum bending moment, determine the bending stress and the torsional
+   shear stress.</p>
+  </li>
+  <li>
+    <p>At the point of maximum bending moment, determine the principal stresses and the maximum
+   shear stress.</p>
+  </li>
+</ul>
+
+<p><img src="/_images/mechdesign/hw1_3.png" alt="Drawing" style="height: 400px;" /></p>
+
+<h3 id="problem-3-20-points">Problem 3 (20 Points)</h3>
+
+<p>The cantilevered bar in the figure is made from a ductile material and is statically loaded with
+   <img src="https://render.githubusercontent.com/render/math?math=F_y = 200" /> lbf and 
+   <img src="https://render.githubusercontent.com/render/math?math=F_x = F_z = 0" />. Analyze the stress situation in rod AB by obtaining the following
+   information.</p>
+
+<ul>
+  <li>
+    <p>Determine the precise location of the critical stress element.</p>
+  </li>
+  <li>
+    <p>Sketch the critical stress element and determine magnitudes and directions for all stresses acting
+   on it. (Transverse shear may only be neglected if you can justify this decision.)</p>
+  </li>
+  <li>
+    <p>For the critical stress element, determine the principal stresses and the maximum shear stress.</p>
+  </li>
+</ul>
+
+<p><img src="/_images/mechdesign/hw1_4.png" alt="Drawing" style="height: 400px;" /></p>
+
+<h3 id="problem-4-20-points-for-part-1-and-2">Problem 4 (20 Points for Part 1 and 2)</h3>
+
+<p>Consider a cantilever beam as shown in the figure with length 
+<img src="https://render.githubusercontent.com/render/math?math=l" /> and the left end fixed to a wall.</p>
+
+<ol>
+  <li>
+    <p>Derive the deflection <img src="https://render.githubusercontent.com/render/math?math=y" />  of the beam along 
+<img src="https://render.githubusercontent.com/render/math?math=x" /> under a single downward force 
+<img src="https://render.githubusercontent.com/render/math?math=F" /> on the right,
+and assume that the moment of inertia <img src="https://render.githubusercontent.com/render/math?math=I" />  is constant along 
+<img src="https://render.githubusercontent.com/render/math?math=x" /> . 
+(Show complete derivation instead of the final function 
+<img src="https://render.githubusercontent.com/render/math?math=y(x)" />)</p>
+  </li>
+  <li>
+    <p>Now consider that the beam has two connected parts, with the part on the left (of length 
+<img src="https://render.githubusercontent.com/render/math?math=l/2" />) having a moment of 
+inertia 
+<img src="https://render.githubusercontent.com/render/math?math=I_1" />, 
+and the part on the right 
+<img src="https://render.githubusercontent.com/render/math?math=I_2" />. 
+Derive the deflection <img src="https://render.githubusercontent.com/render/math?math=y" /> again.
+ Ignore stress concentration.</p>
+  </li>
+  <li>
+    <p>Further, consider that the cross-sections for the two parts are both circular, and the total volume
+of the beam is constant. What should 
+<img src="https://render.githubusercontent.com/render/math?math=I_1" /> and 
+<img src="https://render.githubusercontent.com/render/math?math=I_2" /> be for the beam to have minimal maximum deflection? (Optional)</p>
+  </li>
+</ol>
+
+<p><img src="/_images/mechdesign/hw1_5.png" alt="Drawing" style="height: 200px;" /></p>
+
+<h3 id="problem-5-20-points">Problem 5 (20 Points)</h3>
+
+<ol>
+  <li>
+    <p><em>Form your project phase 1 team</em>. Choose one of the three components: (1) Shaft, (2) Gear, (3) Bearing and key. 
+A shaft team should have 5-6 people; a gear team 3 people; and a bearing and key team 2 people.</p>
+  </li>
+  <li>
+    <p><em>Formulate a pseudo code (flow chart) for component-wise analysis and design</em>.</p>
+  </li>
+</ol>
+
+<ul>
+  <li>
+    <p>For shaft teams, please read Chapter 6 on Fatigue Failure Resulting from Variable Loading and 
+Chapter 7 on Shafts and Shaft Components (Sections 7-4 to 7-5). Start with Example 7-2 that runs through the whole design process, 
+list down the concepts you do not understand, and then seek answers to these questions from Chapters 6 and 7.</p>
+  </li>
+  <li>
+    <p>For gear teams, please read Chapter 13 Gears-General Sections 13-1 to 13-8 and 13-13 and 
+Chapter 14 Spur and Helical Gears. For Chapter 14, start with Section 14-19 and the example within, list down 
+the concepts you do not understand, and then seek answers from the chapter.</p>
+  </li>
+  <li>
+    <p>For bearing and key teams, please read Chapter 11 on Rolling-Contact Bearings and Chapter 7 Section 7-7.</p>
+  </li>
+  <li>
+    <p>The pseudo code should specify (1) the inputs, e.g., 
+static and dynamic loading conditions, geometry, target safety factors, (2) the outputs, e.g., 
+detailed component geometry design, material selection, performance metrics, and (3) the design flow.</p>
+  </li>
+  <li>
+    <p>As a starting point, your submission does not have to be perfect but needs to show your best effort.</p>
+  </li>
+</ul>
+
+:ET
