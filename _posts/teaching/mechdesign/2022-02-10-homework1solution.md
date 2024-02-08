@@ -2,7 +2,7 @@
 categories: mechdesign_homework
 layout: mechdesign_default
 title:  Homework 1 Solution
-published: false
+published: true
 ---
 <style TYPE="text/css">
 code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
