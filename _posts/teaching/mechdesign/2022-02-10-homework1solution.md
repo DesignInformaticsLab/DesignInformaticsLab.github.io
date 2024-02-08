@@ -25,11 +25,11 @@ MathJax.Hub.Queue(function() {
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
-### Problem 1-4
+### Problem 1-3
 
-See [solutions](/_teaching/mechdesign/Homework/Homework 1 Solutions.pdf).
+See [solutions](/_teaching/mechdesign/Homework/Homework 1 Solutions.pdf) 2-4.
 
-### Problem 5
+### Problem 4
 
 Following the discussion in class, we first get the bending moment function
 
