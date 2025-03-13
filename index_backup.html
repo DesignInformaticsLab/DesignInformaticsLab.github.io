@@ -1,0 +1,103 @@
+---
+layout: default
+date: 2016-05-30
+---
+<!--<div id="notification">-->
+<!--  <b>We are looking for a new PhD student for an NSF project on model attribution.-->
+<!--    For prospective students, please <a href="mailto: yiren@asu.edu">email</a> me. </b>-->
+<!--</div>-->
+
+<div id="mission">
+  <b>Mission:</b><br>
+  We study engineering design principles for machines that learn and interact with human beings.
+  Focused research topics include
+  <ul>
+    <li> (1) methods for identifying worst-case risks
+      (e.g., corner cases in self-driving and adversarial attacks against learning machines such as neural networks),</li>
+
+    <li> (2) theories for enabling competence awareness of intelligent systems
+      (e.g., risk certification of self-driving cars during interactions with human beings),</li>
+
+    <li> and (3) new educational tools to prepare future engineers and designers with
+  knowledge to conduct risk specifications and design for intelligent engineering products.</li>
+  </ul>
+  Challenges lie across disciplines including system engineering, machine learning,
+  optimization, optimal control, and game theory.
+  Real-world values of our research include socially adept human-robot interactions,
+  accelerated computational material discovery, and robust machine learning.
+</div>
+
+<!--Dr. Yi Ren's research interest is in the-->
+<!--development of new optimization algorithms for solving design problems-->
+<!--that are intractable within the current computational frameworks. Such algorithms will-->
+<!--acquire knowledge transfer capabilities, and leverage human knowledge, physics-based models,-->
+<!--and new computing hardware.-->
+<!--His research has been applied to real-world challenges including computational-->
+<!--material design, vehicle and robotics system design and control, and-->
+<!--the automation of industrial design for meeting consumer preferences.-->
+
+<div id="news">
+  <b>News:</b><br>
+  {% assign count = 0 %}
+  {% for post in site.posts %}
+    {% if post.categories contains 'news' and count <= 12 %}
+      {% assign count = count | plus: 1 %}
+      <a href="{{ post.url }}">[{{post.date | date: "%b %-d, %Y"}}]   {{ post.title }}</a><br>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<!--<br>-->
+<!--<div id="slides">-->
+<!--  <b>Projects:</b><br>-->
+<!--  {% assign count = 0 %}-->
+<!--  {% for post in site.posts %}-->
+<!--    {% if post.categories contains 'project-current' and count <= 10 %}-->
+<!--      {% assign count = count | plus: 1 %}-->
+<!--      <div id="slideimage">-->
+<!--        <a href="{{ post.url }}" title="{{ post.shorttitle }}"><img src="{{ site.url }}/{{ post.image}}"></a>-->
+<!--      </div>-->
+<!--    {% endif %}-->
+<!--    {% if post.categories contains 'project-past' and count <= 10 %}-->
+<!--      {% assign count = count | plus: 1 %}-->
+<!--      <div id="slideimage">-->
+<!--        <a href="{{ post.url }}" title="{{ post.shorttitle }}"><img src="{{ site.url }}/{{ post.image}}"></a>-->
+<!--      </div>-->
+<!--    {% endif %}-->
+<!--  {% endfor %}-->
+<!--</div>-->
+<!--<br><br>-->
+
+<div class="people">
+  <b>People:</b><br><br>
+  {% for people in site.posts %}
+    {% if people.categories contains 'people' %}
+    <div class="member">
+      {% if people.image %}
+        <img src="{{ site.url }}/_images/people/{{ people.image}}">
+      {% else %}
+        <img src="{{ site.url }}/_images/people/missing_people.png">
+      {% endif %}
+      <br><a href="http://{{ people.link }}">{{ people.name }},</a><br> {{ people.position }}
+      <!--, project: {{ people.project }}-->
+    </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<div class="people">
+  <b>Alumni - <i>Job</i>, Major (Year of graduation):</b><br><br>
+  {% for people in site.posts %}
+    {% if people.categories contains 'alumni' %}
+      <div class="member">
+        {% if people.image %}
+          <img src="{{ site.url }}/_images/people/{{ people.image}}">
+        {% else %}
+          <img src="{{ site.url }}/_images/people/missing_people.png">
+        {% endif %}
+        <br><a href="http://{{ people.link }}">{{ people.name }},</a><br> {{ people.position }}
+        <!--, project: {{ people.project }}-->
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>

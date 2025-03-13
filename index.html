@@ -1,103 +1,82 @@
 ---
 layout: default
-date: 2016-05-30
+title: Home
 ---
-<!--<div id="notification">-->
-<!--  <b>We are looking for a new PhD student for an NSF project on model attribution.-->
-<!--    For prospective students, please <a href="mailto: yiren@asu.edu">email</a> me. </b>-->
-<!--</div>-->
 
-<div id="mission">
-  <b>Mission:</b><br>
-  We study engineering design principles for machines that learn and interact with human beings.
-  Focused research topics include
+<section id="research-interests">
+  <section id="short-bio">
+    <h3>Bio</h3>
+    <p>I am currently an associate professor with the Department of Mechanical and Aerospace Engineering at Arizona State University. 
+      I received my B.S. in Automotive Engineering from Tsinghua University in 2007 
+      and my Ph.D. in Mechanical Engineering from the University of Michigan, Ann Arbor, 
+      in 2012, under the guidance of Dr. Panos Papalambros.</p>
+  </section>
+
+  <h3>Research Interests</h3>
+  <p>I'm interested in open questions related to game theory, optimization, and AI for science that are technically within my reach. 
+    Current projects include:</p>
   <ul>
-    <li> (1) methods for identifying worst-case risks
-      (e.g., corner cases in self-driving and adversarial attacks against learning machines such as neural networks),</li>
-
-    <li> (2) theories for enabling competence awareness of intelligent systems
-      (e.g., risk certification of self-driving cars during interactions with human beings),</li>
-
-    <li> and (3) new educational tools to prepare future engineers and designers with
-  knowledge to conduct risk specifications and design for intelligent engineering products.</li>
+    <li>2p0s differential games with incomplete information and temporal logic specifications (e.g., for football strategic planning)</li>
+    <li>Learning PDEs from experimental observations (e.g., for modeling materials structure-property mapping)</li>
+    <li>GenAI robust watermarking and attribution</li>
   </ul>
-  Challenges lie across disciplines including system engineering, machine learning,
-  optimization, optimal control, and game theory.
-  Real-world values of our research include socially adept human-robot interactions,
-  accelerated computational material discovery, and robust machine learning.
-</div>
+</section>
 
-<!--Dr. Yi Ren's research interest is in the-->
-<!--development of new optimization algorithms for solving design problems-->
-<!--that are intractable within the current computational frameworks. Such algorithms will-->
-<!--acquire knowledge transfer capabilities, and leverage human knowledge, physics-based models,-->
-<!--and new computing hardware.-->
-<!--His research has been applied to real-world challenges including computational-->
-<!--material design, vehicle and robotics system design and control, and-->
-<!--the automation of industrial design for meeting consumer preferences.-->
+<section id="papers">
+  <h3>Selected Publications</h3>
+  
+  <ul>
+    <li>Ghimire, M., Zhang, L., Xu, Z., & Ren, Y. (2025). <i>A Scalable Solver for 2p0s Differential Games with One-Sided Payoff Information and Continuous Actions, States, and Time.</i> <a href="https://arxiv.org/abs/2502.00560">arXiv:2502.00560</a> (Best paper award at AAAI Multiagent AI in Real World Workshop 2025) </li>
+  </ul>
+  <ul>
+    <li>Ghimire, M., Zhang, L., Xu, Z., & Ren, Y. (2024). <i>State-constrained zero-sum differential games with one-sided information.
+    </i> ICML 2024. <a href="https://arxiv.org/abs/2403.02741">arXiv:2403.02741</a></li>
+    <br>
+    <li>Zhang, L., Ghimire, M., Zhang, W., Xu, Z., & Ren, Y. (2024). <i>Value Approximation for Two-Player General-Sum Differential Games With State Constraints.</i> IEEE Transactions on Robotics. <a href="https://arxiv.org/abs/2311.16520">arXiv:2311.16520</a></li>
+  </ul>
+  <ul>
+    <li>Nie, G., Kim, C., Yang, Y., & Ren, Y. (2023). <i>Attributing Image Generative Models using Latent Fingerprints.</i> ICML 2023. <a href="https://arxiv.org/abs/2304.09752">arXiv:2304.09752</a></li>
+    <!-- <br>
+    <li>Zhang, L., Ghimire, M., Zhang, W., Xu, Z., & Ren, Y. (2023). <i>Approximating Discontinuous Nash Equilibrial Values of Two-Player General-Sum Differential Games.</i> ICRA 2023. <a href="https://arxiv.org/abs/2207.09209">arXiv:2207.09209</a></li> -->
+  </ul>
+  <ul>
+    <!-- <li>Cho, Y., Kim, C., Yang, Y., & Ren, Y. (2022). <i>Attributable Watermarking of Speech Generative Models.</i> ICASSP 2022. <a href="https://arxiv.org/abs/2110.07422">arXiv:2110.07422</a></li> -->
+    <li>Cheng, S., Yang, J., & Ren, Y. (2022). <i>Data-driven learning of 3-point correlation functions as microstructure representations.</i> Acta Materialia. <a href="https://arxiv.org/abs/2109.02255">arXiv:2109.02255</a></li>
+  </ul>
+  <ul>
+    <!-- <li>Chen, Y., Zhang, L., Merry, T., Amatya, S., Zhang, W., & Ren, Y. (2021). <i>The Utility of Empathetic Parameter Estimation in Multi-Agent Interactions.</i> ICRA 2021. <a href="https://arxiv.org/abs/2011.02047">arXiv:2011.02047</a></li> -->
+    <li>Kim, C., Ren, Y., & Yang, Y. (2021). <i>Decentralized Attribution of Generative Models.</i> ICLR 2021. <a href="https://arxiv.org/abs/2010.13974">arXiv:2010.13974</a></li>
+  </ul>
+</section>
 
-<div id="news">
-  <b>News:</b><br>
-  {% assign count = 0 %}
-  {% for post in site.posts %}
-    {% if post.categories contains 'news' and count <= 12 %}
-      {% assign count = count | plus: 1 %}
-      <a href="{{ post.url }}">[{{post.date | date: "%b %-d, %Y"}}]   {{ post.title }}</a><br>
-    {% endif %}
-  {% endfor %}
-</div>
+<section id="students">
+  <h3>Current Students</h3>
+  <ul>
+    <li>Mukesh Ghimire (PhD, co-advised by Dr. Zhe Xu) – Differential games</li>
+    <li>Sheng Cheng (PhD, co-advised by Dr. Yezhou Yang) – AI for science</li>
+    <li>Guangyu Nie (PhD) – AI for science </li>
+  </ul>
+  
+  <h3>Past Students</h3>
+  <ul>
+    <li>Lei Zhang (PhD) – Postdoc at Purdue</li>
+    <li>Ruijin Cang (PhD) – Google</li>
+    <li>Houpu Yao (PhD) – Google</li>
+    <li>Pei-En Chen (PhD, co-advised by Dr. Yang Jiao)</li>
+    <li>Nathan Cahill (PhD, co-advised by Dr. Tom Sugar)</li>
+    <li>Yongbaek Cho (MS)</li>
+    <li>Wenlong Shi (MS) – PhD student at ASU</li>
+    <li>Yi Chen (MS) – Aptiv</li>
+    <li>Steven Elliott (MS) – Northrop Grumman</li>
+    <li>Aditya Vipradas (MS) </li>
+    <li>Adithya Venugopal (MS) </li>
+    <li>Tanner Merry (BS) – US Navy</li>
+    <li>John Daly (BS) – NASA</li>
+    <li>Malcolm Regan (BS) – </li>
+    <li>Thurston Sexton (BS/MS) – NIST</li>
+    <li>Paul Stobinske (BS/MS) – Northrop Grumman</li>
+    <li>Travis Zhang (HS) – Cornell CS BS/MS</li>
+    <li>Richard Cheng (HS) – U. Waterloo Math BS</li>
 
-<!--<br>-->
-<!--<div id="slides">-->
-<!--  <b>Projects:</b><br>-->
-<!--  {% assign count = 0 %}-->
-<!--  {% for post in site.posts %}-->
-<!--    {% if post.categories contains 'project-current' and count <= 10 %}-->
-<!--      {% assign count = count | plus: 1 %}-->
-<!--      <div id="slideimage">-->
-<!--        <a href="{{ post.url }}" title="{{ post.shorttitle }}"><img src="{{ site.url }}/{{ post.image}}"></a>-->
-<!--      </div>-->
-<!--    {% endif %}-->
-<!--    {% if post.categories contains 'project-past' and count <= 10 %}-->
-<!--      {% assign count = count | plus: 1 %}-->
-<!--      <div id="slideimage">-->
-<!--        <a href="{{ post.url }}" title="{{ post.shorttitle }}"><img src="{{ site.url }}/{{ post.image}}"></a>-->
-<!--      </div>-->
-<!--    {% endif %}-->
-<!--  {% endfor %}-->
-<!--</div>-->
-<!--<br><br>-->
-
-<div class="people">
-  <b>People:</b><br><br>
-  {% for people in site.posts %}
-    {% if people.categories contains 'people' %}
-    <div class="member">
-      {% if people.image %}
-        <img src="{{ site.url }}/_images/people/{{ people.image}}">
-      {% else %}
-        <img src="{{ site.url }}/_images/people/missing_people.png">
-      {% endif %}
-      <br><a href="http://{{ people.link }}">{{ people.name }},</a><br> {{ people.position }}
-      <!--, project: {{ people.project }}-->
-    </div>
-    {% endif %}
-  {% endfor %}
-</div>
-
-<div class="people">
-  <b>Alumni - <i>Job</i>, Major (Year of graduation):</b><br><br>
-  {% for people in site.posts %}
-    {% if people.categories contains 'alumni' %}
-      <div class="member">
-        {% if people.image %}
-          <img src="{{ site.url }}/_images/people/{{ people.image}}">
-        {% else %}
-          <img src="{{ site.url }}/_images/people/missing_people.png">
-        {% endif %}
-        <br><a href="http://{{ people.link }}">{{ people.name }},</a><br> {{ people.position }}
-        <!--, project: {{ people.project }}-->
-      </div>
-    {% endif %}
-  {% endfor %}
-</div>
+  </ul>
+</section>

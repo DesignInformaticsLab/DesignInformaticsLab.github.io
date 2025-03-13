@@ -1,44 +1,24 @@
 # Site Settings
-title: Design Informatics Lab | ASU
+title: Yi Ren
 email: yiren@asu.edu
 description: >
-  Design Informatics Lab at ASU.
+  Yi Ren's research website
 baseurl: ""
 url: ""
 github_username:  designinformaticslab
 # Build Settings
-sass:
-  sass_dir: _sass
-include: ['_pages', '_papers', '_images', '_teaching', '_posts']
-exclude: ['_pages/publication_backup']
+
+include: []
+exclude: []
 kramdown:
   input: GFM
 encoding: UTF-8
 
-#scholar:
-#  style: apa
-#  locale: en
-#
-#  sort_by: year
-#  order: descending
-#
-#  type_order: article
-#  group_by: type
-#  group_order: ascending
-#
-#  source: ./_papers
-#  bibliography: references.bib
-#  bibliography_template: bibtemplate
-#
-#  replace_strings: true
-#  join_strings:    true
-#
-#  bibtex_filters:
-#  - superscript
-#  - latex
-#
-#  details_dir:    _papers
-#  details_layout: bibtex.html
-#  details_link:   Details
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jemoji
 
-#  query: "@*"
+remote_theme: vaibhavvikas/jekyll-theme-minimalistic
+
