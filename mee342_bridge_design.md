@@ -76,7 +76,7 @@ Use **simply supported** conditions:
 
 ## 7. Material + performance limits (steel-only)
 
-Assume **S275 steel**, yield strength $f_y = 275\ \text{MPa}$.
+Use the default **structural steel** in ANSYS.
 
 Your design must satisfy all of the following:
 
@@ -91,7 +91,7 @@ Your design must satisfy all of the following:
 - A screenshot showing **full deck shell coverage** and **0.25 m mesh**.
 - Results table: **mass**, $\sigma_{vM,\max}$, $\delta_{\max}$, $f_{1,\text{vertical}}$.
 - One plot of **deformed shape** and one plot of **von Mises stress**.
-- The standard model file (.stp) exported from ANSYS EnSight. 
+<!-- - The standard model file (.stp) exported from ANSYS EnSight.  -->
 
 
 <script>
