@@ -3,6 +3,9 @@ layout: default
 title: MEE342 Bridge Design 2026
 ---
 
+<img src="/_images/mechdesign/Mathematical_Bridge.jpg" alt="Drawing" style="height: 400px;"/> 
+
+
 # ANSYS Bridge Design Activity 2026
 
 You will design a lightweight pedestrian bridge and verify it using ANSYS.
