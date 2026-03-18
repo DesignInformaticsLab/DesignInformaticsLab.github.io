@@ -60,7 +60,7 @@ Use global axes with **+Z upward**.
   $
   q = 5.0\ \text{kN/m}^2 \quad \text{downward (−Z)}
   $
-- Fatigue load cycle: between "self-weight only" and "self-weight + q". Target is infinite life.
+- Fatigue load cycle: Use "zero-based loading" (between 0 and +q). Use equivalent stress as the "stress component" for life and safety factor calculation. Target is infinite life ($10^6$ cycles). Use fatigue strength factor (Kf) of 0.7.
 
 ## 6. Boundary conditions (supports)
 
