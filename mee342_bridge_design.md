@@ -60,8 +60,7 @@ Use global axes with **+Z upward**.
   $
   q = 5.0\ \text{kN/m}^2 \quad \text{downward (−Z)}
   $
-
----
+- Fatigue load cycle: between "self-weight only" and "self-weight + q". Target is infinite life.
 
 ## 6. Boundary conditions (supports)
 
@@ -83,14 +82,15 @@ Your design must satisfy all of the following:
 1. **Strength (static):** The maximum Von Mises stress must be no larger than 160MPa: $\sigma_{vM,\max} \le 160\ \text{MPa}$
 2. **Deflection (static):** The maximum deflection of the deck must be no larger than 37.5mm along Z-direction: $\delta_{\max} \le \frac{L}{400} = 37.5\ \text{mm}$
 3. **Vibration (modal):** The 1st natural frequency must be greater than 3Hz: $f_{1,\text{vertical}} \ge 3.0\ \text{Hz}$
+4. **Fatigue:** Fatigue factor of safety greater than 2.0. 
 
 ---
 
 ## 8. What to submit
 
 - A screenshot showing **full deck shell coverage** and **0.25 m mesh**.
-- Results table: **mass**, $\sigma_{vM,\max}$, $\delta_{\max}$, $f_{1,\text{vertical}}$.
-- One plot of **deformed shape** and one plot of **von Mises stress**.
+- Results table: **mass**, $\sigma_{vM,\max}$, $\delta_{\max}$, $f_{1,\text{vertical}}$, fatigue factor of safety.
+- One plot of **deformed shape**, one plot of **static factor of safety**, and one plot of **fatigue factor of safety**.
 <!-- - The standard model file (.stp) exported from ANSYS EnSight.  -->
 
 
