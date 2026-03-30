@@ -1,4 +1,12 @@
+---
+layout: default
+title: MEE342 Gear Design Activity 2026
+---
+
 # MEE 342 Gear Design Assignment: Tesla Model 3 Inspired Gear Reduction System
+
+<img src="/_images/mechdesign/gear_train_wikimedia.jpg" alt="Gear train photograph" style="width: 100%; max-width: 720px; display: block; margin: 0 auto 0.35rem auto;"/>
+<p style="font-size: 0.75em; color: #666; text-align: center;">Image source: <a href="https://commons.wikimedia.org/wiki/File:Gear_Train.jpg">"Gear Train"</a> by Aliva Sahoo, via Wikimedia Commons, licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
 
 ## Objective
 Design a **spreadsheet-based spur gear design tool** and use it for two related tasks:
