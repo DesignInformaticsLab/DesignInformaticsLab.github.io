@@ -4,33 +4,28 @@
 Design a **spreadsheet-based spur gear design tool** and use it for two related tasks:
 
 1. **Single-stage design:** size one spur gear–pinion pair from motor power and speed requirements using **Shigley's standard spur gear design workflow**.
-2. **Two-speed gearbox design:** replace the single-stage reduction with a **shiftable two-speed gearbox**, choose **first gear and second gear ratios** that minimize **0–60 mph time**, choose the best **shift speed**, and then run the gear design from Step 1 for each selectable ratio.
+2. **Two-speed gearbox design:** replace the single-stage reduction with a **shiftable two-speed gearbox**, choose **first gear and second gear ratios** that minimize **0–60 mph time**, choose the best **shift speed**, and then run the gear design from Step 1 for each selected ratio.
 
 The final deliverable is an **interactive spreadsheet** where a user can enter power, speed, safety factors, life, and packaging limits and receive a feasible gear design (or a clear warning that the design is infeasible).
 
 ---
 
 ## Recommended benchmark vehicle and assumptions
-Use a **Tesla Model 3 rear-wheel-drive benchmark** because it is a simple single-motor EV and its public specifications are sufficiently clear for an educational design exercise.
+Use a **Tesla Model 3 rear-wheel-drive benchmark**.
 
 ### Baseline vehicle assumptions
-Use these values as defaults in the spreadsheet, but allow the user to change them:
+Use these values as defaults in the spreadsheet:
 
 - Vehicle type: Tesla Model 3 RWD benchmark
 - Peak motor power: **194 kW**
 - Peak motor torque: **440 N·m**
 - Vehicle mass: **1760 kg**
 - Existing single-speed final drive ratio benchmark: **9.04:1**
-- Tire size benchmark: **235/45R18**
-- Approximate tire outside diameter: **0.669 m**
-- Approximate rolling radius: **0.334 m**
+- Approximate tire diameter: **0.669 m**
 - Drag coefficient: **0.219**
 - Frontal area: **2.22 m²** (reasonable approximation from vehicle dimensions)
 - Air density: **1.225 kg/m³**
 - Rolling resistance coefficient: **0.010**
-- Driveline efficiency per gear stage: **0.97** as a starting default
-- Combined driveline efficiency for a single stage: **0.97**
-- Combined driveline efficiency for two stages: **0.97² ≈ 0.941**
 - Tire-road friction coefficient for hard launch estimate: **1.0**
 
 > These are design-study values, not production-certified Tesla internal values. The spreadsheet should expose them as editable assumptions.
@@ -40,7 +35,7 @@ Use these values as defaults in the spreadsheet, but allow the user to change th
 # Step 1 — Single-stage spur gear and pinion design
 
 ## Goal
-Design one **spur gear–pinion pair** that meets a required speed reduction and transmits the required power and torque safely.
+Design one **spur gear–pinion pair** that meets a required speed reduction, transmits the required power and torque safely, and has the smallest packaging size.
 
 ## What the spreadsheet must accept as user inputs
 At minimum, include these inputs on a sheet called **Inputs**:
@@ -51,19 +46,16 @@ At minimum, include these inputs on a sheet called **Inputs**:
 - Output speed, rpm
 - Or gear ratio as an alternative input
 - Design life, hours or cycles
-- Daily duty cycle or equivalent service description
 - Desired reliability
-- Application/service factor
 
 ### Gear-design inputs
 - Pressure angle, default **20°**
 - Gear type: standard full-depth involute spur gears
 - Minimum acceptable bending factor of safety
 - Minimum acceptable contact factor of safety
-- Allowable center distance or maximum package envelope
 - Preferred gear material options and heat treatment options
-- Gear quality number, if used in the dynamic factor model
-- Target face-width multiplier range, for example **8/Pd to 16/Pd** for inch design or **8m to 16m** for metric design
+- Gear quality number to be used in the dynamic factor model
+- Target face-width range: **3p to 5p**, where p is the circular pitch.
 
 ### Optional but useful inputs
 - User-selected minimum pinion tooth count
@@ -73,7 +65,7 @@ At minimum, include these inputs on a sheet called **Inputs**:
 
 ---
 
-## Required outputs for the single-stage tool
+## Required outputs for the single-stage gear design tool
 Create a sheet called **SingleStage_Results** that reports:
 
 - Selected pinion teeth, `N_p`
@@ -130,7 +122,7 @@ W_t = 2 * T_in / d_p
 ### 3. Choose an initial pinion tooth count
 Use a practical starting range such as:
 
-- `N_p = 18 to 28` for 20° full-depth involute gears
+- `N_p = 17 to 28` for 20° full-depth involute gears
 
 Then compute:
 
@@ -194,7 +186,6 @@ The spreadsheet should include the following factors explicitly:
 For a course spreadsheet, it is acceptable to implement `J` and `I` using:
 
 - table lookup,
-- interpolation from instructor-provided values,
 - or user-entered values if exact AGMA geometry tables are unavailable.
 
 The spreadsheet must clearly label any factor that is approximate or user-supplied.
@@ -233,17 +224,7 @@ until all of the following are satisfied:
 - pinion tooth count avoids undercut and poor manufacturability
 
 ### 9. Rank feasible designs
-The spreadsheet should rank feasible solutions by a score such as:
-
-```text
-Score = w1*(mass) + w2*(center distance) + w3*(stress margin penalty) + w4*(manufacturing penalty)
-```
-
-A simpler alternative is to sort by:
-
-1. smallest center distance,
-2. then lowest mass,
-3. then largest minimum safety factor margin.
+The spreadsheet should rank feasible solutions by center distance.
 
 ---
 
@@ -290,10 +271,10 @@ Clean presentation of the chosen design.
 # Step 2 — Shiftable two-speed gearbox optimized for fastest 0–60 mph
 
 ## Goal
-Replace the single-stage reduction with a **shiftable two-speed gearbox**. Instead of splitting one overall ratio into two permanently engaged stages, the spreadsheet must choose:
+Replace the single-stage reduction with a **shiftable two-speed gearbox**. The spreadsheet must choose:
 
-- a **low gear ratio** `G_low` for launch,
-- a **high gear ratio** `G_high` for acceleration after the shift,
+- a **high gear ratio** `G_high` for launch,
+- a **low gear ratio** `G_low` for acceleration after the shift,
 - and the **shift speed** (or shift motor speed)
 
 so that the vehicle reaches **60 mph in the shortest possible time**.
@@ -307,20 +288,8 @@ using the same Shigley-based spur gear workflow from Step 1.
 
 ---
 
-## Important interpretation
-This assignment should now treat Step 2 as a **shiftable gearbox**, not a two-stage fixed reduction. That means:
-
-- the gearbox has **two selectable ratios**, not one overall ratio split across two constant meshes,
-- the vehicle launches in **first gear**,
-- at some optimal shift point it shifts to **second gear**,
-- and the 0–60 time includes both acceleration segments and an assumed shift delay.
-
-A practical architecture for the spreadsheet is a **two-speed layshaft gearbox** or equivalent conceptual two-speed spur-gear transmission. The spreadsheet does **not** need to fully design synchronizers, dog clutches, bearings, or shift forks unless the user later asks for that. The main requirement is ratio selection, performance modeling, and spur gear sizing for the two selectable gear pairs.
-
----
-
 ## Vehicle longitudinal model to use
-Create or update the sheet called **Acceleration_Model** and compute acceleration from:
+Create the sheet called **Acceleration_Model** and compute acceleration from:
 
 ```text
 F_net = F_drive - F_drag - F_roll
@@ -389,30 +358,21 @@ Integrate forward in time until `v = 60 mph`.
 The spreadsheet must evaluate a **two-segment acceleration problem**.
 
 ### Segment 1 — First gear
-Accelerate from rest using `G_low` until the chosen shift point is reached.
+Accelerate from rest using `G_high` until the chosen shift point is reached.
 
 ### Shift event
 At the shift point:
 
 - vehicle speed is unchanged during the shift,
-- motor speed drops according to the ratio change,
-- add a small fixed **shift delay** to elapsed time.
-
-Use a default educational assumption such as:
-
-```text
-t_shift = 0.20 s
-```
-
-but expose it as an editable input.
+- motor speed drops according to the ratio change.
 
 ### Segment 2 — Second gear
-Continue acceleration with `G_high` until 60 mph is reached.
+Continue acceleration with `G_low` until 60 mph is reached.
 
 Total time is:
 
 ```text
-t_0_60 = t_first_gear + t_shift + t_second_gear
+t_0_60 = t_first_gear + t_second_gear
 ```
 
 ---
@@ -420,25 +380,17 @@ t_0_60 = t_first_gear + t_shift + t_second_gear
 ## Optimization variables for Step 2
 The spreadsheet should vary:
 
-- `G_low` = first gear ratio
-- `G_high` = second gear ratio
+- `G_high` = first gear ratio
+- `G_low` = second gear ratio
 - `v_shift` or `omega_shift` = shift point
 
 with the constraints:
 
 ```text
-G_low > G_high
+G_high > G_low
 ```
 
 and both must be practical for a two-speed EV gearbox.
-
-### Suggested search ranges
-Use reasonable defaults such as:
-
-- `8.0 <= G_low <= 16.0`
-- `4.0 <= G_high <= 10.0`
-- `0 < v_shift < 60 mph`
-- or equivalently search over motor shift speed
 
 ### Practical design preferences
 - First gear should maximize launch force without causing excessive traction saturation far beyond what the tires can use.
@@ -448,18 +400,16 @@ Use reasonable defaults such as:
 A very useful rule in the spreadsheet is to compare wheel force in each gear at the same vehicle speed. The force-optimal shift is near the speed where:
 
 ```text
-F_wheel,1(v) ≈ F_wheel,2(v)
+F_wheel,1(v) ≈ F_wheel,2(v).
 ```
-
-subject to the shift delay penalty. Because a real shift costs time, the true optimal shift may occur slightly after the pure equal-wheel-force crossing.
 
 ---
 
 ## Recommended computational method
 Create a sheet called **TwoSpeed_Search**. Each row should contain one candidate design with:
 
-- `G_low`
 - `G_high`
+- `G_low`
 - `v_shift`
 - predicted `t_0_60`
 - peak motor speed in first gear by 60 mph
@@ -469,59 +419,35 @@ Create a sheet called **TwoSpeed_Search**. Each row should contain one candidate
 
 A simple search strategy is:
 
-1. Loop `G_low` over a practical range.
-2. Loop `G_high` over a practical range with `G_high < G_low`.
+1. Loop `G_high` over a practical range.
+2. Loop `G_low` over a practical range with `G_high > G_low`.
 3. For each ratio pair, loop over shift speed or shift motor speed.
 4. Run the two-segment acceleration simulation.
 5. Save the shortest 0–60 time among feasible cases.
 
 ---
 
-## Reasonable educational result for the Tesla benchmark
-Using the benchmark assumptions in this assignment, a reasonable expectation is that:
-
-- **First gear** should be noticeably shorter than Tesla's existing single-speed reduction to improve launch.
-- **Second gear** should be closer to the current single-speed value so that the motor does not overspeed before 60 mph and remains effective after the shift.
-
-A good educational starting point is:
-
-```text
-G_low  ≈ 13 to 15
-G_high ≈ 7 to 9
-```
-
-with the optimal shift often occurring somewhere in the neighborhood of **25 to 40 mph**, depending on the exact assumptions for:
-
-- motor torque and power curve
-- traction coefficient
-- shift delay
-- tire radius
-- drag and rolling resistance
-
-These are not claimed to be Tesla production values. They are plausible starting points for a simplified launch-performance optimization.
-
 ### Suggested default ratios for the spreadsheet
 Use these as **default initial guesses**, then let the spreadsheet optimize around them:
 
-- `G_low = 14.0`
-- `G_high = 8.0`
-- `t_shift = 0.20 s`
+- `G_high = 14.0`
+- `G_low = 8.0`
 
 The actual best values should be determined by the spreadsheet search, not hard-coded.
 
 ---
 
 ## How to choose actual tooth counts for the two-speed gearbox
-Once the optimizer identifies `G_low` and `G_high`, choose integer tooth counts for each selectable gear pair.
+Once the optimizer identifies `G_high` and `G_low`, choose integer tooth counts for each selectable gear pair.
 
 ### First gear
 ```text
-G_low = N_g1 / N_p1
+G_high = N_g1 / N_p1
 ```
 
 ### Second gear
 ```text
-G_high = N_g2 / N_p2
+G_low = N_g2 / N_p2
 ```
 
 Use practical pinion tooth counts and round gear tooth counts to match the target ratios while still respecting:
@@ -557,7 +483,7 @@ For this assignment, the important point is that the spreadsheet converts optimi
 ## How to run the gear design after optimization
 After the acceleration model chooses the optimal two-speed gearbox parameters, do the following:
 
-1. Select the best `G_low`, `G_high`, and `v_shift`.
+1. Select the best `G_high`, `G_low`, and `v_shift`.
 2. Design **first gear** as a spur gear pair using the Step 1 method.
 3. Design **second gear** as a second spur gear pair using the Step 1 method.
 4. Evaluate each gear pair at the torque and speed it sees in service.
@@ -592,7 +518,7 @@ eta_1 = 0.97
 eta_2 = 0.97
 ```
 
-Then the active wheel force uses the efficiency of the currently engaged gear only. Do **not** multiply them together during the 0–60 simulation because only one selectable ratio is engaged at a time.
+Then the active wheel force uses the efficiency of the currently engaged gear only.
 
 ---
 
@@ -656,43 +582,3 @@ Include plots for:
 - net acceleration vs vehicle speed
 - cumulative 0–60 time vs candidate total ratio
 - bending and contact safety factors for the selected design
-
----
-
-## Recommended design notes to include in the spreadsheet
-Add a notes block that explains:
-
-- this is a **Shigley/AGMA preliminary design tool**, not a final production gearbox design
-- gear geometry factors may be approximate if exact AGMA tables are unavailable
-- bearings, shafts, lubrication, thermal limits, NVH, and housing stiffness are not fully covered in this version
-- the 0–60 optimization is simplified and focuses on acceleration, not full drive-cycle efficiency or top-speed certification
-
----
-
-## Suggested grading emphasis
-A strong submission should:
-
-- use a clean and traceable Shigley workflow
-- make all assumptions visible
-- keep units consistent
-- separate user inputs from formulas
-- clearly identify approximate lookup factors
-- compare the original Tesla-like single-stage ratio to the optimized two-stage fixed reduction
-- demonstrate that each stage is re-designed with the gear tool rather than only splitting the ratio numerically
-
----
-
-## References and source basis
-Use the following as the basis for the benchmark values and methodology:
-
-1. Tesla Model 3 specifications page and owner documentation for current dimensions and vehicle information.
-2. Argonne National Laboratory public vehicle database for a representative Model 3 final drive ratio benchmark.
-3. Public specification aggregators for approximate current Model 3 RWD peak power, peak torque, mass, tire size, and top-speed values.
-4. Shigley's Mechanical Engineering Design for the spur gear design method and AGMA-style stress framework.
-
-Recommended default citations in a written report:
-
-- Tesla Model 3 official website and owner manual
-- Argonne National Laboratory D3 vehicle summary for Tesla Model 3
-- Shigley, *Mechanical Engineering Design*
-
